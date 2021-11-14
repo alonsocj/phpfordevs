@@ -1,7 +1,11 @@
 import express from "express";
 import cors from "cors";
+import morgan from "morgan";
 import home from "./routes/home";
 const app = express();
+app.set("view engine", "ejs");
+app.set("views", __dirname + "/views");
 app.use(cors());
+app.use(morgan("dev"));
 app.use(home);
 export default app;
