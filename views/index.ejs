@@ -1,8 +1,16 @@
 <%- include("templates/head") %>
     <h1>HOLA ESTE ES EL HOME</h1>
-    <%= console.log(data) %>
-    <% for(let i=0; i<data.length;i++){ %>
-        <p><%= data[i].nombre %></p>
-    <% } %>
+    <!-- 
+        esta es la forma en la que se llama la informacion que se desarrollo en el controlador 
+        (esto para ver la informacion mas facil se puede omitir)
+        <%=// console.log(data) %>
+    <% //for(let i=0; i<data.length;i++){ %>
+        
+        para este caso es algo random pero como la variable data que viene de el objeto definido en el controlador
+        debido a que la variable rows era un array con objetos de la consulta se llama uno por uno y se accede a algun
+        atributo que contengan
+
+        <p><%= //data[i].nombre %></p>
+    <% //} %> -->
     
 <%- include("templates/footer") %>
