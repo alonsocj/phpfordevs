@@ -1,9 +1,8 @@
-<%- include("templates/head")  %> 
+<%- include("templates/head") %>
     <h1>HOLA ESTE ES EL HOME</h1>
-    <% for(let i=0; i<lista.length;i++){ %>
-        <a href="<%= lista[i] %>">Hola <%= i %></a>
-        <% } %>
-
-</body>
-
-</html>
+    <%= console.log(data) %>
+    <% for(let i=0; i<data.length;i++){ %>
+        <p><%= data[i].nombre %></p>
+    <% } %>
+    
+<%- include("templates/footer") %>
