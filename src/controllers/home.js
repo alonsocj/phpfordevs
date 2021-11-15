@@ -7,7 +7,7 @@ export const ejemplo = async (req, res) => {
   /* const { rows } = await conexion.query("SELECT * FROM tabla");
   console.log(rows); */
   //se extraeria la informacion en la variable rows (esta definida asi desde la consulta)
-  const rows = ''
+  const rows = ['dato1','dato2']
   //se envia un objeto a la plantilla (en este caso la plantilla index)
   res.render("index", { data: rows });
 };
