@@ -12,5 +12,13 @@ Cuando se clona el repositorio la primera vez o en alguna instancia nueva, es ne
 
     npm i
 
+### Iniciar la base de datos desde docker (En la misma carpeta del repositorio)
+
+    docker-compose up -d
+
 ### Durante el desarrollo del proyecto solo es necesesario utilizar el siguiente comando
     npm run dev
+
+### Cerrar los contenedores de docker (En la misma carpeta del repositorio)
+
+    docker-compose down
