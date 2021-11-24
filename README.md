@@ -1,5 +1,5 @@
 # phpfordevs
-## Crear archivo .env 
+## Crear archivo .env (En la misma carpeta del repositorio)
 en el archivo .env se define el puerto como variable de entorno solo es necesario definirlo de la siguiente manera port ejemplo
 
  `PORT = 4000`
