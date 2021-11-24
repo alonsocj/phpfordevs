@@ -7,4 +7,4 @@ en el archivo .env se define el puerto como variable de entorno solo es necesari
 ## COMANDOS DEL PROYECTO EN DESARROLLO
 
 ### Durante el desarrollo del proyecto solo es necesesario utilizar el siguiente comando
-    `npm run dev`
+    npm run dev
