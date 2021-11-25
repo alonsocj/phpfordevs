@@ -6,7 +6,17 @@
     transform: translate(-50%,-50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
                 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.3s ease;
 }
+
+.infobox.activeIn,
+.quizbox.activeQu{
+    z-index: 5;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /*estilo del boton*/
 .startbtn button{
     font-size: 25px;
@@ -28,6 +38,7 @@
     opacity: 0;
     pointer-events: none;
 }
+
 
 .infobox .infotitle{
     height: 60px;
@@ -68,6 +79,7 @@
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
+    outline: none;
 }
 
 .buttons button.quit{
