@@ -25,8 +25,8 @@
     background: white;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
-    /*opacity: 0;
-    pointer-events: none;*/
+    opacity: 0;
+    pointer-events: none;
 }
 
 .infobox .infotitle{
@@ -37,6 +37,8 @@
     padding: 0 50px;
     font-size: 20px;
     font-weight: 600;
+    background: #242434;
+    color: white;
 }
 
 .infobox .infolist{
@@ -93,13 +95,14 @@
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
+    margin-top: 50px;
 }
 .quizbox header{
     position: relative;
     z-index: 2;
     height: 70px;
     padding: 0 25px;
-    background: white;
+    background: #242434;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -109,11 +112,12 @@
 .quizbox header .title{
     font-size: 20px;
     font-weight: 600;
+    color: white;
 }
 .quizbox header .timer{
     color: white;
-    background: #9e6eb9;
-    border: 1px solid #c580ec;
+    background: #545474;
+    border: 1px solid #242434;
     height: 45px;
     padding: 0 8px;
     border-radius: 5px;
@@ -238,10 +242,10 @@ section .optionlist .option:hover{
     cursor: pointer;
     border: none;
     outline: none;
-    color: #fff;
     border-radius: 5px;
-    background: #007bff;
-    border: 1px solid #007bff;
+    background: white;
+    border: 1px solid #4A235A;
+    color: #4A235A;
     line-height: 10px;
     /*pointer-events: none;*/
     transform: scale(0.95);
@@ -249,7 +253,8 @@ section .optionlist .option:hover{
 }
 
 .footercuestionario .nextbtn:hover{
-    background: #0263ca;
+    background: #4A235A;
+    color: white;
 }
 
 .resultbox{
@@ -270,7 +275,7 @@ section .optionlist .option:hover{
 
 .resultbox .icon{
     font-size: 100px;
-    color: #007bff;
+    color: #242434;
     margin-bottom: 10px;
 }
 
@@ -303,6 +308,6 @@ section .optionlist .option:hover{
     border: none;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #007bff;
+    border: 1px solid #242434;
     transition: all 0.3s ease;
 }
