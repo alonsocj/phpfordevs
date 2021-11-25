@@ -1,0 +1,308 @@
+/*posicion de los divs del cuestionario*/
+.startbtn, .infobox, .quizbox, .resultbox{
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*estilo del boton*/
+.startbtn button{
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #4A235A;
+    cursor: pointer;
+}
+/*estilo de la seccion de informacion*/
+.infobox{
+    width: 540px;
+    background: white;
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    /*opacity: 0;
+    pointer-events: none;*/
+}
+
+.infobox .infotitle{
+    height: 60px;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.infobox .infolist{
+    padding: 15px 50px;
+}
+
+.infobox .info{
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.infobox .buttons{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 35px;
+    border-top: 1px solid lightgrey;
+}
+
+.infobox .buttons button{
+    margin: 0 5px;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttons button.quit{
+    border: 1px solid #4A235A;
+    color: #4A235A;
+}
+.buttons button.quit:hover{
+    background: #4A235A;
+    color: white;
+}
+.buttons button.restart{
+    border: 1px solid #4A235A;
+    color: #4A235A;
+}
+.buttons button.restart:hover{
+    background: #4A235A;
+    color: white;
+}
+
+/*estilo del cuadro de preguntas*/
+.quizbox{
+    width: 550px;
+    background: white;
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+}
+.quizbox header{
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    padding: 0 25px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+}
+.quizbox header .title{
+    font-size: 20px;
+    font-weight: 600;
+}
+.quizbox header .timer{
+    color: white;
+    background: #9e6eb9;
+    border: 1px solid #c580ec;
+    height: 45px;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.quizbox header .timer .timertext{
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+
+.quizbox header .timer .timersec{
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;
+    width: 45px;
+    color: black;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    background: white;
+    border: 1px solid #e7edf3;
+    user-select: none;
+}
+
+.quizbox section{
+    padding: 25px 30px 20px 30px;
+    background: white;
+}
+
+.quizbox section .questiontext{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.quizbox section .optionlist{
+    padding: 20px 0px;
+    padding: 20px 0px;
+    display: block;   
+}
+
+.quizbox section .optionlist .option{
+    background: aliceblue;
+    border: 1px solid #84c5fe;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.optionlist .option:last-child{
+    margin-bottom: 0px;
+}
+
+section .optionlist .option:hover{
+    color: #004085;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+}
+
+.optionlist .option .icono{
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    line-height: 24px;
+}
+
+.optionlist .option .icono.check{
+    color: #23903c;
+    border-color: #23903c;
+    background: #d4edda;
+}
+.optionlist .option .icono.cross{
+    color: #a42834;
+    background: #f8d7da;
+    border-color: #a42834;
+}
+
+.footercuestionario{
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid lightgrey;
+}
+
+.footercuestionario .numeropreguntas span{
+    display:flex;
+    user-select: none;
+    padding-top: 5px;
+}
+
+.footercuestionario .numeropreguntas span p{
+    font-weight: 500;
+    padding: 0 3px;
+}
+
+.footercuestionario .numeropreguntas span p:first-child{
+    padding-left: 0px;
+}
+
+.footercuestionario .nextbtn{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    background: #007bff;
+    border: 1px solid #007bff;
+    line-height: 10px;
+    /*pointer-events: none;*/
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+.footercuestionario .nextbtn:hover{
+    background: #0263ca;
+}
+
+.resultbox{
+    background: white;
+    width: 450px;
+    padding: 25px 30px;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.resultbox .icon{
+    font-size: 100px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.resultbox .completetext{
+    font-size: 20px;
+    font-weight: 500;
+}
+.resultbox .scoretext span{
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+.resultbox .scoretext span p{
+    padding: 0 4px;
+    font-weight: 600;
+}
+.resultbox .buttons{
+    display: flex;
+    margin: 20px 0;
+}
+
+.resultbox .buttons button{
+    margin: 0 10px;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    transition: all 0.3s ease;
+}
