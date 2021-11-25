@@ -1,0 +1,66 @@
+<%- include("templates/head") %>
+<!--Boton de inicio-->
+<div class="startbtn"><button>Iniciar Cuestionario</button></div>
+<!--Cuadro de informacion-->
+<div class="infobox">
+    <div class="infotitle">
+        <span>Indicaciones del Cuestionario</span>
+    </div>
+    <div class="infolist">
+        <div class="info">1.El cuestionario consta de 5 preguntas</div>
+        <div class="info">2.Tiene 30 segundos por pregunta</div>
+    </div>
+    <div class="buttons">
+        <button class="quit">Salir del cuestionario</button>
+        <button class="restart">Continuar</button>
+    </div>
+</div>
+<!--Cuadro de preguntas-->
+<div class="quizbox">
+    <header>
+        <div class="title">Cuestionario Principiante</div>
+        <div class="timer">
+            <div class="timertext">Tiempo restante</div>
+            <div class="timersec">30</div>
+        </div>
+    </header>
+    <section>
+        <div class="questiontext">
+            <span>Cuanto es 1 + 1?</span>
+        </div>
+        <div class="optionlist">
+            <div class="option">
+                <span>1</span>
+                <div class="icono cross"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="option">
+                <span>2</span>
+                <div class="icono check"><i class="fas fa-check"></i></div>
+            </div>
+            <div class="option"><span>3</span></div>
+            <div class="option"><span>4</span></div>
+        </div>
+    </section>
+<!--Footer del cuadro de preguntas-->
+<footer class="footercuestionario">
+    <div class="numeropreguntas">
+        <span><p>Pregunta</p><p>2</p><p>de</p><p>5</p></span>
+    </div>
+    <button class="nextbtn">Siguiente Pregunta</button>
+</footer>
+</div>
+<!--Cuadro de resultado-->
+<div class="resultbox">
+    <div class="icon">
+        <i class="fas fa-crown"></i>
+    </div>
+    <div class="completetext">Has completado el test</div>
+    <div class="scoretext">
+        <span><p></p>Obtuviste <p>5</p> de <p>5</p> puntos </span>
+    </div>
+    <div class="buttons">
+        <button class="restart">Reintentar</button>
+        <button class="quit">Salir</button>
+    </div>
+</div>
+<%- include("templates/footer") %>

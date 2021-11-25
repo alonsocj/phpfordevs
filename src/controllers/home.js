@@ -11,3 +11,7 @@ export const ejemplo = async (req, res) => {
   //se envia un objeto a la plantilla (en este caso la plantilla index)
   res.render("index", { data: rows });
 };
+
+export const cuestionario = async (req, res) => {
+  res.render("cuestionario");
+};
