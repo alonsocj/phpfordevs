@@ -1,7 +1,7 @@
 let questions = [
     {
         num:1,
-        question:"Cuanto es 1 + 1?",
+        question:"Pregunta avanzado",
         answer: "2",
         options: [
             "1",
@@ -22,7 +22,7 @@ let questions = [
         ]
     },
     {
-        num:1,
+        num:3,
         question:"Por que no me ama?",
         answer: "por feo",
         options: [
@@ -33,7 +33,7 @@ let questions = [
         ]
     },
     {
-        num:1,
+        num:4,
         question:"Cuanto es 1 + 0?",
         answer: "1",
         options: [
@@ -44,7 +44,7 @@ let questions = [
         ]
     },
     {
-        num:1,
+        num:5,
         question:"Cuanto es 1 + 8?",
         answer: "9",
         options: [

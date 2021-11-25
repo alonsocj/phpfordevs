@@ -12,6 +12,12 @@ export const ejemplo = async (req, res) => {
   res.render("index", { data: rows });
 };
 
-export const cuestionario = async (req, res) => {
-  res.render("cuestionario");
+export const cuestionarioBasico = async (req, res) => {
+  res.render("cuestionarioBasico");
+};
+export const cuestionarioIntermedio = async (req, res) => {
+  res.render("cuestionarioIntermedio");
+};
+export const cuestionarioAvanzado = async (req, res) => {
+  res.render("cuestionarioAvanzado");
 };
