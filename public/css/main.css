@@ -217,6 +217,17 @@ a{
         display: block;
         margin: 0;
     }
+    .containers{
+        width: 100%;
+        margin: auto;
+       
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
     .footer .containers ul li{
         display: block;
         
