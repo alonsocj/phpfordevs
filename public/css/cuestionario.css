@@ -105,7 +105,7 @@
 
 /*estilo del cuadro de preguntas*/
 .quizbox{
-    width: 550px;
+    width: 900px;
     background: white;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -174,60 +174,98 @@
 .quizbox section{
     padding: 25px 30px 20px 30px;
     background: white;
+    display: block;
 }
 
 .quizbox section .questiontext{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .quizbox section .optionlist{
-    padding: 20px 0px;
-    padding: 20px 0px;
-    display: block;   
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .quizbox section .optionlist .option{
     background: aliceblue;
     border: 1px solid #84c5fe;
     border-radius: 5px;
-    padding: 5px 15px;
+    /*padding: 5px 15px;*/
+    padding: 60px 0px;
     font-size: 17px;
-    margin-bottom: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
+    text-align:center;
     justify-content: space-between;
+    width: 48%;
+    height: 100%;
 }
 
-.optionlist .option:last-child{
-    margin-bottom: 0px;
+.quizbox section .optionlist1{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-section .optionlist .option:hover{
+.quizbox section .optionlist1 .option{
+    background: aliceblue;
+    border: 1px solid #84c5fe;
+    border-radius: 5px;
+    /*padding: 5px 15px;*/
+    padding: 60px 0px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-align:center;
+    justify-content: space-between;
+    width: 48%;
+    height: 100%;
+}
+
+section .optionlist .option:hover,
+section .optionlist1 .option:hover{
     color: #004085;
     background: #cce5ff;
     border: 1px solid #b8daff;
 }
 
-section .optionlist .option.correct{
+section .optionlist .option.correct,
+section .optionlist1 .option.correct{
     color: #155724;
     background: #d4edda;
     border: 1px solid #c3e6cb;
 }
-section .optionlist .option.incorrect{
+
+section .optionlist .option.incorrect,
+section .optionlist1 .option.incorrect{
     color: #721c24;
     background: #f8d7da;
     border: 1px solid #f5c6cb;
 }
-section .optionlist .option.disabled{
+section .optionlist .option.disabled,
+section .optionlist1 .option.disabled{
     pointer-events: none;
 }
 
-.optionlist .option .icono{
-    height: 26px;
-    width: 26px;
+.optionlist .option .icono,
+.optionlist1 .option .icono{
+    height: 30px;
+    width: 30px;
     border: 2px solid transparent;
     border-radius: 50%;
     text-align: center;
@@ -237,12 +275,14 @@ section .optionlist .option.disabled{
     line-height: 24px;
 }
 
-.optionlist .option .icono.check{
+.optionlist .option .icono.check,
+.optionlist1 .option .icono.check{
     color: #23903c;
     border-color: #23903c;
     background: #d4edda;
 }
-.optionlist .option .icono.cross{
+.optionlist .option .icono.cross,
+.optionlist1 .option .icono.cross{
     color: #a42834;
     background: #f8d7da;
     border-color: #a42834;

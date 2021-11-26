@@ -9,6 +9,7 @@ const resultbox = document.querySelector(".resultbox");
 const reintentarbtn = resultbox.querySelector(".buttons .restart");
 const quitarbtn = resultbox.querySelector(".buttons .quit");
 const listaopciones = document.querySelector(".optionlist");
+const listaopciones1 = document.querySelector(".optionlist1");
 const contadorTiempo = quizbox.querySelector(".timer .timersec");
 const tiempoTexto = quizbox.querySelector(".timer .timertext");
 const lineaTiempo = quizbox.querySelector(".time_line");
@@ -66,23 +67,27 @@ reintentarbtn.onclick = ()=>{
 function mostrarPreguntas(index){
     const preguntastxt = document.querySelector(".questiontext");
     const numPreguntas = document.querySelector(".numeropreguntas");
-    let lineaPregunta = '<span>' + questions[index].num+ '. '+questions[index].question + '</span>';
+    let lineaPregunta = '<span>Pregunta ' + questions[index].num+ '. '+questions[index].question + '</span>';
     let lineaOpcion = '<div class="option"> <span>'+questions[index].options[0]+'</span></div>'
-                    + '<div class="option"> <span>'+questions[index].options[1]+'</span></div>'
-                    + '<div class="option"> <span>'+questions[index].options[2]+'</span></div>'
+                    + '<div class="option"> <span>'+questions[index].options[1]+'</span></div>';
+    let lineaOpcion1 = '<div class="option"> <span>'+questions[index].options[2]+'</span></div>'
                     + '<div class="option"> <span>'+questions[index].options[3]+'</span></div>';
     listaopciones.innerHTML = lineaOpcion;
+    listaopciones1.innerHTML = lineaOpcion1;
     preguntastxt.innerHTML = lineaPregunta;
     num = contadorPreguntas + 1;
     let contadorPreguntastxt = '<span><p>Pregunta</p><p>'+num+'</p><p>de</p><p>'+questions.length+'</p></span>';
     numPreguntas.innerHTML = contadorPreguntastxt;
     const opcion = listaopciones.querySelectorAll(".option");
+    const opcion1 = listaopciones1.querySelectorAll(".option");
     for(let i = 0; i < opcion.length; i++){
        opcion[i].setAttribute("onclick","optionSelected(this)");
     }
+    for(let i = 0; i < opcion1.length; i++){
+        opcion1[i].setAttribute("onclick","optionSelected(this)");
+     }
 }
-let iconcheck = '<div class="icono check"><i class="fas fa-check"></i></div>';
-let iconcross = '<div class="icono cross"><i class="fas fa-times"></i></div>';
+
 
 function optionSelected(answer){
     clearInterval(contador);
@@ -90,23 +95,29 @@ function optionSelected(answer){
     let userAns = answer.textContent;
     let correctAns = " "+ questions[contadorPreguntas].answer;
     let allOptions = listaopciones.children.length;
+    let allOptions1 = listaopciones1.children.length;
     if(userAns == correctAns){
         answer.classList.add("correct");
-        answer.insertAdjacentHTML("beforeend",iconcheck);
         puntaje ++;
     }
     else{
         answer.classList.add("incorrect");
-        answer.insertAdjacentHTML("beforeend",iconcross);
         for (let i = 0; i < allOptions; i++){
             if(listaopciones.children[i].textContent == correctAns){
                 listaopciones.children[i].setAttribute("class","option correct");
-                listaopciones.children[i].insertAdjacentHTML("beforeend",iconcheck);
+            }
+        }
+        for (let i = 0; i < allOptions1; i++){
+            if(listaopciones1.children[i].textContent == correctAns){
+                listaopciones1.children[i].setAttribute("class","option correct");
             }
         }
     }
     for (let i = 0; i < allOptions; i++){
         listaopciones.children[i].classList.add("disabled");
+    }
+    for (let i = 0; i < allOptions1; i++){
+        listaopciones1.children[i].classList.add("disabled");
     }
     botonSiguiente.classList.add("show");
 }
@@ -124,13 +135,19 @@ function contarTiempo(time){
             clearInterval(contador); 
             tiempoTexto.textContent = "Tiempo terminado";
             const allOptions = listaopciones.children.length;
+            const allOptions1 = listaopciones1.children.length;
             let correcAns = " "+questions[contadorPreguntas].answer; 
             for(i=0; i < allOptions; i++){
                 if(listaopciones.children[i].textContent == correcAns){ 
                     listaopciones.children[i].setAttribute("class", "option correct"); 
-                    listaopciones.children[i].insertAdjacentHTML("beforeend",iconcheck);
                 }
                 listaopciones.children[i].classList.add("disabled"); 
+            }
+            for(i=0; i < allOptions1; i++){
+                if(listaopciones1.children[i].textContent == correcAns){ 
+                    listaopciones1.children[i].setAttribute("class", "option correct"); 
+                }
+                listaopciones1.children[i].classList.add("disabled"); 
             }
 
             botonSiguiente.classList.add("show");
