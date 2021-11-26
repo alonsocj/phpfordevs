@@ -2,7 +2,7 @@ let questions = [
     {
         num:1,
         question:"Cuanto es 1 + 1?",
-        answer: "2",
+        answer:"2",
         options: [
             "1",
             "2",
@@ -46,6 +46,17 @@ let questions = [
     {
         num:5,
         question:"Cuanto es 1 + 8?",
+        answer: "9",
+        options: [
+            "1",
+            "2",
+            "3",
+            "9"
+        ]
+    },
+    {
+        num:6,
+        question:"Otraaaa",
         answer: "9",
         options: [
             "1",
