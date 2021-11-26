@@ -65,7 +65,9 @@ a{
 
 .header .nav ul li a.activado,
 .header .nav ul li a:hover{
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
 }
 
 .nav-toggler{
@@ -113,6 +115,80 @@ a{
     transform: translateY(6px);
 }
 
+/* FOOTER */
+.footer{
+    background-color: #545474;
+    padding: 12px 0;
+    line-height: 1.5;
+    color:#ffffff;
+    font-size: 16px;
+}
+.containers{
+    max-width: 1170px;
+    margin: auto;
+
+
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .containers ul li a{
+    font-size: 16px;
+    color: #ffffff;
+    padding: 10px 0;
+    transition: all 0.5s ease;
+    
+}
+.footer .containers ul li a i{
+    font-size: 40px;
+}
+.footer .containers ul li{
+    display: inline-block;
+    margin-left: 40px;
+    
+}
+.footer .containers ul li a:hover{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+
+/*logo*/
+
+.sizeimage{
+    height: 50px;
+    width: 150px;
+}
+
+
+/*index.ejs*/
+.general{
+    margin: auto;
+    margin-top: 10px;
+    width: 960px;
+    height: 800px;
+    background-color: bisque;
+}
+
+.cuadrados{
+    float: left;
+    width: 300px;
+    background-color: blue;
+    height: 300px;
+    margin: 10px;
+}
+
+
+
+
+
+
+
+
 /*Para que sea responsivo*/
 @media(max-width:900px){
     .nav-toggler{
@@ -143,28 +219,4 @@ a{
     }
 }
 
-/*logo*/
-
-.sizeimage{
-    height: 50px;
-    width: 150px;
-}
-
-
-/*index.ejs*/
-.general{
-    margin: auto;
-    margin-top: 10px;
-    width: 960px;
-    height: 800px;
-    background-color: bisque;
-}
-
-.cuadrados{
-    float: left;
-    width: 300px;
-    background-color: blue;
-    height: 300px;
-    margin: 10px;
-}
 
