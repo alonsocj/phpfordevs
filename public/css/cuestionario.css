@@ -1,4 +1,7 @@
 /*posicion de los divs del cuestionario*/
+.contenedor{
+    padding: 25%;
+}
 .startbtn, .infobox, .quizbox, .resultbox{
     position:absolute;
     top:50%;
@@ -160,6 +163,14 @@
     user-select: none;
 }
 
+.quizbox header .time_line{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: #007bff;
+}
+
 .quizbox section{
     padding: 25px 30px 20px 30px;
     background: white;
@@ -198,6 +209,20 @@ section .optionlist .option:hover{
     color: #004085;
     background: #cce5ff;
     border: 1px solid #b8daff;
+}
+
+section .optionlist .option.correct{
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+section .optionlist .option.incorrect{
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+section .optionlist .option.disabled{
+    pointer-events: none;
 }
 
 .optionlist .option .icono{
@@ -248,6 +273,7 @@ section .optionlist .option:hover{
 }
 
 .footercuestionario .nextbtn{
+    opacity: 0;
     height: 40px;
     padding: 0 13px;
     font-size: 18px;
@@ -260,10 +286,17 @@ section .optionlist .option:hover{
     border: 1px solid #4A235A;
     color: #4A235A;
     line-height: 10px;
-    /*pointer-events: none;*/
+    pointer-events: none;
     transform: scale(0.95);
     transition: all 0.3s ease;
 }
+
+footer .nextbtn.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
 
 .footercuestionario .nextbtn:hover{
     background: #4A235A;
