@@ -1,3 +1,4 @@
+let nombre = "Cuestionario Intermedio PHP";
 let questions = [
     {
         num:1,

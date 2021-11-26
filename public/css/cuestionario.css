@@ -262,32 +262,6 @@ section .optionlist1 .option.disabled{
     pointer-events: none;
 }
 
-.optionlist .option .icono,
-.optionlist1 .option .icono{
-    height: 30px;
-    width: 30px;
-    border: 2px solid transparent;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 13px;
-    pointer-events: none;
-    transition: all 0.3s ease;
-    line-height: 24px;
-}
-
-.optionlist .option .icono.check,
-.optionlist1 .option .icono.check{
-    color: #23903c;
-    border-color: #23903c;
-    background: #d4edda;
-}
-.optionlist .option .icono.cross,
-.optionlist1 .option .icono.cross{
-    color: #a42834;
-    background: #f8d7da;
-    border-color: #a42834;
-}
-
 .footercuestionario{
     height: 60px;
     padding: 0 30px;
@@ -308,8 +282,15 @@ section .optionlist1 .option.disabled{
     padding: 0 3px;
 }
 
-.footercuestionario .numeropreguntas span p:first-child{
-    padding-left: 0px;
+.footercuestionario .puntaje span{
+    display:flex;
+    user-select: none;
+    padding-top: 5px;
+}
+
+.footercuestionario .puntaje span p{
+    font-weight: 500;
+    padding: 0 3px;
 }
 
 .footercuestionario .nextbtn{
@@ -331,6 +312,25 @@ section .optionlist1 .option.disabled{
     transition: all 0.3s ease;
 }
 
+.footercuestionario .cancelar{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: white;
+    border: 1px solid #4A235A;
+    color: #4A235A;
+    line-height: 10px;
+    transition: all 0.3s ease;
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
 footer .nextbtn.show{
     opacity: 1;
     pointer-events: auto;
@@ -339,6 +339,11 @@ footer .nextbtn.show{
 
 
 .footercuestionario .nextbtn:hover{
+    background: #4A235A;
+    color: white;
+}
+
+.footercuestionario .cancelar:hover{
     background: #4A235A;
     color: white;
 }
@@ -370,7 +375,6 @@ footer .nextbtn.show{
     font-weight: 500;
 }
 .resultbox .scoretext span{
-    display: flex;
     margin: 10px 0;
     font-size: 18px;
     font-weight: 500;
@@ -378,6 +382,7 @@ footer .nextbtn.show{
 .resultbox .scoretext span p{
     padding: 0 4px;
     font-weight: 600;
+    text-align: center;
 }
 .resultbox .buttons{
     display: flex;
