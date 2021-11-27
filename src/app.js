@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 import home from "./routes/home";
 import foro from "./routes/foro";
+import termycondi from "./routes/termycondi"
 import bodyParser from 'body-parser';
 
 const app = express();
@@ -17,4 +18,5 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(home);
 app.use(foro);
+app.use(termycondi);
 export default app;

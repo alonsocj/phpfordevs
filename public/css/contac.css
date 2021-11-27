@@ -1,0 +1,143 @@
+.formulario{
+    margin: 3%;
+    padding: 0%;
+
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.formulario .contacto{
+    background-color: lightgrey;
+    padding: 2%;
+    line-height: 1.5;
+    color:#000000;
+    font-size: 16px;
+    border-radius: 30px;
+    width: 40%;
+
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: left;
+    
+}
+h3{
+    color: #242434;
+    font-size: 150%;
+    text-align: center;
+}
+.formulario .contacto .formulario-contacto{
+    background-color: none;
+    padding: 12px 0;
+    line-height: 1.5;
+    color:#000000;   
+    font-size: 18px;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
+.formulario-contacto label, input, textarea{
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: justify;
+    font-size: 18px;
+
+}
+p{
+
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    background-color: #242434;
+    border-color:#242434;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 1%;
+    width: 100px;
+
+}
+button:hover{
+    background-color: #545474;
+    border-color:#545474;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    padding: 1%;
+
+}
+.formulario .mapa{
+    background-color: lightgrey;
+    padding: 2%;
+    line-height: 3em;
+    color:#000000;
+    font-size: 16px;
+    border-radius: 30px;
+    width: 40%;
+
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+iframe{
+    border-radius: 15px;
+    width:100%;
+    height:27em;
+    border:0;
+}
+
+/*Para que sea responsivo*/
+@media(max-width:900px){
+    .formulario{
+        margin: 3%;
+        display:flex;
+    }
+
+.formulario .contacto{
+    padding: 5%;
+    line-height: 1.5;
+    border-radius: 20px;
+    width: 100%;
+    margin: 5%;
+}
+.formulario .contacto .formulario-contacto{
+    font-size: 16px;
+    border-radius: 20px;
+}
+.formulario-contacto label, input, textarea{
+    font-size: 16px;
+
+}
+.formulario .mapa{
+    padding: 5%;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    margin: 5%;
+
+    
+}
+iframe{
+    border-radius: 10px;
+    width:100%;
+    height:27em;
+    border:0;
+}
+}
