@@ -43,12 +43,12 @@
 }
 .contenedor a .cSection table tbody tr .icono{
     font-size: 450%;
-    color:rgb(0, 46, 92);
+    color:rgb(40, 110, 19);
     text-align:right;
     padding-right: 3%;
 }
 .contenedor a .cSection table tbody tr .titulo{
-    color:#242434;
+    color:rgb(0, 46, 92);
     font-size: 100%;
 }
 .contenedor a .cSection table tbody tr .iconoReloj{
