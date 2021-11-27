@@ -17,14 +17,10 @@
 }
 .contenedor a .cSection table{
     width: 100%;
+    height: 100%;
 }
 .contenedor a .cSection table t body tr{
     margin-top: 100px;
-}
-.contenedor a .cSection table tbody tr td{
-    width: 80px;
-    text-align: center;
-    width: auto;
 }
 .contenedor a .cSection table tbody tr th{
     width: auto;
@@ -50,7 +46,7 @@
 }
 .contenedor a .cSection table tbody tr .titulo{
     color:#242434;
-    font-size: 20px;
+    font-size: 100%;
 }
 
 
