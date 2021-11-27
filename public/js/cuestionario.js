@@ -5,6 +5,7 @@ const botonSalir = document.querySelector(".buttons .quit");
 const botonContinuar = document.querySelector(".buttons .restart");
 const quizbox = document.querySelector(".quizbox");
 const botonSiguiente = document.querySelector(".nextbtn");
+const botonCancelar = document.querySelector(".cancelar");
 const resultbox = document.querySelector(".resultbox");
 const reintentarbtn = resultbox.querySelector(".buttons .restart");
 const quitarbtn = resultbox.querySelector(".buttons .quit");
@@ -13,16 +14,23 @@ const listaopciones1 = document.querySelector(".optionlist1");
 const contadorTiempo = quizbox.querySelector(".timer .timersec");
 const tiempoTexto = quizbox.querySelector(".timer .timertext");
 const lineaTiempo = quizbox.querySelector(".time_line");
+const puntajeFooter = document.querySelector(".puntaje");
 let contadorPreguntas =0;
 let contador;
 let contadorLinea;
 let puntaje=0;
 botonEmpezar.onclick = ()=>{
     infobox.classList.add("activeIn");
+    contadorPreguntas =0;
+    contador;
+    contadorLinea;
+    puntaje=0;
 }
 
 botonSalir.onclick = ()=>{
     infobox.classList.remove("activeIn");
+    var url = '/'; 
+    window.location.href = url; 
 }
 
 botonContinuar.onclick = ()=>{
@@ -49,10 +57,17 @@ botonSiguiente.onclick = ()=>{
     
 }
 
+botonCancelar.onclick = ()=>{
+    quizbox.classList.remove("activeQu");
+    window.location.reload();
+}
 quitarbtn.onclick = ()=>{
     resultbox.classList.remove("activeRe");
+    var url = '/'; 
+    window.location.href = url; 
 }
 reintentarbtn.onclick = ()=>{
+    tiempoTexto.textContent = "Tiempo restante";
     quizbox.classList.add("activeQu");
     resultbox.classList.remove("activeRe");
     contadorPreguntas =0;
@@ -65,6 +80,8 @@ reintentarbtn.onclick = ()=>{
 }
 
 function mostrarPreguntas(index){
+    const titulo = quizbox.querySelector("header .title");
+    titulo.textContent = " "+nombre;
     const preguntastxt = document.querySelector(".questiontext");
     const numPreguntas = document.querySelector(".numeropreguntas");
     let lineaPregunta = '<span>Pregunta ' + questions[index].num+ '. '+questions[index].question + '</span>';
@@ -76,8 +93,10 @@ function mostrarPreguntas(index){
     listaopciones1.innerHTML = lineaOpcion1;
     preguntastxt.innerHTML = lineaPregunta;
     num = contadorPreguntas + 1;
-    let contadorPreguntastxt = '<span><p>Pregunta</p><p>'+num+'</p><p>de</p><p>'+questions.length+'</p></span>';
+    let contadorPreguntastxt = '<span><p>Pregunta '+num+' de '+questions.length+'</p></span>';
     numPreguntas.innerHTML = contadorPreguntastxt;
+    let puntajeFootertxt = '<span><p>Puntos:'+puntaje+'/'+questions.length+'</p></span>';
+    puntajeFooter.innerHTML = puntajeFootertxt;
     const opcion = listaopciones.querySelectorAll(".option");
     const opcion1 = listaopciones1.querySelectorAll(".option");
     for(let i = 0; i < opcion.length; i++){
@@ -119,6 +138,8 @@ function optionSelected(answer){
     for (let i = 0; i < allOptions1; i++){
         listaopciones1.children[i].classList.add("disabled");
     }
+    let puntajeFootertxt = '<span><p>Puntos:'+puntaje+'/'+questions.length+'</p></span>';
+    puntajeFooter.innerHTML = puntajeFootertxt;
     botonSiguiente.classList.add("show");
 }
 
@@ -156,11 +177,11 @@ function contarTiempo(time){
 }
 
 function iniciarLineaTiempo(time){
-    contadorLinea = setInterval(timer, 55);
+    contadorLinea = setInterval(timer, 33);
     function timer(){
         time ++;
         lineaTiempo.style.width = time + "px";
-        if(time > 549){ 
+        if(time > 900){ 
             clearInterval(contadorLinea); 
         }
     }
@@ -171,13 +192,17 @@ function mostrarResultado(){
     infobox.classList.remove("activeIn");
     resultbox.classList.add("activeRe");
     const puntajetxt = resultbox.querySelector(".scoretext");
+    let nota = (puntaje/questions.length)*10;
     if(puntaje>4){
-        puntajetxt.innerHTML = '<span><p>Felicidades aprobaste el cuestionario. Obtuviste '+puntaje+' de '+questions.length+' puntos. </p></span>';
+        puntajetxt.innerHTML = '<span><p>Felicidades aprobaste el cuestionario, obtuviste '+puntaje+' de '+questions.length+' puntos </p></span>'
+                            +   '<span>Tu nota es de '+nota.toFixed(2)+'</span>';
     }else{
         if(puntaje>2){
-            puntajetxt.innerHTML = '<span><p>Sigue esforzandote aun puedes mejorar. Obtuviste '+puntaje+' de '+questions.length+' puntos. </p></span>';
+            puntajetxt.innerHTML = '<span><p>Sigue esforzandote aún puedes mejorar, obtuviste '+puntaje+' de '+questions.length+' puntos </p></span>'
+                               +   '<span>Tu nota es de '+nota.toFixed(2)+'</span>';
         }else{
-            puntajetxt.innerHTML = '<span><p>Lo siento reprobaste el cuestionario. Obtuviste '+puntaje+' de '+questions.length+' puntos. </p></span>';
+            puntajetxt.innerHTML = '<span><p>Lo siento reprobaste el cuestionario, obtuviste '+puntaje+' de '+questions.length+' puntos </p></span>'
+                                +   '<span>Tu nota es de '+nota.toFixed(2)+'</span>';
         }
     }
     
