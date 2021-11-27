@@ -12,7 +12,6 @@
 .formulario .contacto{
     background-color: lightgrey;
     padding: 2%;
-    line-height: 1.5;
     color:#000000;
     font-size: 16px;
     border-radius: 30px;
@@ -33,7 +32,6 @@ h3{
 .formulario .contacto .formulario-contacto{
     background-color: none;
     padding: 12px 0;
-    line-height: 1.5;
     color:#000000;   
     font-size: 18px;
     border-radius: 30px;
@@ -83,7 +81,6 @@ button:hover{
 .formulario .mapa{
     background-color: lightgrey;
     padding: 2%;
-    line-height: 3em;
     color:#000000;
     font-size: 16px;
     border-radius: 30px;
@@ -99,7 +96,7 @@ button:hover{
 iframe{
     border-radius: 15px;
     width:100%;
-    height:27em;
+    height:24em;
     border:0;
 }
 
@@ -112,7 +109,6 @@ iframe{
 
 .formulario .contacto{
     padding: 5%;
-    line-height: 1.5;
     border-radius: 20px;
     width: 100%;
     margin: 5%;
@@ -131,8 +127,6 @@ iframe{
     width: 100%;
     height: 100%;
     margin: 5%;
-
-    
 }
 iframe{
     border-radius: 10px;
