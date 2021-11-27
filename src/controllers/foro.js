@@ -22,11 +22,20 @@ export const getComments = async(req,res)=>{
 
 
 export const postTemas = async(req,res) =>{
-    console.log(req.body.author);
-  
     const rows  = await conexion.query("INSERT INTO foro (descripcion, titforo, user_foro) VALUES ($1,$2,$3)",
     [req.body.contenido, req.body.Titulo, req.body.author])
-    console.log(rows);
     res.redirect('/foro')
 
+}
+
+export const postComments = async(req,res) =>{
+    
+    const rows  = await conexion.query("INSERT INTO respuesta (id_foro, descripcion_res, ayuda, noayuda, usuario_res) VALUES ($1,$2,$3,$4,$5)",
+    [req.params.id, req.body.comment,1,0, req.body.author])
+    console.log(rows);
+
+    let id =  req.params.id;
+
+    /*Cambiar la forma de redireccion, debe de redirigirme al foro en el que estoy dentro no el inicio*/
+    res.redirect('/foro/'+id.toString())
 }
