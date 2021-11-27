@@ -243,13 +243,13 @@ a{
         float: left;
         width: 100%;
         margin-right: 15px;
-        margin-top:15px;
         margin-bottom: 15px;
         background-color: gray;
         border-radius: 15px;
     }
     .cuerpo{
         text-align: center;
+        justify-content: center;
         display:flex;
     }
 }
