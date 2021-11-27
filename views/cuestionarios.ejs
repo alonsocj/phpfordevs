@@ -1,50 +1,93 @@
 <%- include("templates/head") %>
+<script type="text/javascript" src="js/preguntasBasico.js"></script>
+<script type="text/javascript" src="js/preguntasIntermedio.js"></script>
+<script type="text/javascript" src="js/preguntasAvanzado.js"></script>
+<script src="js/cuestionarios.js"></script>
 <a href="cuestionarioBasico">
-    <div>
-        <div><p>Cuestionario 1</p></div>
-        <div><p>Contenido: PHP Básico</p></div>
-        <div>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-        </div>
-    </div>
+    <table>
+        <tbody>
+            <tr>
+                <td rowspan="3" id="icono"><i class="fas fa-play-circle"></i></th>
+                <th colspan="2" id="titulo"><p>Cuestionario 1</p></th>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td colspan="2" id="contenido"><p>Contenido: PHP Básico</p></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <th id="estrellas">
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </th>
+                <th id="cantPreguntas">
+                    <label id="cantBasico"></label>
+                </th>
+            </tr>
+        </tbody>
+    </table>
 </a>
 <a href="cuestionarioIntermedio">
-    <div>
-        <div><p>Cuestionario 2</p></div>
-        <div><p>Contenido: PHP Intermedio</p></div>
-        <div>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-        </div>
-    </div>
+    <table>
+        <tbody>
+            <tr>
+                <td rowspan="3" id="icono"><i class="fas fa-play-circle"></i></th>
+                <th colspan="2" id="titulo"><p>Cuestionario 2</p></th>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td colspan="2" id="contenido"><p>Contenido: PHP Intermedio</p></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <th id="estrellas">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </th>
+                <th id="cantPreguntas">
+                    <label id="cantIntermedio"></label>
+                </th>
+            </tr>
+        </tbody>
+    </table>
 </a>
 <a href="cuestionarioAvanzado">
-    <div>
-        <div><p>Cuestionario 3</p></div>
-        <div><p>Contenido: PHP Avanzado</p></div>
-        <div>
-            <table>
-                <tr>
-                    <th>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </th>
-                    <th>
-                        <p>Cantidad de preguntas</p>
-                    </th>
-                </tr>
-            </table>
-        </div>
-    </div>
+    <table>
+        <tbody>
+            <tr>
+                <td rowspan="3" id="icono"><i class="fas fa-play-circle"></i></th>
+                <th colspan="2" id="titulo"><p>Cuestionario 3</p></th>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td colspan="2" id="contenido"><p>Contenido: PHP Avanzado</p></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <th id="estrellas">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </th>
+                <th id="cantPreguntas">
+                    <label id="cantAvanzado"></label>
+                </th>
+            </tr>
+        </tbody>
+    </table>
 </a>
 <%- include("templates/footer") %>
