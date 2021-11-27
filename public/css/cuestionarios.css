@@ -1,0 +1,56 @@
+.contenedor{
+    margin-top:1.5%;
+    margin-bottom: 1.5%;
+    padding: 0;
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 100%;
+}
+.contenedor a .cSection{
+    border-radius: 10px;
+    margin-top: 3%;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #ececec;
+    color:rgb(37, 37, 37);
+    height: 150px;
+}
+.contenedor a .cSection table{
+    width: 100%;
+}
+.contenedor a .cSection table t body tr{
+    margin-top: 100px;
+}
+.contenedor a .cSection table tbody tr td{
+    width: 125px;
+    text-align: center;
+    width: auto;
+}
+.contenedor a .cSection table tbody tr th{
+    width: auto;
+    text-align: left;
+}
+.contenedor a .cSection table tbody tr .contenido{
+    width: auto;
+    text-align:left;
+}
+.contenedor a .cSection table tbody tr .cantPreguntas{
+    width: auto;
+    text-align:right;
+    color:darkgoldenrod;
+}
+.contenedor a .cSection table tbody tr .icono{
+    font-size: 100px;
+    color:rgb(0, 46, 92);
+}
+.contenedor a .cSection table tbody tr .estrellas{
+    color:darkgoldenrod;
+}
+.contenedor a .cSection table tbody tr .titulo{
+    color:#242434;
+    font-size: 20px;
+}
+
+

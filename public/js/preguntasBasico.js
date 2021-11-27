@@ -1,4 +1,4 @@
-let questionsB = [
+let questions = [
     {
         num:1,
         question:"¿Cuál es la diferencia entre las funciones include() y require()?",
@@ -66,3 +66,4 @@ let questionsB = [
         ]
     },
 ]
+let questionsB = questions;

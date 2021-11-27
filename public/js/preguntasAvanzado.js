@@ -1,4 +1,4 @@
-let questionsA = [
+let questions = [
     {
         num:1,
         question:"Pregunta avanzado",
@@ -55,3 +55,4 @@ let questionsA = [
         ]
     },
 ]
+ let questionsA = questions;
