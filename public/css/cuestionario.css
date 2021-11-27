@@ -1,6 +1,6 @@
 /*posicion de los divs del cuestionario*/
-.contenedor{
-    padding: 25%;
+.contenedorCuestionario{
+    height: 600px;
 }
 .startbtn, .infobox, .quizbox, .resultbox{
     position:absolute;

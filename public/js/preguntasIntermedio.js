@@ -1,4 +1,5 @@
-let questions = [
+const nombreI = "Cuestionario Intermedio PHP";
+let questionsI = [
     {
         num:1,
         question:"Otra pregunta",
@@ -55,4 +56,4 @@ let questions = [
         ]
     },
 ]
-let questionsI = questions;
+const questionsInum = questionsI.length;

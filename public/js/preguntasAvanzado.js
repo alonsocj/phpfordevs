@@ -1,4 +1,5 @@
-let questions = [
+const nombreA = "Cuestionario Avanzado PHP";
+let questionsA = [
     {
         num:1,
         question:"Pregunta avanzado",
@@ -55,4 +56,4 @@ let questions = [
         ]
     },
 ]
- let questionsA = questions;
+ const questionsAnum = questionsA.length;

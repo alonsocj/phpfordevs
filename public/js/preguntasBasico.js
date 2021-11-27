@@ -1,4 +1,5 @@
-let questions = [
+const nombreB = "Cuestionario Basico PHP";
+let questionsB = [
     {
         num:1,
         question:"¿Cuál es la diferencia entre las funciones include() y require()?",
@@ -66,4 +67,4 @@ let questions = [
         ]
     },
 ]
-let questionsB = questions;
+const questionsBnum = questionsB.length;

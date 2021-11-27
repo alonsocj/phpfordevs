@@ -29,7 +29,7 @@ botonEmpezar.onclick = ()=>{
 
 botonSalir.onclick = ()=>{
     infobox.classList.remove("activeIn");
-    var url = '/'; 
+    var url = '/cuestionarios'; 
     window.location.href = url; 
 }
 
@@ -45,7 +45,7 @@ botonContinuar.onclick = ()=>{
 botonSiguiente.onclick = ()=>{
     tiempoTexto.textContent = "Tiempo restante";
     botonSiguiente.classList.remove("show");
-    if(contadorPreguntas<questions.length - 1){
+    if(contadorPreguntas<questionsB.length - 1){
         contadorPreguntas ++;
         mostrarPreguntas(contadorPreguntas);
         contarTiempo(30);
@@ -63,7 +63,7 @@ botonCancelar.onclick = ()=>{
 }
 quitarbtn.onclick = ()=>{
     resultbox.classList.remove("activeRe");
-    var url = '/'; 
+    var url = '/cuestionarios'; 
     window.location.href = url; 
 }
 reintentarbtn.onclick = ()=>{
@@ -81,21 +81,21 @@ reintentarbtn.onclick = ()=>{
 
 function mostrarPreguntas(index){
     const titulo = quizbox.querySelector("header .title");
-    titulo.textContent = " "+nombre;
+    titulo.textContent = " "+nombreB;
     const preguntastxt = document.querySelector(".questiontext");
     const numPreguntas = document.querySelector(".numeropreguntas");
-    let lineaPregunta = '<span>Pregunta ' + questions[index].num+ '. '+questions[index].question + '</span>';
-    let lineaOpcion = '<div class="option"> <span>'+questions[index].options[0]+'</span></div>'
-                    + '<div class="option"> <span>'+questions[index].options[1]+'</span></div>';
-    let lineaOpcion1 = '<div class="option"> <span>'+questions[index].options[2]+'</span></div>'
-                    + '<div class="option"> <span>'+questions[index].options[3]+'</span></div>';
+    let lineaPregunta = '<span>Pregunta ' + questionsB[index].num+ '. '+questionsB[index].question + '</span>';
+    let lineaOpcion = '<div class="option"> <span>'+questionsB[index].options[0]+'</span></div>'
+                    + '<div class="option"> <span>'+questionsB[index].options[1]+'</span></div>';
+    let lineaOpcion1 = '<div class="option"> <span>'+questionsB[index].options[2]+'</span></div>'
+                    + '<div class="option"> <span>'+questionsB[index].options[3]+'</span></div>';
     listaopciones.innerHTML = lineaOpcion;
     listaopciones1.innerHTML = lineaOpcion1;
     preguntastxt.innerHTML = lineaPregunta;
     num = contadorPreguntas + 1;
-    let contadorPreguntastxt = '<span><p>Pregunta '+num+' de '+questions.length+'</p></span>';
+    let contadorPreguntastxt = '<span><p>Pregunta '+num+' de '+questionsB.length+'</p></span>';
     numPreguntas.innerHTML = contadorPreguntastxt;
-    let puntajeFootertxt = '<span><p>Puntos:'+puntaje+'/'+questions.length+'</p></span>';
+    let puntajeFootertxt = '<span><p>Puntos:'+puntaje+'/'+questionsB.length+'</p></span>';
     puntajeFooter.innerHTML = puntajeFootertxt;
     const opcion = listaopciones.querySelectorAll(".option");
     const opcion1 = listaopciones1.querySelectorAll(".option");
@@ -112,7 +112,7 @@ function optionSelected(answer){
     clearInterval(contador);
     clearInterval(contadorLinea);
     let userAns = answer.textContent;
-    let correctAns = " "+ questions[contadorPreguntas].answer;
+    let correctAns = " "+ questionsB[contadorPreguntas].answer;
     let allOptions = listaopciones.children.length;
     let allOptions1 = listaopciones1.children.length;
     if(userAns == correctAns){
@@ -138,7 +138,7 @@ function optionSelected(answer){
     for (let i = 0; i < allOptions1; i++){
         listaopciones1.children[i].classList.add("disabled");
     }
-    let puntajeFootertxt = '<span><p>Puntos:'+puntaje+'/'+questions.length+'</p></span>';
+    let puntajeFootertxt = '<span><p>Puntos:'+puntaje+'/'+questionsB.length+'</p></span>';
     puntajeFooter.innerHTML = puntajeFootertxt;
     botonSiguiente.classList.add("show");
 }
@@ -157,7 +157,7 @@ function contarTiempo(time){
             tiempoTexto.textContent = "Tiempo terminado";
             const allOptions = listaopciones.children.length;
             const allOptions1 = listaopciones1.children.length;
-            let correcAns = " "+questions[contadorPreguntas].answer; 
+            let correcAns = " "+questionsB[contadorPreguntas].answer; 
             for(i=0; i < allOptions; i++){
                 if(listaopciones.children[i].textContent == correcAns){ 
                     listaopciones.children[i].setAttribute("class", "option correct"); 
@@ -192,16 +192,16 @@ function mostrarResultado(){
     infobox.classList.remove("activeIn");
     resultbox.classList.add("activeRe");
     const puntajetxt = resultbox.querySelector(".scoretext");
-    let nota = (puntaje/questions.length)*10;
+    let nota = (puntaje/questionsB.length)*10;
     if(puntaje>4){
-        puntajetxt.innerHTML = '<span><p>Felicidades aprobaste el cuestionario, obtuviste '+puntaje+' de '+questions.length+' puntos </p></span>'
+        puntajetxt.innerHTML = '<span><p>Felicidades aprobaste el cuestionario, obtuviste '+puntaje+' de '+questionsB.length+' puntos </p></span>'
                             +   '<span>Tu nota es de '+nota.toFixed(2)+'</span>';
     }else{
         if(puntaje>2){
-            puntajetxt.innerHTML = '<span><p>Sigue esforzandote aún puedes mejorar, obtuviste '+puntaje+' de '+questions.length+' puntos </p></span>'
+            puntajetxt.innerHTML = '<span><p>Sigue esforzandote aún puedes mejorar, obtuviste '+puntaje+' de '+questionsB.length+' puntos </p></span>'
                                +   '<span>Tu nota es de '+nota.toFixed(2)+'</span>';
         }else{
-            puntajetxt.innerHTML = '<span><p>Lo siento reprobaste el cuestionario, obtuviste '+puntaje+' de '+questions.length+' puntos </p></span>'
+            puntajetxt.innerHTML = '<span><p>Lo siento reprobaste el cuestionario, obtuviste '+puntaje+' de '+questionsB.length+' puntos </p></span>'
                                 +   '<span>Tu nota es de '+nota.toFixed(2)+'</span>';
         }
     }
