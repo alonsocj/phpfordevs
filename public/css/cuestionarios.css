@@ -24,7 +24,7 @@
     margin-top: 100px;
 }
 .contenedor a .cSection table tbody tr td{
-    width: 125px;
+    width: 80px;
     text-align: center;
     width: auto;
 }
@@ -42,7 +42,7 @@
     color:darkgoldenrod;
 }
 .contenedor a .cSection table tbody tr .icono{
-    font-size: 70px;
+    font-size: 500%;
     color:rgb(0, 46, 92);
 }
 .contenedor a .cSection table tbody tr .estrellas{
