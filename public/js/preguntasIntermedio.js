@@ -1,4 +1,4 @@
-let questions = [
+let questionsI = [
     {
         num:1,
         question:"Otra pregunta",

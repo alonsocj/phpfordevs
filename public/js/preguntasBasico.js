@@ -1,4 +1,4 @@
-let questions = [
+let questionsB = [
     {
         num:1,
         question:"¿Cuál es la diferencia entre las funciones include() y require()?",
