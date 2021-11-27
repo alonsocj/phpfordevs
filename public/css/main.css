@@ -248,6 +248,7 @@ a{
     }
     .cuerpo{
         text-align: center;
+        padding-right: 15px;
         justify-content: center;
         display:flex;
     }
