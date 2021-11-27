@@ -5,7 +5,7 @@ export const getTemas = async(req,res)=>{
 
     const { rows } = await conexion.query("SELECT * FROM foro")
     console.log(rows)
-    //Pintar en pantall
+    //Pintar en pantalla
     res.render("foro",{data:rows});
 
 }
@@ -20,9 +20,13 @@ export const getComments = async(req,res)=>{
 
 }
 
-/*
+
 export const postTemas = async(req,res) =>{
-    console.log(req.body)
-    res.render("thread",{body: req.body})
+    console.log(req.body.author);
+  
+    const rows  = await conexion.query("INSERT INTO foro (descripcion, titforo, user_foro) VALUES ($1,$2,$3)",
+    [req.body.contenido, req.body.Titulo, req.body.author])
+    console.log(rows);
+    res.redirect('/foro')
+
 }
-*/

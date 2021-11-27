@@ -1,16 +1,21 @@
 <!--Formulario de llenado-->
+<%- include("templates/head") %>
 
 <h1>Inicio del foro</h1>
 <!--Captura los valores por medio de una lista ordenada-->
 <div class="main">
-    <form action="/foroadd" method="POST">
-        Autor: <input type="text" placeholder="Autor" id="author" name="autor">        
-        Titulo <input type="text" placeholder="Titulo" id="Titulo" name="title">
-        Descripcion <input type="text" placeholder="Descripcion" id="contenido" name="descripcion">
-     </form>
-     <button type="submit" id="agregarthead">Agregar</button>
-     <!--<%=data[0].title%>-->
+    <form method="post">
+        <label for="author">Autor: </label>
+        <input type="text" placeholder="Autor" id="author" name="author">        
+        Titulo <input type="text" placeholder="Titulo" id="Titulo" name="Titulo">
+        Descripcion <input type="text" placeholder="Descripcion" id="contenido" name="contenido">
+        
+    <div>
+        <input type="submit" value="Agregar Foro"></input>
+    </div>
 
+    </form>
+     
      <% for(let i=0; i<data.length;i++){ %>
         <p><%= data[i].descripcion%></p>
         <p><%= data[i].titforo%></p>
@@ -18,14 +23,11 @@
         <a href="/foro/<%=data[i].id_foro%>">Comentarios</a>
     <% } %>
 
-     
-    <div class="contenedor"></div>
-    <div class="agregarforo"></div>
-    
-    <ol></ol>
 </div>
+
 
 <!--
 <script src="dato.js"></script>
-<script src="recuperar.js"></script>
--->
+<script src="recuperar.js"></script> -->
+
+<%- include("templates/footer") %>
