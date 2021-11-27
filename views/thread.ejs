@@ -1,19 +1,25 @@
-<div class="top-bar">
-        <h1>Introducción a PHP</h1>
+<%- include("templates/head") %>
+
+    <div class="top-bar">
+        <h1>Foro</h1>            
     </div>
 
     <div class="main">
-        <div class="header"></div>
-
-        <textarea></textarea>
-        <button>add comment</button>
-        <div class="comments"></div>
+        <form method="post">
+           Autor: <input type="text" placeholder="Autor" id="author" name="author">        
+           Comentario: <input type="text" placeholder="Comentario" id="comment" name="comment">
+            
+        <div>
+            <input type="submit" value="Comentar"></input>
+        </div>
+        </form>
 
         <% for(let i=0; i<data.length;i++){ %>
             <p><%= data[i].usuario_res%></p>
             <p><%= data[i].descripcion_res%></p>
             <p><%= data[i].ayuda%></p>
             <p><%= data[i].noayuda%></p>
-            <a href="/foro/<%=data[i].id_foro%>">Comentarios</a>
         <% } %>
     </div>
+
+<%- include("templates/footer") %>
