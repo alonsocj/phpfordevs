@@ -25,6 +25,7 @@
 .contenedor a .cSection table tbody tr th{
     width: auto;
     text-align: left;
+    padding-left: 15px;
 }
 .contenedor a .cSection table tbody tr .contenido{
     width: 400px;
@@ -52,6 +53,7 @@
 }
 .contenedor a .cSection table tbody tr .iconoReloj{
     height: 30px;
+    margin-top: 5px;
 }
 
 
