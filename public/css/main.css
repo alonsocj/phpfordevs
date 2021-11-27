@@ -242,7 +242,6 @@ a{
     .cuadrados{
         float: left;
         width: 100%;
-        margin-right: 15px;
         margin-bottom: 15px;
         background-color: gray;
         border-radius: 15px;
