@@ -1,6 +1,5 @@
 .contenedor{
-    margin-top:1.5%;
-    margin-bottom: 1.5%;
+    margin-bottom: 20px;
     padding: 0;
     margin-left: 5%;
     margin-right: 5%;
@@ -8,14 +7,13 @@
 }
 .contenedor a .cSection{
     border-radius: 10px;
-    margin-top: 2%;
+    margin-top: 20px;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 5%;
     padding-right: 5%;
     background-color: #ececec;
     color:rgb(37, 37, 37);
-    height: 150px;
 }
 .contenedor a .cSection table{
     width: 100%;
@@ -38,12 +36,14 @@
 }
 .contenedor a .cSection table tbody tr .cantPreguntas{
     width: auto;
-    text-align:right;
+    text-align:left;
     color:darkgoldenrod;
 }
 .contenedor a .cSection table tbody tr .icono{
     font-size: 500%;
     color:rgb(0, 46, 92);
+    text-align:right;
+    padding-right: 3%;
 }
 .contenedor a .cSection table tbody tr .estrellas{
     color:darkgoldenrod;
