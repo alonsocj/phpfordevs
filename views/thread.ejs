@@ -1,0 +1,19 @@
+<div class="top-bar">
+        <h1>Introducción a PHP</h1>
+    </div>
+
+    <div class="main">
+        <div class="header"></div>
+
+        <textarea></textarea>
+        <button>add comment</button>
+        <div class="comments"></div>
+
+        <% for(let i=0; i<data.length;i++){ %>
+            <p><%= data[i].usuario_res%></p>
+            <p><%= data[i].descripcion_res%></p>
+            <p><%= data[i].ayuda%></p>
+            <p><%= data[i].noayuda%></p>
+            <a href="/foro/<%=data[i].id_foro%>">Comentarios</a>
+        <% } %>
+    </div>
