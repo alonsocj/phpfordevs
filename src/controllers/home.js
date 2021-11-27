@@ -26,6 +26,9 @@ export const cuestionarioIntermedio = async (req, res) => {
 export const cuestionarioAvanzado = async (req, res) => {
   res.render("cuestionarioAvanzado");
 };
+export const cursos= async (req, res) => {
+  res.render("cursos");
+};
 export const contactos= async (req, res) => {
   res.render("contactanos");
 };
