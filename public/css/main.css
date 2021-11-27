@@ -47,7 +47,7 @@ a{
 }
 
 .header .nav{
-    padding: 0 5px ;
+    padding: 0px 5px;
 }
 
 .header .nav ul li{
@@ -167,19 +167,24 @@ a{
 
 /*index.ejs*/
 .general{
-    margin: auto;
-    margin-top: 10px;
-    width: 960px;
-    height: 800px;
-    background-color: bisque;
+    text-align: center;
+    height: 100%;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    align-items: center;
 }
-
+.general .general-linea{
+    display:flex;
+    margin-top: 15px;
+    justify-content: space-around;
+}
 .cuadrados{
     float: left;
-    width: 300px;
-    background-color: blue;
-    height: 300px;
-    margin: 10px;
+    width: 100%;
+    height: 250px;
+    margin-right: 15px;
+    background-color: gray;
+    border-radius: 15px;
 }
 
 .footer{
@@ -229,6 +234,21 @@ a{
         align-items: center;
 
         
+    }
+    .general .general-linea{
+        display:block;
+        align-items: center;
+    }
+    .cuadrados{
+        float: left;
+        width: 100%;
+        margin: 15px;
+        background-color: gray;
+        border-radius: 15px;
+    }
+    .cuerpo{
+        text-align: center;
+        display:flex;
     }
 }
 
