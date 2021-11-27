@@ -1,0 +1,47 @@
+<%- include("templates/head") %>
+<div class="formulario">
+    <div class="contacto">
+        <h3>Escribenos tus sugerencias!</h3>
+        <form name="formulario-contacto" method="post">
+            <label for="nombre">Nombre</label>
+            <input class="nombre" id="nombre" type="text" required>
+    
+            <label for="email">Email</label>
+            <input class="email" id="email" type="email" required>
+    
+            <label for="subject">Asunto</label>
+            <input class="subject" id="subject" type="text" required>
+    
+            <label for="mensaje">Mensaje</label>
+            <textarea class="mensaje" id="mensaje" required></textarea>
+            <input id="enviarCorreo" type="submit" value="Enviar">
+        </form>
+        
+    </div>
+    
+     <div class="mapa">
+            <h3>Ubicación</h3>
+            <div class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d484.4946174717578!2d-89.20025189591148!3d13.721056845119714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f633084a2ed0673%3A0x483ee703e948be89!2sEscuela%20de%20Ingenier%C3%ADa%20de%20Sistemas%20Inform%C3%A1ticos%2C%20EISI!5e0!3m2!1ses!2ssv!4v1637992918983!5m2!1ses!2ssv" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        
+            </div>
+        </div>
+    
+    </div>
+</div>
+<script>
+    const btnEnvio=document.getElementById('enviarCorreo');
+    btnEnvio.addEventListener('click',function(e){
+        e.preventDefault();
+        const email=document.getElementById('email').value;
+        const nombre=document.getElementById('nombre').value;
+        const subject=document.getElementById('subject').value;
+        const mensaje=document.getElementById('mensaje').value;
+        window.location.href=`mailto:phpfordevs@gmail.com?subject=${subject}&body=Nombre%3A%20${nombre}%0ACorreo%3A%20${email}%0AMensaje%3A%20${mensaje}`;
+        document.getElementById('email').value="";
+        document.getElementById('nombre').value="";
+        document.getElementById('subject').value="";
+        document.getElementById('mensaje').value="";
+    });
+</script>
+<%- include("templates/footer") %>
