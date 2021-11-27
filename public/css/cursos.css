@@ -27,12 +27,17 @@
     text-align: left;
 }
 .contenedor a .cSection table tbody tr .contenido{
-    width: auto;
+    width: 400px;
     text-align:left;
+    padding-left: 15px;
+}
+.contenedor a .cSection table tbody tr .contenido .pContenido{
+    padding-left: 15px;
 }
 .contenedor a .cSection table tbody tr .cantTiempo{
-    width: auto;
+    width: 100%;
     text-align:right;
+    padding-right: 5px;
     color:black;
 }
 .contenedor a .cSection table tbody tr .icono{
@@ -47,8 +52,7 @@
 }
 .contenedor a .cSection table tbody tr .iconoReloj{
     height: 30px;
-    text-align:left;
-    padding-left: 3%;
 }
+
 
 

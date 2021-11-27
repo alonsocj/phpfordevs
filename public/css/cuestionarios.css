@@ -32,7 +32,7 @@
 }
 .contenedor a .cSection table tbody tr .cantPreguntas{
     width: auto;
-    text-align:left;
+    text-align:right;
     color:darkgoldenrod;
 }
 .contenedor a .cSection table tbody tr .icono{
