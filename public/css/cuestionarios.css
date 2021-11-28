@@ -1,11 +1,11 @@
-.contenedor{
+.contenedorG{
     margin-bottom: 20px;
     padding: 0;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
     height: 100%;
 }
-.contenedor a .cSectionC{
+.contenedorG a .cSectionC{
     border-radius: 10px;
     margin-top: 20px;
     padding-top: 30px;
@@ -15,38 +15,34 @@
     background-color: #ececec;
     color:rgb(37, 37, 37);
 }
-.contenedor a .cSectionC table{
+.contenedorG a .cSectionC table{
     width: 100%;
     height: 100%;
 }
-.contenedor a .cSectionC table t body tr{
-    margin-top: 100px;
-}
-.contenedor a .cSectionC table tbody tr th{
-    width: auto;
-    text-align: left;
-}
-.contenedor a .cSectionC table tbody tr .contenido{
-    width: auto;
+.contenedorG a .cSectionC table tbody tr td p{
     text-align:left;
 }
-.contenedor a .cSectionC table tbody tr .cantPreguntas{
+.contenedorG a .cSectionC table tbody tr .cantPreguntas{
     width: auto;
     text-align:right;
     color:darkgoldenrod;
+    padding-right: 4%;
 }
-.contenedor a .cSectionC table tbody tr .icono{
+.contenedorG a .cSectionC table tbody tr .iconoC{
     font-size: 500%;
     color:rgb(0, 46, 92);
     text-align:right;
     padding-right: 3%;
 }
-.contenedor a .cSectionC table tbody tr .estrellas{
+.contenedorG a .cSectionC table tbody tr .estrellasC{
     color:darkgoldenrod;
 }
-.contenedor a .cSectionC table tbody tr .titulo{
-    color:#242434;
-    font-size: 100%;
+.contenedorG a .cSectionC table tbody tr .tituloC{
+    color:#303052;
+    font-weight: bold;
+}
+.contenedorG a .cSectionC table tbody tr .tituloC .parrafo{
+    text-justify: left;
 }
 
 
