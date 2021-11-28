@@ -1,10 +1,13 @@
 import { conexion } from "../database";
 
+export const cursos = async (req, res) => {
+  res.render("cursos");
+};
+
 export const getVideos = async (req, res) => {
   const { rows } = await conexion.query(
     "SELECT * FROM video WHERE id_curso = $1",
-    [req.paramas.id]
+    [req.params.id]
   );
-  console.log(rows);
-  res.render("videos", { data: rows });
+  res.render("lista", { data: rows });
 };
