@@ -1,27 +1,23 @@
 .titulo{
-  
     text-align: center;
 }
 
 .titulo2{
     text-align: center;
     padding-top: 30px;
-    
+    margin-top: 20px;
+    color: #242434;
+    font-size: 250%;
+    margin-left: 50px;
 }
 .contenedorTC{
-    
-
     margin: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .parrafoTC{
-
-   
     width: 1250px;
-   
-   
+    text-align: justify;
 }
