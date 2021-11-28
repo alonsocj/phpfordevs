@@ -9,5 +9,5 @@ export const getVideos = async (req, res) => {
     "SELECT * FROM video WHERE id_curso = $1",
     [req.params.id]
   );
-  res.render("lista", { data: rows });
+  res.render("videos", { data: rows });
 };

@@ -17,6 +17,5 @@ router.get("/cuestionarios", cuestionarios);
 router.get("/cuestionarioBasico/", cuestionarioBasico);
 router.get("/cuestionarioIntermedio/", cuestionarioIntermedio);
 router.get("/cuestionarioAvanzado/", cuestionarioAvanzado);
-
 router.get("/contactanos", contactos);
 export default router;
