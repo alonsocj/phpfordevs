@@ -11,3 +11,11 @@ export const getVideos = async (req, res) => {
   );
   res.render("videos", { data: rows });
 };
+export const watchVideo = async (req, res) => {
+  const { rows } = await conexion.query(
+    "SELECT * FROM video WHERE id_curso = $1 AND cod = $2",
+    [req.params.id, req.params.cod]
+  );
+  console.log(rows);
+  res.render("vervideo", { rows: rows });
+};
