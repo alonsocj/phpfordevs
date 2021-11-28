@@ -1,0 +1,47 @@
+.nosotros{
+    margin: 3%;
+    padding: 0%;
+
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.nosotros .mvi{
+    
+    padding: 2%;
+    color:#000000;
+    font-size: 16px;
+    border-radius: 30px;
+    width: 40%;
+
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.mision{
+    text-align: justify;
+}
+.vision{
+    text-align: justify;
+}
+.integrantes{
+    text-align: center;
+}
+h3{
+    color: #242434;
+    font-size: 150%;
+    text-align: center;
+}
+p{
+
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
