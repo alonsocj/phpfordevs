@@ -188,6 +188,24 @@ a{
 .footer{
     width: 100%;
 }
+.cuadradosT{
+    
+    float: left;
+    width: 100%;
+    height: 250px;
+    margin-right: 15px;
+    background-color: gray;
+    border-radius: 15px;
+    justify-content: center;
+    display:flex;
+    align-items: center;
+
+    
+}
+
+.textoimagen{
+    padding-bottom: 5px;
+}
 
 
 /*Para que sea responsivo*/
@@ -239,12 +257,16 @@ a{
         margin-bottom: 15px;
         background-color: gray;
         border-radius: 15px;
+        
+ 
+        
     }
     .cuerpo{
         text-align: center;
         padding-right: 15px;
         justify-content: center;
         display:flex;
+        
     }
 }
 
