@@ -191,11 +191,6 @@ a{
     width: 100%;
 }
 
-
-
-
-
-
 /*Para que sea responsivo*/
 @media(max-width:900px){
     .nav-toggler{

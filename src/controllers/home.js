@@ -7,14 +7,14 @@ export const ejemplo = async (req, res) => {
   /* const { rows } = await conexion.query("SELECT * FROM tabla");
   console.log(rows); */
   //se extraeria la informacion en la variable rows (esta definida asi desde la consulta)
-  const rows = ['dato1','dato2']
+  const rows = ["dato1", "dato2"];
   //se envia un objeto a la plantilla (en este caso la plantilla index)
   res.render("index", { data: rows });
 };
-export const index= async (req, res) => {
+export const index = async (req, res) => {
   res.render("index");
 };
-export const cuestionarios= async (req, res) => {
+export const cuestionarios = async (req, res) => {
   res.render("cuestionarios");
 };
 export const cuestionarioBasico = async (req, res) => {
@@ -26,9 +26,7 @@ export const cuestionarioIntermedio = async (req, res) => {
 export const cuestionarioAvanzado = async (req, res) => {
   res.render("cuestionarioAvanzado");
 };
-export const cursos= async (req, res) => {
-  res.render("cursos");
-};
-export const contactos= async (req, res) => {
+
+export const contactos = async (req, res) => {
   res.render("contactanos");
 };
