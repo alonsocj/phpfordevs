@@ -4,6 +4,7 @@
 <h1>Inicio del foro</h1>
 <!--Captura los valores por medio de una lista ordenada-->
 <div class="main">
+    <div class="form">
     <form method="post">
         <label for="author">Autor: </label>
         <input type="text" placeholder="Autor" id="author" name="author">        
@@ -15,12 +16,15 @@
     </div>
 
     </form>
+</div>
      
      <% for(let i=0; i<data.length;i++){ %>
-        <p><%= data[i].descripcion%></p>
-        <p><%= data[i].titforo%></p>
-        <p><%= data[i].user_foro%></p>
-        <a href="/foro/<%=data[i].id_foro%>">Comentarios</a>
+    <div class="Foros">
+        <p>Tema: <%= data[i].titforo%></p>
+        <p>Descripcion <%= data[i].descripcion%></p>
+        <p>Creador del foro: <%= data[i].user_foro%></p>
+        <p><a href="/foro/<%=data[i].id_foro%>">Comentarios</a></p>
+    </div>
     <% } %>
 
 </div>

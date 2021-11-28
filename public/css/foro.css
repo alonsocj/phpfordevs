@@ -1,0 +1,13 @@
+.Foros{
+    background-color: aqua;
+}
+
+.Foros p{
+    color: blue;
+    padding-top: 5px;
+}
+
+.Foros a{
+    color: red;
+    padding-bottom: 10px;
+}
