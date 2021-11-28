@@ -2,30 +2,28 @@
 <%- include("templates/head") %>
 
 <!--Captura los valores por medio de una lista ordenada-->
-<div class="main">
-    <div class="form">
+<div class="mainforum">
+    <div class="forum">
     <form method="post" class="formforo">
         <h1 class="titfo">Agrega un Foro</h1>
         Autor: <input type="text" placeholder="Autor" class="formatinput" id="author" name="author">        
         Titulo: <input type="text" placeholder="Titulo"class="formatinput" id="Titulo" name="Titulo">
         Descripcion: <input type="text" placeholder="Descripcion" class="formatinput" id="contenido" name="contenido">
-        
-    <div>
-        <input type="submit" value="Agregar Foro"></input>
-    </div>
-
+        <input type="submit" value="Agregar Foro"></input>  
     </form>
 </div>
-     
+
+<div class="ForosPrueba">
      <% for(let i=0; i<data.length;i++){ %>
     <div class="Foros">
-        <p>Tema: <%= data[i].titforo%></p>
+        <p>Tema: <%= data[i].titforo%>
         <p>Descripcion <%= data[i].descripcion%></p>
         <p>Creador del foro: <%= data[i].user_foro%></p>
         <p><a href="/foro/<%=data[i].id_foro%>">Comentarios</a></p>
     </div>
     <% } %>
 
+</div> 
 </div>
 
 

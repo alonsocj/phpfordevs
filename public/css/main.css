@@ -126,8 +126,6 @@ a{
 .containers{
     max-width: 1170px;
     margin: auto;
-
-
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -190,6 +188,7 @@ a{
 .footer{
     width: 100%;
 }
+
 
 /*Para que sea responsivo*/
 @media(max-width:900px){
