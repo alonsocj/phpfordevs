@@ -16,7 +16,7 @@
 <div class="ForosPrueba">
      <% for(let i=0; i<data.length;i++){ %>
     <div class="Foros">
-        <p>Tema: <%= data[i].titforo%>
+        <p>Tema: <%= data[i].titforo%></p>
         <p>Descripcion <%= data[i].descripcion%></p>
         <p>Creador del foro: <%= data[i].user_foro%></p>
         <p><a href="/foro/<%=data[i].id_foro%>">Comentarios</a></p>
