@@ -17,5 +17,5 @@ export const watchVideo = async (req, res) => {
     [req.params.id, req.params.cod]
   );
   console.log(rows);
-  res.render("vervideo", { rows: rows });
+  res.render("vervideo", { video: rows });
 };
