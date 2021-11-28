@@ -1,15 +1,14 @@
 <!--Formulario de llenado-->
 <%- include("templates/head") %>
 
-<h1>Inicio del foro</h1>
 <!--Captura los valores por medio de una lista ordenada-->
 <div class="main">
     <div class="form">
-    <form method="post">
-        <label for="author">Autor: </label>
-        <input type="text" placeholder="Autor" id="author" name="author">        
-        Titulo <input type="text" placeholder="Titulo" id="Titulo" name="Titulo">
-        Descripcion <input type="text" placeholder="Descripcion" id="contenido" name="contenido">
+    <form method="post" class="formforo">
+        <h1 class="titfo">Agrega un Foro</h1>
+        Autor: <input type="text" placeholder="Autor" class="formatinput" id="author" name="author">        
+        Titulo: <input type="text" placeholder="Titulo"class="formatinput" id="Titulo" name="Titulo">
+        Descripcion: <input type="text" placeholder="Descripcion" class="formatinput" id="contenido" name="contenido">
         
     <div>
         <input type="submit" value="Agregar Foro"></input>
