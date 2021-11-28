@@ -1,0 +1,23 @@
+.titulo{
+    text-align: center;
+}
+
+.titulo2{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.contenedorTC{
+    
+    background-color: aqua;
+    margin: 30px;
+}
+
+.parrafoTC{
+
+   
+    background-color:chartreuse;
+    padding-bottom: 5px;
+    padding-top: 5px;
+   
+}
