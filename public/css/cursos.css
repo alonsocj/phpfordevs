@@ -66,6 +66,13 @@
     height: 30px;
     margin-top: 5px;
 }
+.contenedor a .cSection table tbody tr .estrellas{
+    display:flex;
+    padding-left: 30px;
+}
+.contenedor a .cSection table tbody tr td .iconoEstre{
+    color:darkgoldenrod;
+}
 
 
 

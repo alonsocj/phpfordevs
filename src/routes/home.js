@@ -6,7 +6,7 @@ import {
   cuestionarioBasico,
   cuestionarioIntermedio,
   cuestionarioAvanzado,
-  contactos,
+  contactos
 } from "../controllers/home";
 const router = Router();
 
