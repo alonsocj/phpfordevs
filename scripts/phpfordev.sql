@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      PostgreSQL 8                                 */
-/* Created on:     11/23/2021 2:25:04 PM                        */
+/* Created on:     11/29/2021 1:50:38 PM                        */
 /*==============================================================*/
 
 
@@ -13,6 +13,12 @@ drop table COMENTARIO;
 drop index CURSO_PK;
 
 drop table CURSO;
+
+drop index RELATIONSHIP_5_FK;
+
+drop index EJEMPLO_PK;
+
+drop table EJEMPLO;
 
 drop index FORO_PK;
 
@@ -71,6 +77,7 @@ create table CURSO (
    CONTENIDO            VARCHAR(250)         not null,
    TIEMPO               TIME                 not null,
    ESTRELLAS            FLOAT8               not null,
+   TITULO_CURSO         VARCHAR(150)         not null,
    constraint PK_CURSO primary key (ID_CURSO)
 );
 
@@ -82,6 +89,32 @@ ID_CURSO
 );
 
 /*==============================================================*/
+/* Table: EJEMPLO                                               */
+/*==============================================================*/
+create table EJEMPLO (
+   ID_EJEMPLO           SERIAL               not null,
+   COD                  INT4                 null,
+   NOMBRE_EJEMPLO       VARCHAR(50)          not null,
+   CODIGO               VARCHAR(1000)        not null,
+   URL_EJEMPLO          VARCHAR(250)         not null,
+   constraint PK_EJEMPLO primary key (ID_EJEMPLO)
+);
+
+/*==============================================================*/
+/* Index: EJEMPLO_PK                                            */
+/*==============================================================*/
+create unique index EJEMPLO_PK on EJEMPLO (
+ID_EJEMPLO
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_5_FK                                     */
+/*==============================================================*/
+create  index RELATIONSHIP_5_FK on EJEMPLO (
+COD
+);
+
+/*==============================================================*/
 /* Table: FORO                                                  */
 /*==============================================================*/
 create table FORO (
@@ -89,6 +122,7 @@ create table FORO (
    DESCRIPCION          VARCHAR(250)         not null,
    TITFORO              VARCHAR(150)         not null,
    USER_FORO            VARCHAR(150)         not null,
+   FECHA_PUB            VARCHAR(50)          not null,
    constraint PK_FORO primary key (ID_FORO)
 );
 
@@ -105,7 +139,6 @@ ID_FORO
 create table RECURSOS (
    IDRECURSO            SERIAL               not null,
    COD                  INT4                 null,
-   TIPO                 VARCHAR(150)         not null,
    URL_RECURSO          VARCHAR(150)         not null,
    NOMBRE_RECURSO       VARCHAR(150)         not null,
    constraint PK_RECURSOS primary key (IDRECURSO)
@@ -134,7 +167,8 @@ create table RESPUESTA (
    DESCRIPCION_RES      VARCHAR(250)         not null,
    AYUDA                INT4                 not null,
    NOAYUDA              INT4                 not null,
-   USUARIO_RES          VARCHAR(150)         null,
+   USUARIO_RES          VARCHAR(150)         not null,
+   FECHA_COMENT         VARCHAR(50)          not null,
    constraint PK_RESPUESTA primary key (ID_RESPUESTA)
 );
 
@@ -181,6 +215,11 @@ ID_CURSO
 
 alter table COMENTARIO
    add constraint FK_COMENTAR_RELATIONS_VIDEO foreign key (COD)
+      references VIDEO (COD)
+      on delete restrict on update restrict;
+
+alter table EJEMPLO
+   add constraint FK_EJEMPLO_RELATIONS_VIDEO foreign key (COD)
       references VIDEO (COD)
       on delete restrict on update restrict;
 
