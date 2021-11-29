@@ -179,10 +179,11 @@ a{
 .cuadrados{
     float: left;
     width: 100%;
-    height: 250px;
+    height: 300px;
     margin-right: 15px;
-    background-color: gray;
+    
     border-radius: 15px;
+    margin-bottom: 15px;
 }
 
 .footer{
@@ -192,19 +193,20 @@ a{
     
     float: left;
     width: 100%;
-    height: 250px;
+    height: 300px;
     margin-right: 15px;
-    background-color: gray;
+    
     border-radius: 15px;
     justify-content: center;
     display:flex;
     align-items: center;
-
+    margin-bottom: 15px;
     
 }
 
 .textoimagen{
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 15px;
 }
 
 
