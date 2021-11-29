@@ -1,27 +1,100 @@
+.container-curso {
+  margin: 2rem;
+}
+h1 {
+  text-align: center;
+}
 a {
-    outline: none;
-    text-decoration: none;
-    padding: 2px 1px 0;
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+a:link {
+  color: #545474;
+}
+
+a:visited {
+  color: #545474;
+}
+
+a:active {
+  color: #242434;
+}
+i {
+  margin-left: 5rem;
+}
+p {
+  color: #000;
+}
+.icon {
+  display: flex;
+  align-items: center;
+}
+.descripcion {
+  text-align: justify;
+}
+.lista-videos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.videoseccion {
+  text-align: justify;
+  width: 50%;
+  padding: 1rem 1rem;
+  border: #545474 5px solid;
+  border-radius: 20px;
+}
+.videoenlace {
+  display: flex;
+  justify-content: center;
+  gap: 5.3rem;
+}
+.videoinfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.videoapoyo {
+  width: auto;
+}
+.likes,
+.dislikes {
+  width: auto;
+  display: flex;
+}
+.tipo {
+  width: 25%;
+}
+@media screen and (min-width: 1024px) {
+  .videoapoyo {
+    display: flex;
+    justify-content: flex-end;
   }
-  a:link {
-    color: #265301;
+  .tipo {
+    width: 0%;
   }
-  
-  a:visited {
-    color: #437A16;
+}
+@media screen and (min-width: 768px) {
+  .videoseccion {
+    width: 75%;
   }
-  
-  a:focus {
-    border-bottom: 1px solid;
-    background: #BAE498;
+}
+@media screen and (max-width: 768px) {
+  i {
+    margin-left: 0;
   }
-  
-  a:hover {
-    border-bottom: 1px solid;
-    background: #CDFEAA;
+  .videoseccion {
+    margin: auto;
+    width: 100%;
   }
-  
-  a:active {
-    background: #265301;
-    color: #CDFEAA;
+  .videoenlace {
+    gap: 1rem;
   }
+  .likes,
+  .dislikes {
+    gap: 2rem;
+  }
+}

@@ -1,12 +1,44 @@
 <%- include("templates/head",{ruta:"/css/videos.css",title:'randomTitle'}) %>
+    <div class="container-curso">
+        <div class="infocurso">
+            <h1>
+                <%=curso[0].contenido%>
+            </h1>
+        </div>
+        <div class="lista-videos">
+            <% for(let i=0; i<data.length;i++){%>
+                <div class="videoseccion">
+                    <a href="/cursos/<%= data[i].id_curso %>/videos/<%= data[i].cod %>" class="videoenlace">
+                        <div class="icon">
+                            <i class="fas fa-play-circle fa-5x"></i>
+                        </div>
+                        <div class="videoinfo">
+                            <strong class="title">
+                                <%= data[i].titulo %>
+                            </strong>
+                            <p class="descripcion">en este video se trabaja sobre el crud en php para la creacion de un
+                                listado de tareas</p>
+                            <div class="videoapoyo">
+                                <div class="likes">
+                                    <p class="tipo">Likes</p>
+                                    <div class="valor"><i class="far fa-thumbs-up"></i>
+                                        <%=data[i].likes%>
+                                    </div>
 
-    <%console.log(data)%>
-        <% for(let i=0; i<data.length;i++){%>
-            <div>
-                <a href="/cursos/<%= data[i].id_curso %>/videos/<%= data[i].cod %>"><i class="fas fa-play-circle"></i><span>
-                        <%= data[0].titulo %>
-                    </span></a>
-            </div>
-            <% } %>
+                                </div>
+                                <div class="dislikes">
 
-                <%- include("templates/footer") %>
+                                    <p class="tipo">Dislikes</p>
+                                    <div class="valor"><i class="far fa-thumbs-down"></i>
+                                        <%=data[i].dislikes%>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <% } %>
+        </div>
+    </div>
+    <%- include("templates/footer") %>
