@@ -1,2 +1,12 @@
-<%- include("templates/head") %>
-<%- include("templates/footer") %>
+<%- include("templates/head",{ruta:"/css/watchvideo.css",title:video[0].titulo})%>
+    <div>
+        <div>
+            <h1>HOLA</h1>
+        </div>
+        <div>
+            <iframe width="720" height="450" src="<%= video[0].url %>" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+    <%- include("templates/footer") %>

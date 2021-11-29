@@ -4,20 +4,20 @@
 
 .titulo2{
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 30px;
+    margin-top: 20px;
+    color: #242434;
+    font-size: 250%;
+    margin-left: 50px;
 }
 .contenedorTC{
-    
-    background-color: aqua;
     margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .parrafoTC{
-
-   
-    background-color:chartreuse;
-    padding-bottom: 5px;
-    padding-top: 5px;
-   
+    width: 1250px;
+    text-align: justify;
 }

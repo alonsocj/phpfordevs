@@ -1,9 +1,12 @@
-<%- include("templates/head") %>
+<%- include("templates/head",{ruta:"/css/videos.css",title:'randomTitle'}) %>
 
+    <%console.log(data)%>
         <% for(let i=0; i<data.length;i++){%>
-            <p>
-                <a href="<%= data[i].url %>">Video</a>
-            </p>
+            <div>
+                <a href="/cursos/<%= data[i].id_curso %>/videos/<%= data[i].cod %>"><i class="fas fa-play-circle"></i><span>
+                        <%= data[0].titulo %>
+                    </span></a>
+            </div>
             <% } %>
 
-<%- include("templates/footer") %>
+                <%- include("templates/footer") %>

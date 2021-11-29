@@ -7,6 +7,7 @@ import foro from "./routes/foro";
 import cursos from "./routes/cursos";
 import videos from "./routes/videos";
 import termycondi from "./routes/termycondi";
+import acercaDNosotros from "./routes/acercaDNosotros";
 import bodyParser from "body-parser";
 
 const app = express();
@@ -23,4 +24,5 @@ app.use(foro);
 app.use(cursos);
 app.use(termycondi);
 app.use(videos);
+app.use(acercaDNosotros);
 export default app;

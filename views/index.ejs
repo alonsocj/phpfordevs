@@ -1,52 +1,40 @@
-<%- include("templates/head") %>
-    
-    <!-- 
-        esta es la forma en la que se llama la informacion que se desarrollo en el controlador 
-        (esto para ver la informacion mas facil se puede omitir)
-        <%=// console.log(data) %>
-    <% for(let i=0; i<data.length;i++){ %>
-        
-        para este caso es algo random pero como la variable data que viene de el objeto definido en el controlador
-        debido a que la variable rows era un array con objetos de la consulta se llama uno por uno y se accede a algun
-        atributo que contengan
-
-        <p><%= data[i] %></p>
-    <% } %> -->
+<%- include("templates/head",{ruta:'',title:'phpfordevs'}) %>
 <div class="cuerpo">
     <div class="general">
         <div class="general-linea">
             <div class="cuadrados">
                 <a href="#" class="Cuadrados">
-                    <p>Cursos</p>
-                    <img src="/img/gat.png" width="100%" height="15%" alt="Gato">
+                    <p class="textoimagen">Cursos</p>
+                    <img src="/img/gat.png" width="100%" height="15%" alt="Gato" >
                 </a>
             </div>
-            <div class="cuadrados">
+            <div class="cuadradosT">
                 <p>Bienvenidos</p>
             </div>
             <div class="cuadrados">
                 <a href="#">
-                    <p>Cuestionarios</p>
-                    <img src="/img/gat.png" width="100%" height="15%" alt="Gato">
+                    <p class="textoimagen">Cuestionarios</p>
+                    <img src="/img/gat.png" width="80%" height="80%" alt="Gato">
                 </a>
             </div>
         </div>
         <div class="general-linea">
             <div class="cuadrados">
                 <a href="#">
-                    <p>Editor y compilador</p>
-                    <img src="/img/gat.png" width="100%" height="15%" alt="Gato">
+                    <p class="textoimagen">Editor y compilador</p>
+                    <img src="/img/gat.png" width="100%" height="15%" alt="Gato" >
                 </a>
             </div>
-            <div class="cuadrados">
-                <p>"Inserte su eslogan aqui"</p>
+            <div class="cuadradosT" >
+                <p">"Inserte su eslogan aqui"</p>
             </div>
             <div class="cuadrados">
                 <a href="#">
-                    <p>Foro</p>
+                    <p class="textoimagen">Foro</p>
                     <img src="/img/gat.png" width="100%" height="15%" alt="Gato">
                 </a>
             </div>
         </div>
 
-<%- include("templates/footer") %>
+
+            <%- include("templates/footer") %>
