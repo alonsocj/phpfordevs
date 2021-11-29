@@ -22,12 +22,7 @@
     justify-content: center;
     align-items: center;
 }
-.mision{
-    text-align: justify;
-}
-.vision{
-    text-align: justify;
-}
+
 .integrantes{
     text-align: center;
 }
@@ -37,11 +32,7 @@ h3{
     text-align: center;
 }
 p{
-
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    text-align: justify;
 }
+
 
