@@ -16,6 +16,12 @@
   <meta name="keywords" content="phpfordevs, php, devs" />
   <meta name="description" content="phpfordevs" />
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <% if(ruta !='' ) {%>
+    <link rel="stylesheet" type="text/css" href="<%= ruta %>" />
+    <%}%>
+      <title>
+        <%= title %>
+      </title>
       <script src="https://kit.fontawesome.com/f9e5d5f13a.js" crossorigin="anonymous"></script>
 </head>
 
