@@ -35,17 +35,6 @@ let questionsB = [
     },
     {
         num:4,
-        question:"¿Cuál es la manera correcta de iniciar un php?",
-        answer: "<?php ?>",
-        options: [
-            "<<php >>",
-            "<!php !>",
-            "<?php ?>",
-            "<php   >"
-        ]
-    },
-    {
-        num:5,
         question:"¿Qué palabra reservada es usada para mostrar una cadena de caracteres?",
         answer: "echo",
         options: [
@@ -56,7 +45,7 @@ let questionsB = [
         ]
     },
     {
-        num:6,
+        num:5,
         question:"¿Cuál es la manera correcta de declarar una variable?",
         answer: "$var",
         options: [
@@ -66,5 +55,159 @@ let questionsB = [
             "#var"
         ]
     },
+    {
+        num:6,
+        question:"Permite almacenar información y comienza con el símbolo de dólar",
+        answer: "Variable",
+        options: [
+            "Función",
+            "Variable",
+            "Contenedor",
+            "Almacenador"
+        ]
+    },
+    {
+        num:7,
+        question:"Palabra reservada utilizada para declarar funciones",
+        answer: "function",
+        options: [
+            "funcion",
+            "eccho",
+            "for",
+            "function"
+        ]
+    },
+    {
+        num:8,
+        question:"Cantidad máxima de caracteres que puede contener el método GET",
+        answer: "2048",
+        options: [
+            "2009",
+            "3000",
+            "2048",
+            "1024"
+        ]
+    },
+    {
+        num:9,
+        question:"Tipos de datos que puede utilizar el método POST",
+        answer: "ASCII y binarios",
+        options: [
+            "Solo ASCII",
+            "ASCII y binarios",
+            "Solo binarios",
+            "Solo enteros"
+        ]
+    },
+    {
+        num:10,
+        question:"Es visible para el usuario en la barra de direcciones ",
+        answer: "GET",
+        options: [
+            "POST",
+            "DIR",
+            "GET",
+            "FOR"
+        ]
+    },
+    {
+        num:11,
+        question:"Envía un mensaje de error",
+        answer: "error_log",
+        options: [
+            "error_log",
+            "error_get",
+            "error",
+            "error_set"
+        ]
+    },
+    {
+        num:12,
+        question:"Palabra reservada utilizada para finalizar ejecución de ciclos",
+        answer: "break",
+        options: [
+            "switch",
+            "finish",
+            "break",
+            "end"
+        ]
+    },   
+    {
+        num:13,
+        question:"Palabra reservada que permite determinar si una variable está definida o no",
+        answer: "isset",
+        options: [
+            "include",
+            "def",
+            "isset",
+            "instanceof"
+        ]
+    },   
+    {
+        num:14,
+        question:"Utilizada para asignar variables a manera de array",
+        answer: "list",
+        options: [
+            "array",
+            "list",
+            "ol",
+            "or"
+        ]
+    },   
+    {
+        num:15,
+        question:"Utilizada para saltar el resto de la iteración en la que se encuentra y continúa con la evaluación",
+        answer: "continue",
+        options: [
+            "break",
+            "die",
+            "continue",
+            "end"
+        ]
+    },   
+    {
+        num:16,
+        question:"Utilizada para imprimir una cadena de caracteres",
+        answer: "print",
+        options: [
+            "echo",
+            "send",
+            "end",
+            "print"
+        ]
+    },   
+    {
+        num:17,
+        question:"Palabra reservada que hace accesible a las propiedades y métodos pero solamente desde una clase o sus heredadas",
+        answer: "protected",
+        options: [
+            "public",
+            "private",
+            "protected",
+            "reserved"
+        ]
+    },   
+    {
+        num:18,
+        question:"Palabra reservada para destruir una variable en específico",
+        answer: "unset",
+        options: [
+            "delete",
+            "unset",
+            "end",
+            "finish"
+        ]
+    },   
+    {
+        num:19,
+        question:"Palabra reservada utilizada para definir valores constantes",
+        answer: "const",
+        options: [
+            "const",
+            "equals",
+            "varconst",
+            "eval"
+        ]
+    },   
 ]
 const questionsBnum = questionsB.length;

@@ -20,6 +20,7 @@ let contador;
 let contadorLinea;
 let puntaje=0;
 botonEmpezar.onclick = ()=>{
+    mostrarIndicaciones();
     infobox.classList.add("activeIn");
     contadorPreguntas =0;
     contador;
@@ -77,6 +78,15 @@ reintentarbtn.onclick = ()=>{
     mostrarPreguntas(0);
     contarTiempo(60);
     iniciarLineaTiempo(0);
+}
+function mostrarIndicaciones(){
+    const indicaciones = infobox.querySelector(".infolist");
+    let indicacion = '<div class="info">1.El cuestionario consta de '+ questionsBnum+ ' preguntas.</div>'
+                    + '<div class="info">2.Las preguntas que contiene el cuestionario son de complejidad basica.</div>'
+                    + '<div class="info">3.Cada pregunta puntua 1 punto.</div>'
+                    + '<div class="info">4.El cuestionario es secuencial, no se puede regresar a la pregunta anterior.</div>'
+                    + '<div class="info">5.Tiene 60 segundos para responder cada pregunta.</div>';
+    indicaciones.innerHTML = indicacion;
 }
 
 function mostrarPreguntas(index){

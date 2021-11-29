@@ -208,7 +208,7 @@
     display: flex;
     align-items: center;
     text-align:center;
-    justify-content: space-between;
+    justify-content: center;
     width: 48%;
     height: 100%;
 }
@@ -236,7 +236,7 @@
     display: flex;
     align-items: center;
     text-align:center;
-    justify-content: space-between;
+    justify-content: center;
     width: 48%;
     height: 100%;
 }
@@ -430,7 +430,7 @@ footer .nextbtn.show{
         font-size: 20px;
     }
     .infobox .info{
-        font-size: 12px;
+        font-size: 14px;
     }
     .infobox .buttons{
         padding: 0 20px;
@@ -442,15 +442,30 @@ footer .nextbtn.show{
     .quizbox header .timer .timertext{
         font-size: 15px;
     }
+    .quizbox section{
+        padding: 15px 10px 10px 10px;
+        background: white;
+        display: block;
+    }
+    .quizbox section .optionlist{
+        height: 155px;     
+    }
+    .quizbox section .optionlist1{
+        height: 155px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
     .quizbox section .questiontext{
         font-size: 16px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     .quizbox section .optionlist .option{
-        font-size: 10px;
+        font-size: 14px;
+        height: 155px;
     }
     .quizbox section .optionlist1 .option{
-        font-size: 10px;
+        font-size: 14px;
+        height: 155px;
     }
     .footercuestionario{
         height: 80px;
@@ -487,4 +502,5 @@ footer .nextbtn.show{
     .quizbox header .time_line{
         display: none;
     }
+    
 }

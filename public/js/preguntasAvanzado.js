@@ -2,57 +2,167 @@ const nombreA = "Cuestionario Avanzado PHP";
 let questionsA = [
     {
         num:1,
-        question:"Pregunta avanzado",
-        answer: "2",
+        question:"¿Cómo se puede diferenciar las sesiones con “privilegios” de las que no los poseen?",
+        answer:"Definiendo un identificador para la sesión del usuario",
         options: [
-            "1",
-            "2",
-            "3",
-            "4"
+            "Creando usuarios y su identificador correspondiente",
+            "Definiendo un identificador para la sesión del usuario",
+            "Creando un usuario único al que se le otorguen permisos específicos",
+            "Ninguna de las anteriores"
         ]
     },
     {
         num:2,
-        question:"Pasaras tpi?",
-        answer: "no",
+        question:"¿Qué se debe hacer para mantener una sesión activa?",
+        answer: "D) A y B son correctas",
         options: [
-            "si",
-            "quizas",
-            "no",
-            "talves"
+            "A) El identificador de la sesión debe ser enviado de una página a otra",
+            "B) Pasar el identificador de sesión en los formularios como un campo HIDDEN",
+            "C) Generar un identificador de sesión aleatorio en cada página",
+            "D) A y B son correctas"
         ]
     },
     {
         num:3,
-        question:"Por que no me ama?",
-        answer: "por feo",
+        question:"¿Cuál es la función de session_destroy()?",
+        answer: "Elimina todos los datos asociados con una sesión y borra el archivo en el servidor pero no borra la cookie",
         options: [
-            "nose",
-            "si",
-            "pan",
-            "por feo"
+            "Elimina todos los datos asociados con una sesión y borra el archivo en el servidor pero no borra la cookie",
+            "Deja sin ningún valor asignado a todas las variables de la sesión",
+            "Elimina el camino al directorio donde se guardan los ficheros asociados a la sesión",
+            "Elimina temporalmente los parámetros de configuración de las cookies"
         ]
     },
     {
         num:4,
-        question:"Cuanto es 1 + 0?",
-        answer: "1",
+        question:"Descodifica la cadena que recibe como parámetro y que contiene la info de sesión, después de usar esta función se actualiza la info de sesión:",
+        answer: "session_decode(cadena);",
         options: [
-            "1",
-            "2",
-            "3",
-            "4"
+            "session_decode([cadena]);",
+            "session_decode([path]);",
+            "session_decode(cadena);",
+            "Ninguna de las anteriores"
         ]
     },
     {
         num:5,
-        question:"Cuanto es 1 + 8?",
-        answer: "9",
+        question:"Permite definir nuevos valores para los parámetros de configuración de las cookies:",
+        answer: "session_get_cookie_params();",
         options: [
-            "1",
+            "session_get_cookie_params[];",
+            "session_get_cookie_param();",
+            "session_get_cookkie_param();",
+            "session_get_cookie_params();"
+        ]
+    },
+    {
+        num:6,
+        question:"Devuelve el nombre del módulo que se usa para realizar la gestión de sesiones:",
+        answer: "session_module_name([modulo]);",
+        options: [
+            "session_module_name([modulo]);",
+            "session_module_names(modulo);",
+            "session_decode(modulo);",
+            "session_encode();"
+        ]
+    },
+    {
+        num:7,
+        question:"Permite definir nuevos valores para los parámetros de configuración de las cookies:",
+        answer: "Ninguna opción es correcta",
+        options: [
+            "session_get_cookie_param();",
+            "Ninguna opción es correcta",
+            "session_get_cokie_params();",
+            "session_unset();"
+        ]
+    },
+    {
+        num:8,
+        question:"¿Cuál es la sintaxis para crear una cookie en PHP?",
+        answer: "setcookie(name, value, expire, path, domain, secure, httponly);",
+        options: [
+            "setcookie(name, value, expire, path, domain, secure, htponly);",
+            "setcookies(name, value, expire, path, domain);",
+            "setcokie(name, value, expire, domain, secure, httponly);",
+            "setcookie(name, value, expire, path, domain, secure, httponly);"
+        ]
+    },
+    {
+        num:9,
+        question:"¿Cuál es la sintaxis correcta para eliminar una cookie?",
+        answer: "<?php // set the expiration date to one hour ago setcookie('user', '', time() - 3600); ?> ",
+        options: [
+            "A) B y C son correctas",
+            "B) Se debe usar la función setcookie() con una fecha de expiración pasada",
+            "C) <?php // set the expiration date to one hour ago setcookie('user', '', time() - 3600); ?> ",
+            "C) <?php // set the expiration date to one hour ago setcokie('user', '', time() - 3600); ?> "
+        ]
+    },
+    {
+        num:10,
+        question:"Contienen información sobre un solo usuario y están disponibles para todas las páginas en una aplicación:",
+        answer: "Variables de sesión",
+        options: [
+            "Variables de sesión",
+            "Variables globales",
+            "Variables super globales",
+            "Variables estáticas"
+        ]
+    },
+    {
+        num:11,
+        question:"¿Qué es una Cookie?",
+        answer: "Una variable que se registra dentro del navegador",
+        options: [
+            "Una variable que se registra dentro del navegador",
+            "Un tipo de archivo",
+            "Un lenguaje de programación",
+            "Ninguna de las anteriores"
+        ]
+    },
+    {
+        num:12,
+        question:"¿Cuáles son los estados de conexión en PHP?",
+        answer: "Normal, Aborted y Timeout",
+        options: [
+            "Normal, Aborted y Timeout",
+            "Normal y Aborted",
+            "Null",
+            "End"
+        ]
+    },   
+    {
+        num:13,
+        question:"¿Cuántos tipos de errores y avisos hay en PHP?",
+        answer: "4",
+        options: [
+            "4",
             "2",
-            "3",
-            "9"
+            "5",
+            "3"
+        ]
+    },   
+    {
+        num:14,
+        question:"¿Cuál de los siguientes es un tipo de error en PHP?",
+        answer: "Parse Errors",
+        options: [
+            "Parse Errors",
+            "Error",
+            "Todos son correctos",
+            "Error de sintaxis"
+        ]
+    },   
+    {
+        num:15,
+        question:"¿Qué es el protocolo HTTP en PHP?",
+        answer: "Protocolo que proporciona un mecanismo de autenticación",
+        options: [
+            "No existe ese protocolo",
+            "Protocolo para iniciar el proyecto",
+            "Protocolo que proporciona un mecanismo de autenticación",
+            "Protocolo para borrar variables"
         ]
     },
 ]
