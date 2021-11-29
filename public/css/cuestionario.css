@@ -1,10 +1,12 @@
 /*posicion de los divs del cuestionario*/
 .contenedorCuestionario{
+    position:relative;
     height: 600px;
+    width: 100%;
 }
 .startbtn, .infobox, .quizbox, .resultbox{
     position:absolute;
-    top:50%;
+    top:40%;
     left: 50%;
     transform: translate(-50%,-50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
@@ -35,7 +37,8 @@
 }
 /*estilo de la seccion de informacion*/
 .infobox{
-    width: 540px;
+    width: 50%;
+    /*width: 80%;*/
     background: white;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -45,7 +48,7 @@
 
 
 .infobox .infotitle{
-    height: 60px;
+    height: 50px;
     border-bottom: 1px solid lightgrey;
     display: flex;
     align-items: center;
@@ -105,7 +108,8 @@
 
 /*estilo del cuadro de preguntas*/
 .quizbox{
-    width: 900px;
+    width: 75%;
+    /*width: 95%;*/
     background: white;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -350,7 +354,8 @@ footer .nextbtn.show{
 
 .resultbox{
     background: white;
-    width: 450px;
+    /*width: 80%;*/
+    width: 60%;
     padding: 25px 30px;
     border-radius: 5px;
     display: flex;
@@ -401,4 +406,85 @@ footer .nextbtn.show{
     border-radius: 5px;
     border: 1px solid #242434;
     transition: all 0.3s ease;
+}
+
+@media(max-width:900px){
+    .contenedorCuestionario{
+        height: 600px;
+    }
+    .startbtn, .infobox, .quizbox, .resultbox{
+        top:40%;
+        left: 50%;
+    }
+    .infobox{
+        width: 80%;
+    }
+    .quizbox{
+        width: 95%;
+    }
+    .resultbox{
+        width: 80%;
+    }
+    .infobox .infotitle{
+        height: 75px;
+        font-size: 20px;
+    }
+    .infobox .info{
+        font-size: 12px;
+    }
+    .infobox .buttons{
+        padding: 0 20px;
+    }
+    .quizbox header .title{
+        font-size: 17px;
+        margin-right: 5%;
+    }
+    .quizbox header .timer .timertext{
+        font-size: 15px;
+    }
+    .quizbox section .questiontext{
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .quizbox section .optionlist .option{
+        font-size: 10px;
+    }
+    .quizbox section .optionlist1 .option{
+        font-size: 10px;
+    }
+    .footercuestionario{
+        height: 80px;
+    }
+    .footercuestionario .numeropreguntas span p{
+        font-size: 12px;
+
+    }
+    .footercuestionario .numeropreguntas{
+        margin-right: 10%;
+
+    }
+    .footercuestionario .puntaje span p{
+        font-size: 12px;
+    }
+
+    .footercuestionario .puntaje{
+        margin-right: 10%;
+    }
+    .footercuestionario .nextbtn{
+        height: 30px;
+        padding: 0 10px;
+        font-size: 12px;
+        margin-left: 10%;
+    }
+    
+    .footercuestionario .cancelar{
+        height: 30px;
+        padding: 0 10px;
+        font-size: 12px;
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+    .quizbox header .time_line{
+        display: none;
+    }
 }

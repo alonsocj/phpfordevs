@@ -37,7 +37,7 @@ botonContinuar.onclick = ()=>{
     infobox.classList.remove("activeIn");
     quizbox.classList.add("activeQu");
     mostrarPreguntas(0);
-    contarTiempo(30);
+    contarTiempo(60);
     iniciarLineaTiempo(0);
 }
 
@@ -48,7 +48,7 @@ botonSiguiente.onclick = ()=>{
     if(contadorPreguntas<questionsB.length - 1){
         contadorPreguntas ++;
         mostrarPreguntas(contadorPreguntas);
-        contarTiempo(30);
+        contarTiempo(60);
         iniciarLineaTiempo(0);
     }
     else{
@@ -75,7 +75,7 @@ reintentarbtn.onclick = ()=>{
     contadorLinea;
     puntaje=0;
     mostrarPreguntas(0);
-    contarTiempo(30);
+    contarTiempo(60);
     iniciarLineaTiempo(0);
 }
 
@@ -177,11 +177,11 @@ function contarTiempo(time){
 }
 
 function iniciarLineaTiempo(time){
-    contadorLinea = setInterval(timer, 33);
+    contadorLinea = setInterval(timer, 62);
     function timer(){
         time ++;
         lineaTiempo.style.width = time + "px";
-        if(time > 900){ 
+        if(time > 956){ 
             clearInterval(contadorLinea); 
         }
     }
@@ -193,11 +193,11 @@ function mostrarResultado(){
     resultbox.classList.add("activeRe");
     const puntajetxt = resultbox.querySelector(".scoretext");
     let nota = (puntaje/questionsB.length)*10;
-    if(puntaje>4){
+    if(nota>8){
         puntajetxt.innerHTML = '<span><p>Felicidades aprobaste el cuestionario, obtuviste '+puntaje+' de '+questionsB.length+' puntos </p></span>'
                             +   '<span>Tu nota es de '+nota.toFixed(2)+'</span>';
     }else{
-        if(puntaje>2){
+        if(nota>5){
             puntajetxt.innerHTML = '<span><p>Sigue esforzandote aún puedes mejorar, obtuviste '+puntaje+' de '+questionsB.length+' puntos </p></span>'
                                +   '<span>Tu nota es de '+nota.toFixed(2)+'</span>';
         }else{
