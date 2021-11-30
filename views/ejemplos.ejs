@@ -1,0 +1,37 @@
+<%- include("templates/head",{ruta:'/css/ejemplos.css',title:'Ejemplos'}) %>
+
+<% for(let i=0;i<data.length;i++){%>
+<div class="contenedor">   
+    <section class="EjemploCodigo">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="titulo"><strong> Tema: <%=data[i].nombre_ejemplo;%></strong></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="ejem">Codigo EJemplo:</div>
+                        <div class="contCodigo">
+                            < ?php
+                            <div class="codigo">
+                                <% for(let j=0;j<data[i].codigo.length;j++){%>
+                                    <%if(data[i].codigo[j]==";"){%>
+                                        <%=data[i].codigo[j]%><br/>
+                                        <%j++%>
+                                    <%}else%>    
+                                        <%=data[i].codigo[j]%>
+                                <%}%>    
+                            </div>
+                            ?>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="boton"><a class="btn" href="<%=data[i].url_ejemplo;%>" target="_blank">Ejecutar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+<%}%>
+<%- include("templates/footer") %>
