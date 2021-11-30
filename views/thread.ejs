@@ -1,12 +1,9 @@
 <%- include("templates/head",{ruta:'/css/foro.css',title:'Titulo Foro'}) %>
 
     <div class="top-bar">
-        <h1>
-            <%=foro[0].titforo%>
-        </h1>
-        <p>
-            <%=foro[0].descripcion%>
-        </p>
+        <h1><%=foro[0].titforo%></h1>
+        <h2><%=foro[0].descripcion%></h2>
+        <h3>Publicado por: <%=foro[0].user_foro%></h3>
     </div>
 
     <div class="maincomment">
@@ -14,8 +11,8 @@
             <form method="post" class="formcomment">
                 <label>Autor:</label><input type="text" placeholder="Autor" id="author" name="author"
                     class="formatinput">
-                <label>Comentario:</label><input type="text" placeholder="Comentario" id="comment" name="comment"
-                    class="formatinput">
+                <label>Comentario:</label><textarea type="text" placeholder="Comentario" id="comment" name="comment"
+                class="formatextarea"></textarea>
                 <button type="submit" class="btnComment">Comentar</button>
             </form>
         </div>
@@ -28,10 +25,10 @@
                 <div class="contentmessage">Autor: <%= data[i].usuario_res%></div>
                 <div class="contentmessage">Respuesta: <%= data[i].descripcion_res%></div>
                 <div class="contentmessage">Fecha de publicacion: <%= data[i].fecha_coment%></div>
-                <div class="contentmessage">Me gusta: <%= data[i].ayuda%> No me gusta: <%= data[i].noayuda%></div>
+                <div class="contentmessage"><i class="far fa-thumbs-up"></i><%= data[i].ayuda%> 
+                                            <i class="far fa-thumbs-down"></i> <%= data[i].noayuda%></div>
             </div>
-
         </div>
         <% } %>
 
-            <%- include("templates/footer") %>
+<%- include("templates/footer") %>
