@@ -9,23 +9,25 @@
         Autor: <input type="text" placeholder="Autor" class="formatinput" id="author" name="author">        
         Titulo: <input type="text" placeholder="Titulo"class="formatinput" id="Titulo" name="Titulo">
         Descripcion: <input type="text" placeholder="Descripcion" class="formatinput" id="contenido" name="contenido">
-        <input type="submit" value="Agregar Foro"></input>  
+        <button type="submit" class="btnForo">Agregar Foro</button>  
     </form>
 </div>
-
-<div class="ForosPrueba">
-     <% for(let i=0; i<data.length;i++){ %>
-    <div class="Foros">
-        <p>Tema: <%= data[i].titforo%></p>
-        <p>Descripcion <%= data[i].descripcion%></p>
-        <p>Creador del foro: <%= data[i].user_foro%></p>
-        <p><a href="/foro/<%=data[i].id_foro%>">Comentarios</a></p>
-    </div>
-    <% } %>
-
-</div> 
 </div>
 
+
+<% for(let i=0; i<data.length;i++){ %>
+ <div class="ForosPrueba">
+   <div class="Foros">
+       <div>Tema: <%= data[i].titforo%></div>
+       <div>Descripcion: <%= data[i].descripcion%></div>
+       <div>Creador del foro: <%= data[i].user_foro%></div>
+       <div>Fecha de Creacion: <%=data[i].fecha_pub %></div>
+       <div><a href="/foro/<%=data[i].id_foro%>">Comentarios</a></div>
+   </div>
+</div>
+   <% } %>
+
+ 
 
 <!--
 <script src="dato.js"></script>

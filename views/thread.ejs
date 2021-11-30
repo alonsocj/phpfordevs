@@ -2,10 +2,10 @@
 
     <div class="top-bar">
         <h1>
-            <%= foro[0].titforo%>
+            <%=foro[0].titforo%>
         </h1>
         <p>
-            <%= foro[0].descripcion%>
+            <%=foro[0].descripcion%>
         </p>
     </div>
 
@@ -25,10 +25,10 @@
     <% for(let i=0; i<data.length;i++){ %>
         <div class="seccioncomentarios">
             <div class="mensajes">
-                <div class="contentmessage">Autor: <%= data[i].usuario_res%> <br></div>
-                <div class="contentmessage">Respuesta: <%= data[i].descripcion_res%><br></div>
-                <div class="contentmessage">Me gusta: <%= data[i].ayuda%> No me gusta: <%= data[i].noayuda%>
-                </div>
+                <div class="contentmessage">Autor: <%= data[i].usuario_res%></div>
+                <div class="contentmessage">Respuesta: <%= data[i].descripcion_res%></div>
+                <div class="contentmessage">Fecha de publicacion: <%= data[i].fecha_coment%></div>
+                <div class="contentmessage">Me gusta: <%= data[i].ayuda%> No me gusta: <%= data[i].noayuda%></div>
             </div>
 
         </div>

@@ -1,27 +1,45 @@
-.Foros p{
-    background-color: aliceblue;
-    color: black;
-    padding-top: 5px;
-    font-size: 16px;
-}
-
-.Foros{
-    margin: 10px;
-}
-
-.Foros a{
-    color: red;
-    padding-bottom: 10px;
+.mainforum{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .mainforum .forum{
     width: 450px;
-    background-color: aquamarine;
-    padding: 10px 20px;
+    background-color: lightgrey;
+    padding: 20px 40px;
     box-sizing: border-box;
-    margin-top: 20px;
     border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+
+.ForosPrueba{
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
+    justify-content: left !important;
+}
+
+.ForosPrueba .Foros{
+    padding-bottom: 10px;
     margin-bottom: 10px;
+    border: 0.5px solid #242434;
+    padding-left: 45px;
+    padding-top: 10px ;
+    padding-right: 45px;
+}
+
+.Foros div{
+    text-align: justify;
+    padding: 5px;
+}
+
+.ForosPrueba .Foros div a{
+    color: red;
+    padding-bottom: 10px;
 }
 
 .titfo{
@@ -37,15 +55,7 @@
     padding: 7px;
     box-sizing: border-box;
     font-size: 15px;
-}
-
-.mainforum{
-    background-color: brown;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
+    background-color: #242434;
 }
 
 /*Seccion dentro de foro*/
@@ -80,6 +90,7 @@
     border: 0.5px solid #242434;
     padding-left: 45px;
     padding-top: 10px ;
+    padding-right: 45px;
 }
 
 .seccioncomentarios .mensajes .contentmessage{
@@ -108,6 +119,27 @@
     padding: 1%;
 }
 
+.btnForo{
+    background-color: #242434;
+    border-color:#242434;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 1%;
+    width: 200px;
+}
+
+.btnForo:hover{
+    background-color: #545474;
+    border-color:#545474;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    padding: 1%;
+}
+
 .top-bar h1{
     margin-top: 20px;
     color: #242434;
@@ -123,6 +155,16 @@
 
     .formcomment{
         width: 100%;
+    }
+
+    .ForosPrueba .Foros div{
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    .seccioncomentarios .mensajes{
+        width: 100%;
+        word-wrap: break-word;
     }
 }
 

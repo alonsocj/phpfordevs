@@ -14,6 +14,7 @@ export const getComments = async (req, res) => {
     [req.params.id]
   );
   const foro = await getForo(req.params.id);
+  
   //Pintar en pantalla
   res.render("thread", { data: rows, foro: foro });
 };
@@ -28,16 +29,16 @@ const getForo = async (id) => {
 
 export const postTemas = async (req, res) => {
   const rows = await conexion.query(
-    "INSERT INTO foro (descripcion, titforo, user_foro) VALUES ($1,$2,$3)",
-    [req.body.contenido, req.body.Titulo, req.body.author]
+    "INSERT INTO foro (descripcion, titforo, user_foro, fecha_pub) VALUES ($1,$2,$3,$4)",
+    [req.body.contenido, req.body.Titulo, req.body.author, new Date().toLocaleString()]
   );
   res.redirect("/foro");
 };
 
 export const postComments = async (req, res) => {
   const rows = await conexion.query(
-    "INSERT INTO respuesta (id_foro, descripcion_res, ayuda, noayuda, usuario_res) VALUES ($1,$2,$3,$4,$5)",
-    [req.params.id, req.body.comment, 1, 0, req.body.author]
+    "INSERT INTO respuesta (id_foro, descripcion_res, ayuda, noayuda, usuario_res,fecha_coment) VALUES ($1,$2,$3,$4,$5,$6)",
+    [req.params.id, req.body.comment, 1, 0, req.body.author, new Date().toLocaleString()]
   );
 
   let id = req.params.id;
