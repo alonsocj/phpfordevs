@@ -1,23 +1,34 @@
 <%- include("templates/head",{ruta:"/css/watchvideo.css",title:video[0].titulo})%>
-    <div class="view-video">
-        <div class="actual-info">
-            <h1 class="videotitle">
-                <%= video[0].titulo %>
-            </h1>
+
+    <div class="container-watch">
+        <div class="navcontent flex">
+            <aside class="sidebar-videos">
+
+                <ul class="nav-links">
+                    <%for(let i=0 ; i< lista.length;i++){%>
+                        <li class="flex">
+                            <a href="#" class="flex">
+                                <i class="fas fa-play-circle fa-3x"></i>
+                                <strong class="title">
+                                    <%=lista[i].cod%>.<%=lista[i].titulo%>
+                                </strong>
+                            </a>
+                        </li>
+                        <%}%>
+                </ul>
+            </aside>
+            <section class="home-section">
+                <div class="home-content"><i class="fas fa-bars"></i></div>
+            </section>
+
         </div>
-        <div class="container-watch">
-            <div class="list-videos">
-                <%for(let i=0 ; i< lista.length;i++){%>
-                    <div class="element">
-                        <p>
-                            <%=lista[i].cod%>
-                        </p><strong>
-                            <%=lista[i].titulo%>
-                        </strong>
-                    </div>
-                    <%}%>
-            </div>
-            <div class="video">
+        <div class="video">
+            <div class="view-video">
+                <div class="actual-info">
+                    <h1 class="videotitle">
+                        <%= video[0].titulo %>
+                    </h1>
+                </div>
                 <div class="watch">
                     <iframe width="720" height="450" src="<%= video[0].url %>" title="YouTube video player"
                         frameborder="0"
@@ -29,4 +40,5 @@
             </div>
         </div>
     </div>
+    <script src="/js/videolist.js"></script>
     <%- include("templates/footer") %>
