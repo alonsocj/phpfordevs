@@ -2,8 +2,8 @@ import express from "express";
 import path from "path";
 import cors from "cors";
 import morgan from "morgan";
-/*import session from "express-session";
-import bcryptjs from "bcryptjs";*/
+import session from "express-session";
+import bcryptjs from "bcryptjs";
 import home from "./routes/home";
 import foro from "./routes/foro";
 import cursos from "./routes/cursos";
@@ -24,11 +24,11 @@ app.set("views", path.join(__dirname, "../views"));
 app.use(express.static(path.resolve(__dirname, "../public")));
 app.use(cors());
 app.use(morgan("dev"));
-/*app.use(session({
+app.use(session({
     secret: 'secret',
     resave: true,
     saveUninitialized: true
-}));*/
+}));
 app.use(home);
 app.use(foro);
 app.use(cursos);
