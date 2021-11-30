@@ -8,6 +8,9 @@
     align-items: center;
     justify-content: space-around;
 }
+.quienesSomos, .mision, .vision, .integrantes{
+    margin-bottom: 20px;
+}
 .nosotros .mvi{
     
     padding: 2%;
@@ -45,6 +48,9 @@ p{
         border-radius: 20px;
         width: 100%;
         margin: 5%;
+    }
+    .quienesSomos, .mision, .vision, .integrantes{
+        margin-bottom: 10px;
     }
     .mvi .img{
         padding: 5%;
