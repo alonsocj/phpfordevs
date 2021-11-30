@@ -201,6 +201,16 @@ a{
     display:flex;
     align-items: center;
     margin-bottom: 15px;
+    font-size: 20px;
+    
+}
+
+.textobienvenida{
+
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    color:black;
     
 }
 
@@ -209,8 +219,18 @@ a{
     font-size: 20px;
     padding-top: 10px;
     padding-bottom: 15px;
+    color:black;
+    
 }
 
+.textoimagen:hover{
+
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    color: blue;
+    
+}
 
 /*Para que sea responsivo*/
 @media(max-width:900px){
