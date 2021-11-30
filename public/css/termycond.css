@@ -4,11 +4,9 @@
 
 .titulo2{
     text-align: center;
-    padding-top: 30px;
-    margin-top: 20px;
+    margin-top: 50px;
     color: #242434;
-    font-size: 250%;
-    margin-left: 50px;
+    font-size: 225%;
 }
 .contenedorTC{
     margin: 30px;
@@ -20,4 +18,5 @@
 .parrafoTC{
     width: 1250px;
     text-align: justify;
+    line-height : 25px;
 }

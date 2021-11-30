@@ -18,10 +18,10 @@
 <% for(let i=0; i<data.length;i++){ %>
  <div class="ForosPrueba">
    <div class="Foros">
-       <div>Tema: <%= data[i].titforo%></div>
-       <div>Descripcion: <%= data[i].descripcion%></div>
-       <div>Creador del foro: <%= data[i].user_foro%></div>
-       <div>Fecha de Creacion: <%=data[i].fecha_pub %></div>
+       <div><p>Tema: <%= data[i].titforo%></p></div>
+       <div><p>Descripcion: <%= data[i].descripcion%></p></div>
+       <div><p>Creador del foro: <%= data[i].user_foro%></p></div>
+       <div><p>Fecha de Creacion: <%=data[i].fecha_pub %></p></div>
        <div><a href="/foro/<%=data[i].id_foro%>">Comentarios</a></div>
    </div>
 </div>

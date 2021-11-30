@@ -89,10 +89,14 @@
 }
 
 .seccioncomentarios .mensajes .contentmessage{
-    text-align: justify;
     padding: 5px;
     word-wrap: break-word;
     margin: 2px;
+    text-align: justify;
+}
+
+p{
+    line-height : 25px;
 }
 
 .btnComment{
@@ -184,6 +188,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     resize: none; /*Impide que el textarea se pueda redimnensionar*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
