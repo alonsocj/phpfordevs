@@ -1,7 +1,8 @@
 import { conexion } from "../database";
 
 export const cursos = async (req, res) => {
-  res.render("cursos");
+  const { rows } = await conexion.query("SELECT * FROM curso");
+  res.render("cursos", { data: rows });
 };
 
 const getCurso = async (id) => {
