@@ -2,46 +2,46 @@ const nombreI = "Cuestionario Intermedio PHP";
 let questionsI = [
     {
         num:1,
-        question:"Otra pregunta",
-        answer: "C.",
+        question:"¿En qué lugar se ejecuta el código PHP?",
+        answer: "Servidor",
         options: [
-            "A.<img class = 'opcionimg' src='/img/aBasico.jpeg'>",
-            "B.<img class = 'opcionimg' src='/img/bBasico.jpeg'>",
-            "C.<img class = 'opcionimg' src='/img/cBasico.jpeg'>",
-            "D.<img class = 'opcionimg' src='/img/dBasico.jpeg'>"
+            "Servidor",
+            "Cliente (ordenador propio)",
+            "Base de datos",
+            "Editor de código"
         ]
     },
     {
         num:2,
-        question:"Pasaras tpi?",
-        answer: "no",
+        question:"Una estructura análoga a una clase abstracta se llama:",
+        answer: "interfaz",
         options: [
-            "si",
-            "quizas",
-            "no",
-            "talves"
+            "interface",
+            "abstract",
+            "interfaz",
+            "constructor"
         ]
     },
     {
         num:3,
-        question:"Por que no me ama?",
-        answer: "por feo",
+        question:"La clase que permite conectar y trabajar con una base de datos desde PHP5 se llama:",
+        answer: "mysqli",
         options: [
-            "nose",
-            "si",
-            "pan",
-            "por feo"
+            "mysqli",
+            "mysql",
+            "mysql1",
+            "myphpadmin"
         ]
     },
     {
         num:4,
-        question:"Cuanto es 1 + 0?",
-        answer: "1",
+        question:"El siguiente código <img class = 'preguntaimg' src='/img/preguntaI.jpeg'> realiza:",
+        answer: "Imprime datos recuperados de una base de datos",
         options: [
-            "1",
-            "2",
-            "3",
-            "4"
+            "Inserta información en una tabla de la base de datos",
+            "Consulta a tablas de la base de datos",
+            "Imprime datos recuperados de una base de datos",
+            "Conecta a una base de datos"
         ]
     },
     {
