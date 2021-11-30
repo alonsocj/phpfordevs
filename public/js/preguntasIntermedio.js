@@ -3,12 +3,12 @@ let questionsI = [
     {
         num:1,
         question:"Otra pregunta",
-        answer: "2",
+        answer: "C.",
         options: [
-            "1",
-            "2",
-            "3",
-            "4"
+            "A.<img class = 'opcionimg' src='/img/aBasico.jpeg'>",
+            "B.<img class = 'opcionimg' src='/img/bBasico.jpeg'>",
+            "C.<img class = 'opcionimg' src='/img/cBasico.jpeg'>",
+            "D.<img class = 'opcionimg' src='/img/dBasico.jpeg'>"
         ]
     },
     {

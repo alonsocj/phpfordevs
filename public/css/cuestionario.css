@@ -408,6 +408,12 @@ footer .nextbtn.show{
     transition: all 0.3s ease;
 }
 
+.opcionimg{
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+}
+
 @media(max-width:900px){
     .contenedorCuestionario{
         height: 600px;
@@ -502,5 +508,9 @@ footer .nextbtn.show{
     .quizbox header .time_line{
         display: none;
     }
-    
+    .opcionimg{
+        height: 40px;
+        width: 100%;
+        border-radius: 5px;
+    }
 }

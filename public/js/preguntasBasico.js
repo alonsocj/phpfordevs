@@ -208,6 +208,17 @@ let questionsB = [
             "varconst",
             "eval"
         ]
-    },   
+    },
+    {
+        num:20,
+        question:"¿Cuál es la manera correcta de iniciar un php?",
+        answer: "C.",
+        options: [
+            "A.<img class = 'opcionimg' src='/img/aBasico.jpeg'>",
+            "B.<img class = 'opcionimg' src='/img/bBasico.jpeg'>",
+            "C.<img class = 'opcionimg' src='/img/cBasico.jpeg'>",
+            "D.<img class = 'opcionimg' src='/img/dBasico.jpeg'>"
+        ]
+    },
 ]
 const questionsBnum = questionsB.length;
