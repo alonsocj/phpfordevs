@@ -1,8 +1,16 @@
 /*==============================================================*/
 /* DBMS name:      PostgreSQL 8                                 */
-/* Created on:     11/30/2021 12:32:43 PM                       */
+/* Created on:     11/30/2021 1:59:49 PM                        */
 /*==============================================================*/
 
+
+drop index RELATIONSHIP_12_FK;
+
+drop index RELATIONSHIP_11_FK;
+
+drop index APOYO_RES_PK;
+
+drop table APOYO_RES;
 
 drop index RELATIONSHIP_7_FK;
 
@@ -28,6 +36,22 @@ drop index FORO_PK;
 
 drop table FORO;
 
+drop index RELATIONSHIP_10_FK;
+
+drop index RELATIONSHIP_9_FK2;
+
+drop index LIKES_COMENTS_PK;
+
+drop table LIKES_COMENTS;
+
+drop index RELATIONSHIP_14_FK;
+
+drop index RELATIONSHIP_13_FK;
+
+drop index LIKE_VID_PK;
+
+drop table LIKE_VID;
+
 drop index RELATIONSHIP_2_FK;
 
 drop index RECURSOS_PK;
@@ -46,13 +70,42 @@ drop index USUARIO_PK;
 
 drop table USUARIO;
 
-drop index RELATIONSHIP_8_FK;
-
 drop index RELATIONSHIP_1_FK;
 
 drop index VIDEO_PK;
 
 drop table VIDEO;
+
+/*==============================================================*/
+/* Table: APOYO_RES                                             */
+/*==============================================================*/
+create table APOYO_RES (
+   ID_APRES             SERIAL               not null,
+   ID_USER              INT4                 null,
+   ID_RESPUESTA         INT4                 null,
+   constraint PK_APOYO_RES primary key (ID_APRES)
+);
+
+/*==============================================================*/
+/* Index: APOYO_RES_PK                                          */
+/*==============================================================*/
+create unique index APOYO_RES_PK on APOYO_RES (
+ID_APRES
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_11_FK                                    */
+/*==============================================================*/
+create  index RELATIONSHIP_11_FK on APOYO_RES (
+ID_USER
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_12_FK                                    */
+/*==============================================================*/
+create  index RELATIONSHIP_12_FK on APOYO_RES (
+ID_RESPUESTA
+);
 
 /*==============================================================*/
 /* Table: COMENTARIO                                            */
@@ -63,7 +116,6 @@ create table COMENTARIO (
    ID_USER              INT4                 null,
    OPINION              VARCHAR(250)         not null,
    MEGUSTA              INT4                 not null,
-   NOMEGUSTA            INT4                 not null,
    constraint PK_COMENTARIO primary key (ID_COMENT)
 );
 
@@ -160,6 +212,68 @@ ID_USER
 );
 
 /*==============================================================*/
+/* Table: LIKES_COMENTS                                         */
+/*==============================================================*/
+create table LIKES_COMENTS (
+   ID_LIKECOMENT        SERIAL               not null,
+   ID_USER              INT4                 null,
+   ID_COMENT            INT4                 null,
+   constraint PK_LIKES_COMENTS primary key (ID_LIKECOMENT)
+);
+
+/*==============================================================*/
+/* Index: LIKES_COMENTS_PK                                      */
+/*==============================================================*/
+create unique index LIKES_COMENTS_PK on LIKES_COMENTS (
+ID_LIKECOMENT
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_9_FK2                                    */
+/*==============================================================*/
+create  index RELATIONSHIP_9_FK2 on LIKES_COMENTS (
+ID_USER
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_10_FK                                    */
+/*==============================================================*/
+create  index RELATIONSHIP_10_FK on LIKES_COMENTS (
+ID_COMENT
+);
+
+/*==============================================================*/
+/* Table: LIKE_VID                                              */
+/*==============================================================*/
+create table LIKE_VID (
+   ID_LIKEVID           SERIAL               not null,
+   ID_USER              INT4                 null,
+   COD                  INT4                 null,
+   constraint PK_LIKE_VID primary key (ID_LIKEVID)
+);
+
+/*==============================================================*/
+/* Index: LIKE_VID_PK                                           */
+/*==============================================================*/
+create unique index LIKE_VID_PK on LIKE_VID (
+ID_LIKEVID
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_13_FK                                    */
+/*==============================================================*/
+create  index RELATIONSHIP_13_FK on LIKE_VID (
+ID_USER
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_14_FK                                    */
+/*==============================================================*/
+create  index RELATIONSHIP_14_FK on LIKE_VID (
+COD
+);
+
+/*==============================================================*/
 /* Table: RECURSOS                                              */
 /*==============================================================*/
 create table RECURSOS (
@@ -193,7 +307,6 @@ create table RESPUESTA (
    ID_USER              INT4                 null,
    DESCRIPCION_RES      VARCHAR(250)         not null,
    AYUDA                INT4                 not null,
-   NOAYUDA              INT4                 not null,
    FECHA_COMENT         VARCHAR(50)          not null,
    constraint PK_RESPUESTA primary key (ID_RESPUESTA)
 );
@@ -242,11 +355,9 @@ ID_USER
 create table VIDEO (
    COD                  SERIAL               not null,
    ID_CURSO             INT4                 null,
-   ID_USER              INT4                 null,
    TITULO               VARCHAR(150)         not null,
    URL                  VARCHAR(150)         not null,
    LIKES                INT4                 not null,
-   DISLIKES             INT4                 not null,
    DESCRIPCION_VIDEO    VARCHAR(150)         not null,
    constraint PK_VIDEO primary key (COD)
 );
@@ -265,12 +376,15 @@ create  index RELATIONSHIP_1_FK on VIDEO (
 ID_CURSO
 );
 
-/*==============================================================*/
-/* Index: RELATIONSHIP_8_FK                                     */
-/*==============================================================*/
-create  index RELATIONSHIP_8_FK on VIDEO (
-ID_USER
-);
+alter table APOYO_RES
+   add constraint FK_APOYO_RE_RELATIONS_USUARIO foreign key (ID_USER)
+      references USUARIO (ID_USER)
+      on delete restrict on update restrict;
+
+alter table APOYO_RES
+   add constraint FK_APOYO_RE_RELATIONS_RESPUEST foreign key (ID_RESPUESTA)
+      references RESPUESTA (ID_RESPUESTA)
+      on delete restrict on update restrict;
 
 alter table COMENTARIO
    add constraint FK_COMENTAR_RELATIONS_VIDEO foreign key (COD)
@@ -292,6 +406,26 @@ alter table FORO
       references USUARIO (ID_USER)
       on delete restrict on update restrict;
 
+alter table LIKES_COMENTS
+   add constraint FK_LIKES_CO_RELATIONS_COMENTAR foreign key (ID_COMENT)
+      references COMENTARIO (ID_COMENT)
+      on delete restrict on update restrict;
+
+alter table LIKES_COMENTS
+   add constraint FK_LIKES_CO_RELATIONS_USUARIO foreign key (ID_USER)
+      references USUARIO (ID_USER)
+      on delete restrict on update restrict;
+
+alter table LIKE_VID
+   add constraint FK_LIKE_VID_RELATIONS_USUARIO foreign key (ID_USER)
+      references USUARIO (ID_USER)
+      on delete restrict on update restrict;
+
+alter table LIKE_VID
+   add constraint FK_LIKE_VID_RELATIONS_VIDEO foreign key (COD)
+      references VIDEO (COD)
+      on delete restrict on update restrict;
+
 alter table RECURSOS
    add constraint FK_RECURSOS_RELATIONS_VIDEO foreign key (COD)
       references VIDEO (COD)
@@ -310,10 +444,5 @@ alter table RESPUESTA
 alter table VIDEO
    add constraint FK_VIDEO_RELATIONS_CURSO foreign key (ID_CURSO)
       references CURSO (ID_CURSO)
-      on delete restrict on update restrict;
-
-alter table VIDEO
-   add constraint FK_VIDEO_RELATIONS_USUARIO foreign key (ID_USER)
-      references USUARIO (ID_USER)
       on delete restrict on update restrict;
 
