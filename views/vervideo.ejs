@@ -1,12 +1,32 @@
 <%- include("templates/head",{ruta:"/css/watchvideo.css",title:video[0].titulo})%>
-    <div>
-        <div>
-            <h1>HOLA</h1>
+    <div class="view-video">
+        <div class="actual-info">
+            <h1 class="videotitle">
+                <%= video[0].titulo %>
+            </h1>
         </div>
-        <div>
-            <iframe width="720" height="450" src="<%= video[0].url %>" title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+        <div class="container-watch">
+            <div class="list-videos">
+                <%for(let i=0 ; i< lista.length;i++){%>
+                    <div class="element">
+                        <p>
+                            <%=lista[i].cod%>
+                        </p><strong>
+                            <%=lista[i].titulo%>
+                        </strong>
+                    </div>
+                    <%}%>
+            </div>
+            <div class="video">
+                <div class="watch">
+                    <iframe width="720" height="450" src="<%= video[0].url %>" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-info"></div>
+                <div class="comentaries"></div>
+            </div>
         </div>
     </div>
     <%- include("templates/footer") %>
