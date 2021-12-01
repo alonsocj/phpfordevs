@@ -12,14 +12,18 @@ export const getTemas = async (req, res) => {
 };
 
 export const getComments = async (req, res) => {
+  const users = [];
   const { rows } = await conexion.query(
     "SELECT * FROM respuesta WHERE id_foro = $1",
     [req.params.id]
   );
   const foro = await getForo(req.params.id);
+  for(let i=0; i< rows.length; i++){
+    users.push(await getUser(rows[i].id_user));
+  }
 
   //Pintar en pantalla
-  res.render("thread", { data: rows, foro: foro });
+  res.render("thread", { data: rows, foro: foro, users:users,login:req.session.loggedin });
 };
 
 const getForo = async (id) => {
@@ -46,14 +50,13 @@ export const postTemas = async (req, res) => {
 };
 
 export const postComments = async (req, res) => {
-  const rows = await conexion.query(
-    "INSERT INTO respuesta (id_foro, descripcion_res, ayuda, noayuda, usuario_res,fecha_coment) VALUES ($1,$2,$3,$4,$5,$6)",
+  await conexion.query(
+    "INSERT INTO respuesta (id_foro, descripcion_res, ayuda, id_user,fecha_coment) VALUES ($1,$2,$3,$4,$5)",
     [
       req.params.id,
       req.body.comment,
       1,
-      0,
-      req.body.author,
+      req.session.name,
       new Date().toLocaleString(),
     ]
   );
@@ -61,6 +64,7 @@ export const postComments = async (req, res) => {
   let id = req.params.id;
   res.redirect("/foro/" + id.toString());
 };
+
 const getUser = async (id) => {
   const { rows } = await conexion.query(
     "SELECT * FROM usuario WHERE id_user=$1",

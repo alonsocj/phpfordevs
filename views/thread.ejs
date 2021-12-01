@@ -8,25 +8,23 @@
 
     <div class="maincomment">
         <div class="comments">
+            <% if(login !=undefined ){%>
             <form method="post" class="formcomment">
-                <label>Autor:</label><input type="text" placeholder="Autor" id="author" name="author"
-                    class="formatinput">
                 <label>Comentario:</label><textarea type="text" placeholder="Comentario" id="comment" name="comment"
                 class="formatextarea"></textarea>
                 <button type="submit" class="btnComment">Comentar</button>
             </form>
+            <%}%>
         </div>
     </div>
-
 
     <% for(let i=0; i<data.length;i++){ %>
         <div class="seccioncomentarios">
             <div class="mensajes">
-                <div class="contentmessage" ><p>Autor: <%= data[i].usuario_res%></p></div>
+                <div class="contentmessage"><p>Autor: <%= users[i][0].username%></p></div>
                 <div class="contentmessage"><p>Fecha de publicacion: <%= data[i].fecha_coment%></p></div>
                 <div class="contentmessage"><p>Respuesta: <%= data[i].descripcion_res%></p></div>
-                <div class="contentmessage"><i class="far fa-thumbs-up"></i><%= data[i].ayuda%> 
-                                            <i class="far fa-thumbs-down"></i> <%= data[i].noayuda%></div>
+                <div class="contentmessage"><i class="far fa-thumbs-up"></i><%= data[i].ayuda%></div>
             </div>
         </div>
         <% } %>
