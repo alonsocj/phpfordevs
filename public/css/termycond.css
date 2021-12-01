@@ -16,7 +16,6 @@
 
 .titulo2{
     text-align: center;
-    margin-top: 50px;
     color:#11112c;
     font-size: 40px;
     font-weight: bold;
@@ -33,3 +32,9 @@
     text-align: justify;
     line-height : 25px;
 }
+@media(max-width:900px){
+    .contenedor{
+         padding: 5%;
+         margin: 5%;
+     }
+ }
