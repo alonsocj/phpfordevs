@@ -12,7 +12,7 @@ import acercaDNosotros from "./routes/acercaDNosotros";
 import ejemplos from "./routes/ejemplos";
 import bodyParser from "body-parser";
 import login from "./routes/login";
-import register  from "./routes/register";
+import register from "./routes/register";
 
 const app = express();
 /*app.use(bodyParser.urlencoded({ extended: false }));*/
@@ -23,11 +23,14 @@ app.set("views", path.join(__dirname, "../views"));
 app.use(express.static(path.resolve(__dirname, "../public")));
 app.use(cors());
 app.use(morgan("dev"));
-app.use(session({
-    secret: 'secret',
+app.use(
+  session({
+    secret: "secret",
     resave: true,
-    saveUninitialized: true
-}));
+    saveUninitialized: true,
+    cookie: { secure: true },
+  })
+);
 app.use(home);
 app.use(foro);
 app.use(cursos);
@@ -36,5 +39,5 @@ app.use(videos);
 app.use(ejemplos);
 app.use(acercaDNosotros);
 app.use(login);
-app.use(register)
+app.use(register);
 export default app;
