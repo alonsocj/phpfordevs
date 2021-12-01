@@ -2,7 +2,7 @@ import express from "express";
 import path from "path";
 import cors from "cors";
 import morgan from "morgan";
-import session from "express-session";
+import session from "cookie-session";
 import home from "./routes/home";
 import foro from "./routes/foro";
 import cursos from "./routes/cursos";
@@ -26,9 +26,9 @@ app.use(morgan("dev"));
 app.use(
   session({
     secret: "secret",
-    resave: true,
+    resave: false,
     saveUninitialized: true,
-    cookie: { secure: true },
+    cookie: { secure: true, maxAge: 60000 },
   })
 );
 app.use(home);
