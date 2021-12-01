@@ -3,7 +3,6 @@ import path from "path";
 import cors from "cors";
 import morgan from "morgan";
 import session from "express-session";
-import bcryptjs from "bcryptjs";
 import home from "./routes/home";
 import foro from "./routes/foro";
 import cursos from "./routes/cursos";

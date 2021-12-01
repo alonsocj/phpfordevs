@@ -1,36 +1,53 @@
 <!--Formulario de llenado-->
 <%- include("templates/head",{ruta:'/css/foro.css',title:'Foro phpfordevs'}) %>
 
-<!--Captura los valores por medio de una lista ordenada-->
-<div class="mainforum">
-    <div class="forum">
-    <form method="post" class="formforo">
-        <h1 class="titfo">Agrega un Tema!</h1>
-        <label>Autor: </label> <input type="text" placeholder="Autor" class="formatinput" id="author" name="author">        
-        <label>Titulo: </label> <input type="text" placeholder="Titulo"class="formatinput" id="Titulo" name="Titulo">
-        <label>Descripcion: </label> <textarea type="text" placeholder="Descripcion" id="contenido" name="contenido" class="formatextarea"></textarea>
-        <button type="submit" class="btnForo">Agregar</button>  
-    </form>
-</div>
-</div>
+    <!--Captura los valores por medio de una lista ordenada-->
+    <div class="mainforum">
+        <div class="forum">
+            <% if(login !=undefined ){%>
+                <form method="post" class="formforo">
+                    <h1 class="titfo">Agrega un Tema!</h1>
+                    <label>Autor: </label> <input type="text" placeholder="Autor" class="formatinput" id="author"
+                        name="author">
+                    <label>Titulo: </label> <input type="text" placeholder="Titulo" class="formatinput" id="Titulo"
+                        name="Titulo">
+                    <label>Descripcion: </label> <textarea type="text" placeholder="Descripcion" id="contenido"
+                        name="contenido" class="formatextarea"></textarea>
+                    <button type="submit" class="btnForo">Agregar</button>
+                </form>
+                <%}%>
+        </div>
+    </div>
 
 
-<% for(let i=0; i<data.length;i++){ %>
- <div class="ForosPrueba">
-   <div class="Foros">
-       <div><p>Tema: <%= data[i].titforo%></p></div>
-       <div><p>Descripcion: <%= data[i].descripcion%></p></div>
-       <div><p>Creador del foro: <%= data[i].user_foro%></p></div>
-       <div><p>Fecha de Creacion: <%=data[i].fecha_pub %></p></div>
-       <div><a href="/foro/<%=data[i].id_foro%>">Comentarios</a></div>
-   </div>
-</div>
-   <% } %>
+    <% for(let i=0; i<data.length;i++){ %>
+        <div class="ForosPrueba">
+            <div class="Foros">
+                <div>
+                    <p>Tema: <%= data[i].titforo%>
+                    </p>
+                </div>
+                <div>
+                    <p>Descripcion: <%= data[i].descripcion%>
+                    </p>
+                </div>
+                <div>
+                    <p>Creador del foro: <%= users[i][0].username%>
+                    </p>
+                </div>
+                <div>
+                    <p>Fecha de Creacion: <%=data[i].fecha_pub %>
+                    </p>
+                </div>
+                <div><a href="/foro/<%=data[i].id_foro%>">Comentarios</a></div>
+            </div>
+        </div>
+        <% } %>
 
- 
 
-<!--
+
+            <!--
 <script src="dato.js"></script>
 <script src="recuperar.js"></script> -->
 
-<%- include("templates/footer") %>
+            <%- include("templates/footer") %>
