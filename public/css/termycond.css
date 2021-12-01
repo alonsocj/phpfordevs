@@ -1,22 +1,35 @@
+.contenedor{
+    margin: 3%;
+    padding: 0%;
+
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+
+}
 .titulo{
     text-align: center;
+    color:#2d2d50;
 }
 
 .titulo2{
     text-align: center;
     margin-top: 50px;
-    color: #242434;
-    font-size: 225%;
+    color:#11112c;
+    font-size: 40px;
+    font-weight: bold;
 }
 .contenedorTC{
-    margin: 30px;
+    margin: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .parrafoTC{
-    width: 1250px;
+    width: 100%;
     text-align: justify;
     line-height : 25px;
 }

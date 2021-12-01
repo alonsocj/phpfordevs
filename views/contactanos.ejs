@@ -34,11 +34,31 @@
         const nombre=document.getElementById('nombre').value;
         const subject=document.getElementById('subject').value;
         const mensaje=document.getElementById('mensaje').value;
-        window.location.href=`mailto:phpfordevs@gmail.com?subject=${subject}&body=Nombre%3A%20${nombre}%0ACorreo%3A%20${email}%0AMensaje%3A%20${mensaje}`;
-        document.getElementById('email').value="";
-        document.getElementById('nombre').value="";
-        document.getElementById('subject').value="";
-        document.getElementById('mensaje').value="";
+
+        if(nombre==""){
+            alert("El campo de nombre de usuario está vacío");
+            document.getElementById('nombre').value="";
+            document.getElementById("nombre").focus();
+        }else if(email==""){
+            alert("El campo de email está vacío");
+            document.getElementById('email').value="";
+            document.getElementById("email").focus();
+        }else if(subject==""){
+            alert("El campo de asunto del correo a enviar está vacío");
+            document.getElementById('subject').value="";
+            document.getElementById("subject").focus();
+        }else if(mensaje==""){
+            alert("El campo del mensaje a enviar está vacío");
+            document.getElementById('mensaje').value="";
+            document.getElementById("mensaje").focus();
+        }else{
+            window.location.href=`mailto:phpfordevs@gmail.com?subject=${subject}&body=Nombre%3A%20${nombre}%0ACorreo%3A%20${email}%0AMensaje%3A%20${mensaje}`;
+            document.getElementById('email').value="";
+            document.getElementById('nombre').value="";
+            document.getElementById('subject').value="";
+            document.getElementById('mensaje').value="";
+        }
+        
     });
 </script>
 <%- include("templates/footer") %>
