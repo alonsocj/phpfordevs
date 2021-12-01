@@ -22,22 +22,21 @@
             </section>
 
         </div>
-        <div class="video">
-            <div class="view-video">
-                <div class="actual-info">
-                    <h1 class="videotitle">
-                        <%= video[0].titulo %>
-                    </h1>
-                </div>
-                <div class="watch">
-                    <iframe width="720" height="450" src="<%= video[0].url %>" title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="video-info"></div>
-                <div class="comentaries"></div>
+        <div class="video flex">
+
+            <div class="watch">
+                <iframe width="720" height="450" src="<%= video[0].url %>" title="YouTube video player" frameborder="0"
+                    allowfullscreen></iframe>
             </div>
+            <div class="video-info">
+                <h1 class="videotitle">
+                    <%= video[0].titulo %>
+                </h1>
+                <p>
+                    <%= video[0].descripcion_video%>
+                </p>
+            </div>
+            <div class="comentaries"></div>
         </div>
     </div>
     <script src="/js/videolist.js"></script>
