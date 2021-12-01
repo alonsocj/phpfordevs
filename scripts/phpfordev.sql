@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      PostgreSQL 8                                 */
-/* Created on:     11/30/2021 1:59:49 PM                        */
+/* Created on:     12/1/2021 2:41:56 PM                         */
 /*==============================================================*/
 
 
@@ -116,6 +116,7 @@ create table COMENTARIO (
    ID_USER              INT4                 null,
    OPINION              VARCHAR(250)         not null,
    MEGUSTA              INT4                 not null,
+   DATE_COMMENT         VARCHAR(50)          not null,
    constraint PK_COMENTARIO primary key (ID_COMENT)
 );
 
@@ -147,7 +148,6 @@ create table CURSO (
    ID_CURSO             SERIAL               not null,
    CONTENIDO            VARCHAR(250)         not null,
    TIEMPO               TIME                 not null,
-   ESTRELLAS            FLOAT8               not null,
    TITULO_CURSO         VARCHAR(150)         not null,
    constraint PK_CURSO primary key (ID_CURSO)
 );
@@ -166,8 +166,9 @@ create table EJEMPLO (
    ID_EJEMPLO           SERIAL               not null,
    COD                  INT4                 null,
    NOMBRE_EJEMPLO       VARCHAR(50)          not null,
-   CODIGO               VARCHAR(1000)        not null,
-   URL_EJEMPLO          VARCHAR(250)         not null,
+   URL_IMAGEN           VARCHAR(5000)        not null,
+   URL_POST             VARCHAR(250)         not null,
+   URL_COMPILADOR       VARCHAR(250)         not null,
    constraint PK_EJEMPLO primary key (ID_EJEMPLO)
 );
 
