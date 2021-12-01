@@ -1,285 +1,38 @@
 <%- include("templates/head",{ruta:"/css/cursos.css",title:'Cursos de php'}) %>
 <div class="contenedor">
-    <a href="#">
-        <section class="cSection">
-            <table>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" class="icono"><i class="fas fa-play-circle"></i></td>
-                        <td colspan="3" class="titulo">Vídeo Introductorio</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">
-                            <div class="contenido">Contenido:</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Introducción del curso</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="estrellas">
-                            <% for(let i=0; i<data[1].estrellas;i++){ %>
-                                <p class="iconoEstre"><i class="fas fa-star"></i></p>
-                            <%}%>
-                            <% for(let i=0; i<5-data[1].estrellas;i++){ %>
-                                <p class="iconoEstre"><i class="far fa-star"></i></p>
-                            <%}%>
-                        </td>
-                        <td class="cantTiempo">
-                                <label id="cantP1"><%=data[1].tiempo;%></label>
-                        </td>
-                        <td><img class="iconoReloj" src="img/calendar-clock.svg" alt="Imagen de reloj"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-    <a href="#">
-        <section class="cSection">
-            <table>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" class="icono"><i class="fas fa-play-circle"></i></td>
-                        <td colspan="2" class="titulo">Entorno de trabajo (Windows)</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="contenido">
-                            <div class="contenido">Contenido:</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Instalación de PHP</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Crear un servidor para PHP</div>
-                            <div class="recurso">Recurso:</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Guía de instalación</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="estrellas">
-                            <% for(let i=0; i<5;i++){ %>
-                                <%if(i<parseInt(data[2].estrellas)){%>
+    <% for(let i=0; i<data.length;i++){ %>
+        <a href="#">
+            <section class="cSection">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3" class="icono"><i class="fas fa-play-circle"></i></td>
+                            <td colspan="3" class="titulo"><%=data[i].titulo_curso;%></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div class="contenido">Contenido:</div>
+                                <div class="pContenido"><p class="iconoDiv">·</p><%=data[i].contenido;%></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="estrellas">
+                                <% for(let i=0; i<data[1].estrellas;i++){ %>
                                     <p class="iconoEstre"><i class="fas fa-star"></i></p>
                                 <%}%>
-                            <%}%>
-                            <%for(let i=0; i<5-data[2].estrellas;i++){ %>
-                                <p class="iconoEstre"><i class="far fa-star"></i></p>
-                            <%}%>
-                        </td>
-                        <td class="cantTiempo">
-                                <label id="cantP1"><%=data[2].tiempo;%></label>
-                        </td>
-                        <td><img class="iconoReloj" src="img/calendar-clock.svg" alt="Imagen de reloj"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-    <a href="#">
-        <section class="cSection">
-            <table>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" class="icono"><i class="fas fa-play-circle"></i></td>
-                        <td colspan="2" class="titulo">Entorno de trabajo (Linux)</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="contenido">
-                            <div class="contenido">Contenido:</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Instalación de PHP</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Crear un servidor para PHP</div>
-                            <div class="recurso">Recurso:</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Guía de instalación</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cantTiempo"><label id="cant">2:05</label></td>
-                        <td><img class="iconoReloj" src="img/calendar-clock.svg" alt="Imagen de reloj"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-    <a href="#">
-        <section class="cSection">
-            <table>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" class="icono"><i class="fas fa-play-circle"></i></td>
-                        <td colspan="2" class="titulo">Conceptos básicos</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="contenido">
-                            <div class="contenido">Contenido:</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Tipos de datos</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Sintáxis</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Estructuras condicionales</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Ciclos</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Manejo de errores</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Arreglos y cadenas en PHP</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cantTiempo"><label id="cant">2:05</label></td>
-                        <td><img class="iconoReloj" src="img/calendar-clock.svg" alt="Imagen de reloj"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-    <a href="#">
-        <section class="cSection">
-            <table>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" class="icono"><i class="fas fa-play-circle"></i></td>
-                        <td colspan="2" class="titulo">Programación orientada a objetos</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="contenido">
-                            <div class="contenido">Contenido:</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Creación de objetos</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Herencia</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cantTiempo"><label id="cant">2:05</label></td>
-                        <td><img class="iconoReloj" src="img/calendar-clock.svg" alt="Imagen de reloj"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-    <a href="#">
-        <section class="cSection">
-            <table>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" class="icono"><i class="fas fa-play-circle"></i></td>
-                        <td colspan="2" class="titulo">Base de datos con PHP</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="contenido">
-                            <div class="contenido">Contenido:</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Manejo de base de datos</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Acceso de base de datos</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Conexión de base de datos</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cantTiempo"><label id="cant">2:05</label></td>
-                        <td><img class="iconoReloj" src="img/calendar-clock.svg" alt="Imagen de reloj"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-    <a href="#">
-        <section class="cSection">
-            <table>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" class="icono"><i class="fas fa-play-circle"></i></td>
-                        <td colspan="2" class="titulo">Creación de formularios en PHP</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="contenido">
-                            <div class="contenido">Contenido:</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Expresiones regulares</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Get y Post</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cantTiempo"><label id="cant">2:05</label></td>
-                        <td><img class="iconoReloj" src="img/calendar-clock.svg" alt="Imagen de reloj"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-    <a href="#">
-        <section class="cSection">
-            <table>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" class="icono"><i class="fas fa-play-circle"></i></td>
-                        <td colspan="2" class="titulo">Consumir API en PHP</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="contenido">
-                            <div class="contenido">Contenido:</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Get</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Post</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cantTiempo"><label id="cant">2:05</label></td>
-                        <td><img class="iconoReloj" src="img/calendar-clock.svg" alt="Imagen de reloj"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-    <a href="#">
-        <section class="cSection">
-            <table>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" class="icono"><i class="fas fa-play-circle"></i></td>
-                        <td colspan="2" class="titulo">Sesiones y manejo de cookies</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="contenido">
-                            <div class="contenido">Descripción:</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Falta editar....</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cantTiempo"><label id="cant">2:05</label></td>
-                        <td><img class="iconoReloj" src="img/calendar-clock.svg" alt="Imagen de reloj"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-    <a href="#">
-        <section class="cSection">
-            <table>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" class="icono"><i class="fas fa-play-circle"></i></td>
-                        <td colspan="2" class="titulo">Creación de un proyecto (CRUD en PHP)</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="contenido">
-                            <div class="contenido">Descrición:</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Falta editar....</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cantTiempo"><label id="cant">2:05</label></td>
-                        <td><img class="iconoReloj" src="img/calendar-clock.svg" alt="Imagen de reloj"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-    <a href="#">
-        <section class="cSection">
-            <table>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" class="icono"><i class="fas fa-play-circle"></i></td>
-                        <td colspan="2" class="titulo">WebSockets en PHP</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="contenido">
-                            <div class="contenido">Descripción:</div>
-                            <div class="pContenido"><p class="iconoDiv">·</p>Falta editar...</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cantTiempo"><label id="cant">2:05</label></td>
-                        <td><img class="iconoReloj" src="img/calendar-clock.svg" alt="Imagen de reloj"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-    
+                                <% for(let i=0; i<5-data[1].estrellas;i++){ %>
+                                    <p class="iconoEstre"><i class="far fa-star"></i></p>
+                                <%}%>
+                            </td>
+                            <td class="cantTiempo">
+                                    <label id="cantP1"><%=data[i].tiempo;%></label>
+                            </td>
+                            <td><img class="iconoReloj" src="img/calendar-clock.svg" alt="Imagen de reloj"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </a>
+    <%}%>    
 </div>
 <%- include("templates/footer") %>
