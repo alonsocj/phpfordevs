@@ -1,31 +1,33 @@
 <%- include("templates/head",{ruta:"/css/cursos.css",title:'Cursos de php'}) %>
 <div class="contenedor">
-    <% for(let i=0; i<data.length;i++){ %>
+    <% for(let j=0; j<data.length;j++){ %>
         <a href="#">
             <section class="cSection">
                 <table>
                     <tbody>
                         <tr>
                             <td rowspan="3" class="icono"><i class="fas fa-play-circle"></i></td>
-                            <td colspan="3" class="titulo"><%=data[i].titulo_curso;%></td>
+                            <td colspan="3" class="titulo"><%=data[j].titulo_curso;%></td>
                         </tr>
                         <tr>
                             <td colspan="3">
                                 <div class="contenido">Contenido:</div>
-                                <div class="pContenido"><p class="iconoDiv">·</p><%=data[i].contenido;%></div>
+                                <%var dato=""%>
+                                <% for(let i=0; i<data[j].contenido.length;i++){ %>
+                                    <% if(data[j].contenido[i]=="."){ %>
+                                        <%dato=dato + data[j].contenido[i];%>
+                                        <div class="pContenido"><p class="iconoDiv">·</p><%=dato;%></div>
+                                        <%dato="";%>
+                                        <%i++%>
+                                    <%}else{%>
+                                        <%dato=dato + data[j].contenido[i];%>   
+                                    <%}%> 
+                                <%}%>   
                             </td>
                         </tr>
                         <tr>
-                            <td class="estrellas">
-                                <% for(let i=0; i<data[1].estrellas;i++){ %>
-                                    <p class="iconoEstre"><i class="fas fa-star"></i></p>
-                                <%}%>
-                                <% for(let i=0; i<5-data[1].estrellas;i++){ %>
-                                    <p class="iconoEstre"><i class="far fa-star"></i></p>
-                                <%}%>
-                            </td>
                             <td class="cantTiempo">
-                                    <label id="cantP1"><%=data[i].tiempo;%></label>
+                                    <label id="cantP1"><%=data[j].tiempo;%></label>
                             </td>
                             <td><img class="iconoReloj" src="img/calendar-clock.svg" alt="Imagen de reloj"></i></td>
                         </tr>
