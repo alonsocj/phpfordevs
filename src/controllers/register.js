@@ -24,7 +24,7 @@ export const registerPost = async (req, res) => {
           alertIcon: "success",
           showConfirmButton: false,
           time: 1500,
-          ruta: "",
+          ruta: "login",
         });
       }
     }
