@@ -7,7 +7,7 @@
                 <ul class="nav-links">
                     <%for(let i=0 ; i< lista.length;i++){%>
                         <li class="flex">
-                            <a href="#" class="flex">
+                            <a href="/cursos/<%=lista[i].id_curso%>/videos/<%=lista[i].cod%>" class="flex">
                                 <i class="fas fa-play-circle fa-3x"></i>
                                 <strong class="title">
                                     <%=lista[i].cod%>.<%=lista[i].titulo%>
@@ -23,7 +23,6 @@
 
         </div>
         <div class="video flex">
-
             <div class="watch">
                 <iframe width="720" height="450" src="<%= video[0].url %>" title="YouTube video player" frameborder="0"
                     allowfullscreen></iframe>
@@ -36,8 +35,40 @@
                     <%= video[0].descripcion_video%>
                 </p>
             </div>
-            <div class="comentaries"></div>
+            <div class="comentaries flex">
+                <div class="publication">
+                    <% if(login !=undefined ){%>
+                        <form action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>" method="post"
+                            class="formcomment">
+                            <label>Comentario:</label><textarea type="text" placeholder="Comentario" id="comment"
+                                name="comment" class="formatextarea"></textarea>
+                            <button type="submit" class="btnComment">Comentar</button>
+                        </form>
+                        <%}%>
+                </div>
+                <div class="allcomments flex">
+                    <%for(let i=0;i<comments.length;i++){%>
+                        <div class="comment-user flex">
+                            <div class="inforcoment">
+                                <strong class="user">
+                                    <%=users[i][0].username%>
+                                </strong>
+                            </div>
+                            <p class="comentarie">
+                                <%=comments[i].opinion%>
+                            </p>
+                            <div class="likes">
+                                <p class="tipo">Likes <i class="far fa-thumbs-up"></i>
+                                    <%=comments[i].megusta%>
+                                </p>
+                            </div>
+                        </div>
+
+                        <%}%>
+                </div>
+            </div>
         </div>
     </div>
+
     <script src="/js/videolist.js"></script>
     <%- include("templates/footer") %>
