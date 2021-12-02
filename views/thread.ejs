@@ -1,5 +1,8 @@
 <%- include("templates/head",{ruta:'/css/foro.css',title:'Titulo Foro',login:login}) %>
 
+<script src="/js/validacionforo.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <div class="top-bar">
         <h1>
             <%=foro[0].titforo%>
@@ -14,7 +17,7 @@
     <div class="maincomment">
         <div class="comments">
             <% if(login !=undefined ){%>
-                <form method="post" class="formcomment">
+                <form method="post" class="formcomment" onsubmit="return validarComentarios();">
                     <label>Comentario:</label><textarea type="text" placeholder="Comentario" id="comment" name="comment"
                         class="formatextarea"></textarea>
                     <button type="submit" class="btnComment">Comentar</button>

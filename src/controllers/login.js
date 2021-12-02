@@ -21,7 +21,7 @@ export const auth = async (req, res) => {
           res.render("login", {
             alert: true,
             alertTitle: "Error",
-            alertMessage: "Usuario y/o password incorrectas",
+            alertMessage: "Usuario y/o Contraseña incorrecta",
             alertIcon: "error",
             showConfirmButton: true,
             time: false,
@@ -32,7 +32,7 @@ export const auth = async (req, res) => {
           req.session.name = rows[0].id_user;
           res.render("login", {
             alert: true,
-            alertTitle: "Conexion Exitosa",
+            alertTitle: "Bienvenido!",
             alertMessage: "Login Correcto",
             alertIcon: "success",
             showConfirmButton: false,

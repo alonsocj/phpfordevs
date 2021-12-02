@@ -19,8 +19,8 @@ export const registerPost = async (req, res) => {
       } else {
         res.render("register", {
           alert: true,
-          alertTitle: "registracion",
-          alertMessage: "Registracion Exitosa",
+          alertTitle: "Nuevo Usuario!",
+          alertMessage: "Registro Exitoso",
           alertIcon: "success",
           showConfirmButton: false,
           time: 1500,

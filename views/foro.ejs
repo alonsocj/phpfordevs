@@ -1,11 +1,14 @@
 <!--Formulario de llenado-->
 <%- include("templates/head",{ruta:'/css/foro.css',title:'Foro phpfordevs',login:login}) %>
 
+<script src="/js/validacionforo.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!--Captura los valores por medio de una lista ordenada-->
     <div class="mainforum">
         <div class="forum">
             <% if(login !=undefined ){%>
-                <form method="post" class="formforo">
+                <form method="post" class="formforo" onsubmit="return validarForo();">
                     <h1 class="titfo">Agrega un Tema!</h1>
                     <label>Titulo: </label> <input type="text" placeholder="Titulo" class="formatinput" id="Titulo"
                         name="Titulo">
@@ -45,10 +48,4 @@
         </div>
         <% } %>
 
-
-
-            <!--
-<script src="dato.js"></script>
-<script src="recuperar.js"></script> -->
-
-            <%- include("templates/footer") %>
+<%- include("templates/footer") %>
