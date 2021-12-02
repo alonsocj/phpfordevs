@@ -1,4 +1,4 @@
-<%- include("templates/head",{ruta:"/css/watchvideo.css",title:video[0].titulo})%>
+<%- include("templates/head",{ruta:"/css/watchvideo.css",title:video[0].titulo,login:login})%>
 
     <div class="container-watch">
         <div class="navcontent flex">
@@ -52,7 +52,9 @@
                             <div class="inforcoment">
                                 <strong class="user">
                                     <%=users[i][0].username%>
-                                </strong>
+                                </strong> - <p>
+                                    <%=comments[i].date_comment%>
+                                </p>
                             </div>
                             <p class="comentarie">
                                 <%=comments[i].opinion%>

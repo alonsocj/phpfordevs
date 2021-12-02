@@ -2,7 +2,11 @@ import { conexion } from "../database";
 
 export const cursos = async (req, res) => {
   const { rows } = await conexion.query("SELECT * FROM curso");
-  res.render("cursos", { data: rows });
+  res.render("cursos", {
+    data: rows,
+    login: req.session.loggedin,
+    name: req.session.name,
+  });
 };
 
 const getCurso = async (id) => {
@@ -16,7 +20,12 @@ const getCurso = async (id) => {
 export const getVideos = async (req, res) => {
   const rows = await getListVideos(req.params.id);
   const curso = await getCurso(req.params.id);
-  res.render("videos", { data: rows, curso: curso });
+  res.render("videos", {
+    data: rows,
+    curso: curso,
+    login: req.session.loggedin,
+    name: req.session.name,
+  });
 };
 export const watchVideo = async (req, res) => {
   const codvid = req.params.cod;
@@ -45,8 +54,14 @@ export const postComments = async (req, res) => {
   const idcurso = req.params.id;
   const codvideo = req.params.cod;
   await conexion.query(
-    "INSERT INTO comentario (cod,id_user,opinion,megusta) VALUES($1,$2,$3,$4)",
-    [codvideo, req.session.name, req.body.comment, 0]
+    "INSERT INTO comentario (cod,id_user,opinion,megusta,date_comment) VALUES($1,$2,$3,$4,$5)",
+    [
+      codvideo,
+      req.session.name,
+      req.body.comment,
+      0,
+      new Date().toLocaleString(),
+    ]
   );
   res.redirect("/cursos/" + idcurso + "/videos/" + codvideo);
 };

@@ -119,3 +119,7 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+.inforcoment {
+  display: flex;
+  gap: 1rem;
+}

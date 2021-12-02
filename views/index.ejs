@@ -1,42 +1,43 @@
-<%- include("templates/head",{ruta:'',title:'phpfordevs',}) %>
-<div class="cuerpo">
-    <div class="general">
-        <div class="general-linea">
-            <div class="cuadrados">
-                <a href="/cursos" class="Cuadrados">
-                    <p class="textoimagen">Cursos</p>
-                    <img src="/img/cursos.jpg" width="70%" height="70%" alt="Gato" >
-                </a>
+<%- include("templates/head",{ruta:'',title:'phpfordevs',loggin:login}) %>
+    <div class="cuerpo">
+        <div class="general">
+            <div class="general-linea">
+                <div class="cuadrados">
+                    <a href="/cursos" class="Cuadrados">
+                        <p class="textoimagen">Cursos</p>
+                        <img src="/img/cursos.jpg" width="70%" height="70%" alt="Gato">
+                    </a>
+                </div>
+                <div class="cuadrados">
+                    <p class="textobienvenida">Bienvenidos a PhpForDevs</p>
+                    <img src="/img/bienvenidos.png" width="60%" height="80%">
+                </div>
+                <div class="cuadrados">
+                    <a href="/cuestionarios">
+                        <p class="textoimagen">Cuestionarios</p>
+                        <img src="/img/cuestionario2.png" width="50%" height="90%" alt="Gato">
+                    </a>
+                </div>
             </div>
-            <div class="cuadrados">
-                <p class="textobienvenida">Bienvenidos a PhpForDevs</p>
-                <img src="/img/bienvenidos.png" width="60%" height="80%">
-            </div>
-            <div class="cuadrados">
-                <a href="/cuestionarios">
-                    <p class="textoimagen">Cuestionarios</p>
-                    <img src="/img/cuestionario2.png" width="50%" height="90%" alt="Gato">
-                </a>
-            </div>
-        </div>
-        <div class="general-linea">
-            <div class="cuadrados">
-                <a href="/ejemplos">
-                    <p class="textoimagen">Ejemplos</p>
-                    <img src="/img/phplogo.png" width="60%" height="75%" alt="Gato" >
-                </a>
-            </div>
-            <div class="cuadradosT" >
-                <p">"Somos PhpForDevs, màs que una pagina de enseñanzas sobre PHP, somos tu mejor aliado en tu camino de aprendizaje"</p>
-            </div>
-            <div class="cuadrados">
-                <a href="/foro">
-                    <p class="textoimagen">Foro</p>
-                    <img src="/img/foro.png" width="60%" height="80%" alt="Gato">
-                </a>
+            <div class="general-linea">
+                <div class="cuadrados">
+                    <a href="/ejemplos">
+                        <p class="textoimagen">Ejemplos</p>
+                        <img src="/img/phplogo.png" width="60%" height="75%" alt="Gato">
+                    </a>
+                </div>
+                <div class="cuadradosT">
+                    <p">"Somos PhpForDevs, màs que una pagina de enseñanzas sobre PHP, somos tu mejor aliado en tu
+                        camino de aprendizaje"</p>
+                </div>
+                <div class="cuadrados">
+                    <a href="/foro">
+                        <p class="textoimagen">Foro</p>
+                        <img src="/img/foro.png" width="60%" height="80%" alt="Gato">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-            <%- include("templates/footer") %>
+    <%- include("templates/footer") %>

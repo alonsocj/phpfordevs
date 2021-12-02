@@ -17,7 +17,12 @@
                     <li><a href="/cuestionarios">Cuestionarios</a></li>
                     <li><a href="/foro">Foro</a></li>
                     <li><a href="/contactanos">Contactanos</a></li>
-                    <li><a href="/register">Registrarse</a></li>
+                    <%if(login){%>
+                        <li><a href="/logout">Cerrar Sesion</a></li>
+                        <%}else{%>
+                            <li><a href="/login">Iniciar Sesion</a></li>
+                            <li><a href="/register">Registrarse</a></li>
+                            <%}%>
                 </ul>
             </nav>
         </div>

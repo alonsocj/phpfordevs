@@ -1,90 +1,90 @@
-<%- include("templates/head",{ruta:'/css/cuestionarios.css',title:'Cuestionarios de PHP'}) %>
-<script type="text/javascript" src="/js/preguntasBasico.js"></script>
-<script type="text/javascript" src="/js/preguntasIntermedio.js"></script>
-<script type="text/javascript" src="/js/preguntasAvanzado.js"></script>
-<script src="/js/cuestionarios.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/cuestionarios.css" />
-<div class="contenedorG">
-    <a href="cuestionarioBasico">
-        <section class="cSectionC">
-            <table>
-                <tbody>
-                    <tr>
-                        <th rowspan="3" class="iconoC"><i class="fas fa-play-circle"></i></th>
-                        <td colspan="2" class="tituloC">Cuestionario 1</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="contenidoC">Contenido: PHP Básico</td>
-                    </tr>
-                    <tr>
-                        <td class="estrellasC">
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </td>
-                        <td class="cantPreguntas">
-                            <label id="cantBasico"></label>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-    <a href="cuestionarioIntermedio">
-        <section class="cSectionC">
-            <table>
-                <tbody>
-                    <tr>
-                        <th rowspan="3" class="iconoC"><i class="fas fa-play-circle"></i></th>
-                        <td colspan="2" class="tituloC">Cuestionario 2</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="contenidoC">Contenido: PHP Intermedio</td>
-                    </tr>
-                    <tr>
-                        <td class="estrellasC">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </td>
-                        <td class="cantPreguntas">
-                            <label id="cantIntermedio"></label>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-    <a href="cuestionarioAvanzado">
-        <section class="cSectionC">
-            <table>
-                <tbody>
-                    <tr>
-                        <th rowspan="3" class="iconoC"><i class="fas fa-play-circle"></i></th>
-                        <td colspan="2" class="tituloC">Cuestionario 3</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="contenidoC">Contenido: PHP Avanzado</td>
-                    </tr>
-                    <tr>
-                        <td class="estrellasC">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </td>
-                        <td class="cantPreguntas">
-                            <label id="cantAvanzado"></label>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </a>
-</div>
-<%- include("templates/footer") %>
+<%- include("templates/head",{ruta:'/css/cuestionarios.css',title:'Cuestionarios de PHP',login:login}) %>
+    <script type="text/javascript" src="/js/preguntasBasico.js"></script>
+    <script type="text/javascript" src="/js/preguntasIntermedio.js"></script>
+    <script type="text/javascript" src="/js/preguntasAvanzado.js"></script>
+    <script src="/js/cuestionarios.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/cuestionarios.css" />
+    <div class="contenedorG">
+        <a href="cuestionarioBasico">
+            <section class="cSectionC">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th rowspan="3" class="iconoC"><i class="fas fa-play-circle"></i></th>
+                            <td colspan="2" class="tituloC">Cuestionario 1</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="contenidoC">Contenido: PHP Básico</td>
+                        </tr>
+                        <tr>
+                            <td class="estrellasC">
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </td>
+                            <td class="cantPreguntas">
+                                <label id="cantBasico"></label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </a>
+        <a href="cuestionarioIntermedio">
+            <section class="cSectionC">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th rowspan="3" class="iconoC"><i class="fas fa-play-circle"></i></th>
+                            <td colspan="2" class="tituloC">Cuestionario 2</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="contenidoC">Contenido: PHP Intermedio</td>
+                        </tr>
+                        <tr>
+                            <td class="estrellasC">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </td>
+                            <td class="cantPreguntas">
+                                <label id="cantIntermedio"></label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </a>
+        <a href="cuestionarioAvanzado">
+            <section class="cSectionC">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th rowspan="3" class="iconoC"><i class="fas fa-play-circle"></i></th>
+                            <td colspan="2" class="tituloC">Cuestionario 3</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="contenidoC">Contenido: PHP Avanzado</td>
+                        </tr>
+                        <tr>
+                            <td class="estrellasC">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </td>
+                            <td class="cantPreguntas">
+                                <label id="cantAvanzado"></label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </a>
+    </div>
+    <%- include("templates/footer") %>
