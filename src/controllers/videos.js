@@ -40,7 +40,7 @@ export const watchVideo = async (req, res) => {
   const commentsLikes = [];
   for (let i = 0; i < comments.length; i++) {
     users.push(await getUser(comments[i].id_user));
-    commentsLikes.push(await isLike(actualUser, comments[i].id_coment));
+    commentsLikes.push(await isLikeComment(actualUser, comments[i].id_coment));
   }
   res.render("vervideo", {
     video: actualVideo,
@@ -51,6 +51,7 @@ export const watchVideo = async (req, res) => {
     users: users,
     recurso: recurso,
     actualUser: actualUser,
+    videoLike: await isLikeVideo(actualUser, codvid),
   });
 };
 // obtiene un video
@@ -77,6 +78,42 @@ export const postComments = async (req, res) => {
   );
   res.redirect("/cursos/" + idcurso + "/videos/" + codvideo);
 };
+// un video obtiene un like
+export const postLikeVideo = async (req, res) => {
+  const videos = await getVideo(req.params.id, req.params.cod);
+  console.log(videos[0].cod == req.params.cod);
+  videos.forEach(async (video) => {
+    if (video.cod == req.params.cod) {
+      await conexion.query("UPDATE video SET likes = $1 WHERE cod = $2", [
+        video.likes + 1,
+        video.cod,
+      ]);
+      await conexion.query("INSERT INTO like_vid (id_user,cod) VALUES($1,$2)", [
+        req.params.us,
+        video.cod,
+      ]);
+    }
+  });
+  res.redirect("/cursos/" + req.params.id + "/videos/" + req.params.cod);
+};
+// da un dislike a un video
+export const postUnlikeVideo = async (req, res) => {
+  const video = await getVideo(req.params.id, req.params.cod);
+  video.forEach(async (video) => {
+    if (video.cod == req.params.cod) {
+      await conexion.query("UPDATE video SET likes = $1 WHERE cod = $2", [
+        video.likes - 1,
+        video.cod,
+      ]);
+      await conexion.query(
+        "DELETE FROM like_vid WHERE id_user = $1 AND cod=$2",
+        [req.params.us, video.cod]
+      );
+    }
+  });
+  res.redirect("/cursos/" + req.params.id + "/videos/" + req.params.cod);
+};
+
 // un comentario obtiene un like
 export const postLikeComment = async (req, res) => {
   const video = await getVideo(req.params.id, req.params.cod);
@@ -148,9 +185,21 @@ const getRecurso = async (cod) => {
 };
 
 //verifica si ha dado like a un comentario
-const isLike = async (user, post) => {
+const isLikeComment = async (user, post) => {
   const { rows } = await conexion.query(
     "SELECT * FROM likes_coments WHERE id_user = $1 AND id_coment = $2",
+    [user, post]
+  );
+  if (rows.length == 1) {
+    return true;
+  } else {
+    return false;
+  }
+};
+// verifica que le ha dado like a un video
+const isLikeVideo = async (user, post) => {
+  const { rows } = await conexion.query(
+    "SELECT * FROM like_vid WHERE id_user = $1 AND cod = $2",
     [user, post]
   );
   if (rows.length == 1) {

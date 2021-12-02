@@ -34,6 +34,40 @@
                 <p>
                     <%= video[0].descripcion_video%>
                 </p>
+                <div class="likes">
+                    <%if(videoLike==true){%>
+                        <%if(login !=undefined){%>
+                            <form
+                                action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/unlike/<%=actualUser%>"
+                                method="post">
+                                <button type="submit" class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
+                                    <%= video[0].likes%>
+                                </button>
+                            </form>
+                            <%}else{%>
+
+                                <button class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
+                                    <%= video[0].likes%>
+                                </button>
+                                <%}%>
+                                    <%}else{%>
+                                        <%if(login !=undefined){%>
+                                            <form
+                                                action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/like/<%=actualUser%>"
+                                                method="post">
+                                                <button type="submit" class="megusta">Me gusta <i
+                                                        class="far fa-thumbs-up"></i>
+                                                    <%= video[0].likes%>
+                                                </button>
+                                            </form>
+                                            <%}else{%>
+                                                <button type="submit" class="megusta">Me gusta <i
+                                                        class="far fa-thumbs-up"></i>
+                                                    <%= video[0].likes%>
+                                                </button>
+                                                <%}%>
+                                                    <%}%>
+                </div>
             </div>
             <div class="comentaries flex">
                 <div class="publication">
@@ -44,7 +78,11 @@
                                 name="comment" class="formatextarea"></textarea>
                             <button type="submit" class="btnComment">Comentar</button>
                         </form>
-                        <%}%>
+                        <%}else{%>
+                            <p>Si quieres interactuar en <%=video[0].titulo%>
+                                    <a href="/register">registrate!</a> o </p>
+                            <p>Si ya tienes una cuenta <a href="/login">Inicia Sesión</a></p>
+                            <%}%>
                 </div>
                 <div class="allcomments flex">
                     <%for(let i=0;i<comments.length;i++){%>
