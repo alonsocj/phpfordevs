@@ -29,9 +29,9 @@
                     <%}%>
         </div>
     </div>
+    <div class="seccioncomentarios">
+        <% for(let i=0; i<data.length;i++){ %>
 
-    <% for(let i=0; i<data.length;i++){ %>
-        <div class="seccioncomentarios">
             <div class="mensajes">
                 <div class="contentmessage">
                     <p>Autor: <%= users[i][0].username%>
@@ -46,8 +46,9 @@
                     </p>
                 </div>
                 <!--Session de likes-->
-                <%if(likes[i]==true){%>
-                    <%if(login !=undefined){%>
+
+                <%if(login !=undefined){%>
+                    <%if(likes[i]==true){%>
                         <form action="/foro/<%=foro[0].id_foro%>/unlike/<%=data[i].id_respuesta%>/<%=actualUser%>"
                             method="post">
                             <button type="submit" class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
@@ -56,28 +57,21 @@
                         </form>
                         <%}else{%>
 
-                            <button class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
-                                <%= data[i].ayuda%>
-                            </button>
+                            <form action="/foro/<%=foro[0].id_foro%>/like/<%=data[i].id_respuesta%>/<%=actualUser%>"
+                                method="post">
+                                <button type="submit" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
+                                    <%= data[i].ayuda%>
+                                </button>
+                            </form>
                             <%}%>
                                 <%}else{%>
-                                    <%if(login !=undefined){%>
-                                        <form
-                                            action="/foro/<%=foro[0].id_foro%>/like/<%=data[i].id_respuesta%>/<%=actualUser%>"
-                                            method="post">
-                                            <button type="submit" class="megusta">Me gusta <i
-                                                    class="far fa-thumbs-up"></i>
-                                                <%= data[i].ayuda%>
-                                            </button>
-                                        </form>
-                                        <%}else{%>
-                                            <button type="submit" class="megusta">Me gusta <i
-                                                    class="far fa-thumbs-up"></i>
-                                                <%= data[i].ayuda%>
-                                            </button>
-                                            <%}%>
-                                                <%}%>
+
+                                    <a href="/login" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
+                                        <%= data[i].ayuda%>
+                                    </a>
+                                    <%}%>
             </div>
-        </div>
-        <% } %>
-            <%- include("templates/footer") %>
+
+            <% } %>
+    </div>
+    <%- include("templates/footer") %>
