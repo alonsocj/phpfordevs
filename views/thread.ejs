@@ -19,6 +19,10 @@
                         class="formatextarea"></textarea>
                     <button type="submit" class="btnComment">Comentar</button>
                 </form>
+                <%}else{%>
+                    <p>Si quieres interactuar en el foro <%=foro[0].titforo%> 
+                        <a href="/register">registrate!</a> o </p>
+                        <p>Si ya tienes una cuenta <a href="/login">Inicia Sesión</a></p>
                 <%}%>
         </div>
     </div>
@@ -38,18 +42,18 @@
                     <p>Respuesta: <%= data[i].descripcion_res%>
                     </p>
                 </div>
-                <%console.log(likes[i])%>
+                <!--Session de likes-->
                     <%if(likes[i]==true){%>
                         <%if(login !=undefined){%>
                             <form action="/foro/<%=foro[0].id_foro%>/unlike/<%=data[i].id_respuesta%>/<%=actualUser%>"
                                 method="post">
-                                <button type="submit">Unlike <i class="far fa-thumbs-up"></i>
+                                <button type="submit" class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
                                     <%= data[i].ayuda%>
                                 </button>
                             </form>
                             <%}else{%>
 
-                                <button>Unlike <i class="far fa-thumbs-up"></i>
+                                <button class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
                                     <%= data[i].ayuda%>
                                 </button>
                                 <%}%>
@@ -58,12 +62,12 @@
                                             <form
                                                 action="/foro/<%=foro[0].id_foro%>/like/<%=data[i].id_respuesta%>/<%=actualUser%>"
                                                 method="post">
-                                                <button type="submit">Like <i class="far fa-thumbs-up"></i>
+                                                <button type="submit" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
                                                     <%= data[i].ayuda%>
                                                 </button>
                                             </form>
                                             <%}else{%>
-                                                <button type="submit">Like <i class="far fa-thumbs-up"></i>
+                                                <button type="submit" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
                                                     <%= data[i].ayuda%>
                                                 </button>
                                                 <%}%>

@@ -194,6 +194,48 @@ p{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/*Diseño de reacciones*/
+.nomegusta{
+    background-color: #e63636;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.nomegusta:hover{
+    background-color: rgb(238, 104, 104);
+}
+
+.megusta{
+    background-color: #03b112;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.megusta:hover{
+    background-color: rgb(178, 255, 168);
+}
+
+p a{
+    color:rgb(0, 46, 92);
+}
+
+p a:hover{
+    color: blue;
+}
 
 /*Responsive*/
 
