@@ -4,7 +4,10 @@ export const index = async (req, res) => {
   res.render("index", { login: req.session.loggedin, name: req.session.name });
 };
 export const cuestionarios = async (req, res) => {
-  res.render("cuestionarios", { login: true, name: req.session.name });
+  res.render("cuestionarios", {
+    login: req.session.loggedin,
+    name: req.session.name,
+  });
 };
 export const cuestionarioBasico = async (req, res) => {
   res.render("cuestionarioBasico", {
