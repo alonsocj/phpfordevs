@@ -35,8 +35,9 @@
                     <%= video[0].descripcion_video%>
                 </p>
                 <div class="likes">
-                    <%if(videoLike==true){%>
-                        <%if(login !=undefined){%>
+                    <%if(login !=undefined){%>
+                        <%if(videoLike==true){%>
+
                             <form
                                 action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/unlike/<%=actualUser%>"
                                 method="post">
@@ -46,27 +47,20 @@
                             </form>
                             <%}else{%>
 
-                                <button class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
-                                    <%= video[0].likes%>
-                                </button>
+                                <form
+                                    action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/like/<%=actualUser%>"
+                                    method="post">
+                                    <button type="submit" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
+                                        <%= video[0].likes%>
+                                    </button>
+                                </form>
                                 <%}%>
                                     <%}else{%>
-                                        <%if(login !=undefined){%>
-                                            <form
-                                                action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/like/<%=actualUser%>"
-                                                method="post">
-                                                <button type="submit" class="megusta">Me gusta <i
-                                                        class="far fa-thumbs-up"></i>
-                                                    <%= video[0].likes%>
-                                                </button>
-                                            </form>
-                                            <%}else{%>
-                                                <button type="submit" class="megusta">Me gusta <i
-                                                        class="far fa-thumbs-up"></i>
-                                                    <%= video[0].likes%>
-                                                </button>
-                                                <%}%>
-                                                    <%}%>
+
+                                        <a href="/login" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
+                                            <%= video[0].likes%>
+                                        </a>
+                                        <%}%>
                 </div>
             </div>
             <div class="comentaries flex">
@@ -98,8 +92,9 @@
                                 <%=comments[i].opinion%>
                             </p>
                             <div class="likes">
-                                <%if(commentsLikes[i]==true){%>
-                                    <%if(login !=undefined){%>
+                                <%if(login !=undefined){%>
+                                    <%if(commentsLikes[i]==true){%>
+
                                         <form
                                             action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/unlike/<%=comments[i].id_coment%>/<%=actualUser%>"
                                             method="post">
@@ -109,28 +104,21 @@
                                             </button>
                                         </form>
                                         <%}else{%>
-
-                                            <button class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
-                                                <%= comments[i].megusta%>
-                                            </button>
+                                            <form
+                                                action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/like/<%=comments[i].id_coment%>/<%=actualUser%>"
+                                                method="post">
+                                                <button type="submit" class="megusta">Me gusta <i
+                                                        class="far fa-thumbs-up"></i>
+                                                    <%= comments[i].megusta%>
+                                                </button>
+                                            </form>
                                             <%}%>
                                                 <%}else{%>
-                                                    <%if(login !=undefined){%>
-                                                        <form
-                                                            action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/like/<%=comments[i].id_coment%>/<%=actualUser%>"
-                                                            method="post">
-                                                            <button type="submit" class="megusta">Me gusta <i
-                                                                    class="far fa-thumbs-up"></i>
-                                                                <%= comments[i].megusta%>
-                                                            </button>
-                                                        </form>
-                                                        <%}else{%>
-                                                            <button type="submit" class="megusta">Me gusta <i
-                                                                    class="far fa-thumbs-up"></i>
-                                                                <%= comments[i].megusta%>
-                                                            </button>
-                                                            <%}%>
-                                                                <%}%>
+                                                    <a href="/login" class="megusta">Me gusta <i
+                                                            class="far fa-thumbs-up"></i>
+                                                        <%= video[0].likes%>
+                                                    </a>
+                                                    <%}%>
                             </div>
                         </div>
 
