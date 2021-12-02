@@ -11,6 +11,7 @@ function validarForo(){
             text: 'Debe de Ingresar el Titulo y/o Descripcion del Tema para publicarlo en el foro',
             icon: 'error',
             showConfirmButton: 'Aceptar',
+            confirmButtonColor: '#3085d6'
 
         })
         return false;
@@ -30,6 +31,7 @@ function validarComentarios(){
             text: 'Debe de Ingresar una respuesta para el tema',
             icon: 'error',
             showConfirmButton: 'Aceptar',
+            confirmButtonColor: '#3085d6'
 
         })
         return false;
