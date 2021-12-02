@@ -28,7 +28,7 @@ export const auth = async (req, res) => {
             ruta: "login",
           });
         } else {
-          req.session.loggedin = true
+          req.session.loggedin = true;
           req.session.name = rows[0].id_user;
           res.render("login", {
             alert: true,
@@ -53,4 +53,9 @@ export const auth = async (req, res) => {
       ruta: "login",
     });
   }
+};
+export const logout = async (req, res) => {
+  console.log(req.session);
+  req.session = null;
+  res.redirect("/");
 };
