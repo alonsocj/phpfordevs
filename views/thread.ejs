@@ -1,7 +1,7 @@
 <%- include("templates/head",{ruta:'/css/foro.css',title:'Titulo Foro',login:login}) %>
 
-<script src="/js/validacionforo.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/validacionforo.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <div class="top-bar">
         <h1>
@@ -23,10 +23,10 @@
                     <button type="submit" class="btnComment">Comentar</button>
                 </form>
                 <%}else{%>
-                    <p>Si quieres interactuar en el foro <%=foro[0].titforo%> 
-                        <a href="/register">registrate!</a> o </p>
-                        <p>Si ya tienes una cuenta <a href="/login">Inicia Sesión</a></p>
-                <%}%>
+                    <p>Si quieres interactuar en el foro <%=foro[0].titforo%>
+                            <a href="/register">registrate!</a> o </p>
+                    <p>Si ya tienes una cuenta <a href="/login">Inicia Sesión</a></p>
+                    <%}%>
         </div>
     </div>
 
@@ -46,43 +46,38 @@
                     </p>
                 </div>
                 <!--Session de likes-->
-                    <%if(likes[i]==true){%>
-                        <%if(login !=undefined){%>
-                            <form action="/foro/<%=foro[0].id_foro%>/unlike/<%=data[i].id_respuesta%>/<%=actualUser%>"
-                                method="post">
-                                <button type="submit" class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
-                                    <%= data[i].ayuda%>
-                                </button>
-                            </form>
-                            <%}else{%>
+                <%if(likes[i]==true){%>
+                    <%if(login !=undefined){%>
+                        <form action="/foro/<%=foro[0].id_foro%>/unlike/<%=data[i].id_respuesta%>/<%=actualUser%>"
+                            method="post">
+                            <button type="submit" class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
+                                <%= data[i].ayuda%>
+                            </button>
+                        </form>
+                        <%}else{%>
 
-                                <button class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
-                                    <%= data[i].ayuda%>
-                                </button>
-                                <%}%>
-                                    <%}else{%>
-                                        <%if(login !=undefined){%>
-                                            <form
-                                                action="/foro/<%=foro[0].id_foro%>/like/<%=data[i].id_respuesta%>/<%=actualUser%>"
-                                                method="post">
-                                                <button type="submit" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
-                                                    <%= data[i].ayuda%>
-                                                </button>
-                                            </form>
-                                            <%}else{%>
-                                                <button type="submit" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
-                                                    <%= data[i].ayuda%>
-                                                </button>
+                            <button class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
+                                <%= data[i].ayuda%>
+                            </button>
+                            <%}%>
+                                <%}else{%>
+                                    <%if(login !=undefined){%>
+                                        <form
+                                            action="/foro/<%=foro[0].id_foro%>/like/<%=data[i].id_respuesta%>/<%=actualUser%>"
+                                            method="post">
+                                            <button type="submit" class="megusta">Me gusta <i
+                                                    class="far fa-thumbs-up"></i>
+                                                <%= data[i].ayuda%>
+                                            </button>
+                                        </form>
+                                        <%}else{%>
+                                            <button type="submit" class="megusta">Me gusta <i
+                                                    class="far fa-thumbs-up"></i>
+                                                <%= data[i].ayuda%>
+                                            </button>
+                                            <%}%>
                                                 <%}%>
-                                                    <%}%>
             </div>
         </div>
         <% } %>
-            <script>
-                document.querySelectorAll(".like").forEach(element => {
-                    element.addEventListener('click', () => {
-                        alert("has dado click en el elemento con id " + element.attributes[2].nodeValue)
-                    })
-                })
-            </script>
             <%- include("templates/footer") %>
