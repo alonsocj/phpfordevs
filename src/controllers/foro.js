@@ -13,20 +13,17 @@ export const getTemas = async (req, res) => {
 
 export const renderComments = async (req, res) => {
   const users = [];
-  const { rows } = await conexion.query(
-    "SELECT * FROM respuesta WHERE id_foro = $1",
-    [req.params.id]
-  );
+  const comentarios = await getComments(req.params.id);
   const foro = await getForo(req.params.id);
   const likes = [];
   const actualUser = req.session.name;
-  for (let i = 0; i < rows.length; i++) {
-    users.push(await getUser(rows[i].id_user));
-    likes.push(await isLike(actualUser, rows[i].id_respuesta));
+  for (let i = 0; i < comentarios.length; i++) {
+    users.push(await getUser(comentarios[i].id_user));
+    likes.push(await isLike(actualUser, comentarios[i].id_respuesta));
   }
   //Pintar en pantalla
   res.render("thread", {
-    data: rows,
+    data: comentarios,
     foro: foro,
     users: users,
     likes: likes,
@@ -122,10 +119,10 @@ const getUser = async (id) => {
   );
   return rows;
 };
-const isLike = async (user, post) => {
+const isLike = async (user, comentario) => {
   const { rows } = await conexion.query(
     "SELECT * FROM apoyo_res WHERE id_user = $1 AND id_respuesta = $2",
-    [user, post]
+    [user, comentario]
   );
   if (rows.length == 1) {
     return true;

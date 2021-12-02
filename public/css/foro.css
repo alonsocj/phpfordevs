@@ -1,262 +1,260 @@
-.mainforum{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.mainforum {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.mainforum .forum{
-    width: 450px;
-    background-color: lightgrey;
-    padding: 20px 40px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    margin-top: 20px;
-    margin-left: 50px;
-    margin-bottom: 20px;
-    margin-right: 50px;
+.mainforum .forum {
+  width: 450px;
+  background-color: lightgrey;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  margin-right: 50px;
 }
 
-.ForosPrueba{
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 10px;
-    justify-content: left !important;
+.ForosPrueba {
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 10px;
+  justify-content: left !important;
 }
 
-.ForosPrueba .Foros{
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #242434;
-    padding-left: 45px;
-    padding-top: 10px ;
-    padding-right: 45px;
-    border-radius: 10px;
+.ForosPrueba .Foros {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #242434;
+  padding-left: 45px;
+  padding-top: 10px;
+  padding-right: 45px;
+  border-radius: 10px;
 }
 
-.Foros div{
-    text-align: justify;
-    padding: 5px;
+.Foros div {
+  text-align: justify;
+  padding: 5px;
 }
 
-.ForosPrueba .Foros div a{
-    color: red;
-    padding-bottom: 10px;
+.ForosPrueba .Foros div a {
+  color: red;
+  padding-bottom: 10px;
 }
 
-.titfo{
-    color: #242434;
-    font-size: 150%;
-    text-align: center;
-    margin-top: 2px;
-    margin-bottom: 5px;
-    font-size: 25px;
+.titfo {
+  color: #242434;
+  font-size: 150%;
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  font-size: 25px;
 }
 
 /*Seccion dentro de foro*/
-.maincomment{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.maincomment {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.maincomment .comments{
-    width: 450px;
-    background-color: lightgrey;
-    padding: 20px 40px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    margin-top: 20px;
-    margin-left: 50px;
-    margin-bottom: 20px;
-    margin-right: 50px;
+.maincomment .comments {
+  width: 450px;
+  background-color: lightgrey;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  margin-right: 50px;
 }
 
-.seccioncomentarios{
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 10px;
-    justify-content: left !important;
+.seccioncomentarios {
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 10px;
+  justify-content: left !important;
 }
 
-.seccioncomentarios .mensajes{
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #242434;
-    padding-left: 45px;
-    padding-top: 10px ;
-    padding-right: 45px;
-    border-radius: 10px;
+.seccioncomentarios .mensajes {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #242434;
+  padding-left: 45px;
+  padding-top: 10px;
+  padding-right: 45px;
+  border-radius: 10px;
 }
 
-.seccioncomentarios .mensajes .contentmessage{
-    padding: 5px;
-    word-wrap: break-word;
-    margin: 2px;
-    text-align: justify;
+.seccioncomentarios .mensajes .contentmessage {
+  padding: 5px;
+  word-wrap: break-word;
+  margin: 2px;
+  text-align: justify;
 }
 
-p{
-    line-height : 25px;
+p {
+  line-height: 25px;
 }
 
-.btnComment{
-    margin-top: 5px;
-    background-color: #242434;
-    border-color:#242434;
-    border-radius: 10px;
-    text-align: center;
-    color: #ffffff;
-    font-size: 18px;
-    padding: 1%;
-    width: 100px;
+.btnComment {
+  margin-top: 5px;
+  background-color: #242434;
+  border-color: #242434;
+  border-radius: 10px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 1%;
+  width: 100px;
 }
 
-.btnComment:hover{
-    background-color: #545474;
-    border-color:#545474;
-    border-radius: 10px;
-    text-align: center;
-    color: #fff;
-    font-size: 18px;
-    padding: 1%;
+.btnComment:hover {
+  background-color: #545474;
+  border-color: #545474;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  padding: 1%;
 }
 
-.btnForo{
-    margin-top: 5px;
-    background-color: #242434;
-    border-color:#242434;
-    border-radius: 10px;
-    text-align: center;
-    color: #ffffff;
-    font-size: 18px;
-    padding: 1%;
-    width: 200px;
+.btnForo {
+  margin-top: 5px;
+  background-color: #242434;
+  border-color: #242434;
+  border-radius: 10px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 1%;
+  width: 200px;
 }
 
-.btnForo:hover{
-    background-color: #545474;
-    border-color:#545474;
-    border-radius: 10px;
-    text-align: center;
-    color: #fff;
-    font-size: 18px;
-    padding: 1%;
+.btnForo:hover {
+  background-color: #545474;
+  border-color: #545474;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  padding: 1%;
 }
 
-.top-bar h1{
-    margin-top: 20px;
-    color: #242434;
-    font-size: 200%;
-    margin-left: 50px;
-    margin-right: 50px;
+.top-bar h1 {
+  margin-top: 20px;
+  color: #242434;
+  font-size: 200%;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
-.top-bar h2{
-    margin-top: 10px;
-    font-size: 150%;
-    margin-left: 50px;
-    margin-right: 50px;
+.top-bar h2 {
+  margin-top: 10px;
+  font-size: 150%;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
-.top-bar h3{
-    margin-top: 10px;
-    font-size: 100%;
-    margin-left: 50px;
-    margin-right: 50px;
+.top-bar h3 {
+  margin-top: 10px;
+  font-size: 100%;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 /*Diseño de Inputs*/
 
-.formatinput{
-    display: block;
-    width: 100%;
-    padding: 12px 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: justify;
-    font-size: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+.formatinput {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: justify;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.formatextarea{
-    display: block;
-    width: 100%;
-    height: 150px;
-    padding: 12px 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: justify;
-    font-size: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    resize: none; /*Impide que el textarea se pueda redimnensionar*/
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.formatextarea {
+  display: block;
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: justify;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  resize: none; /*Impide que el textarea se pueda redimnensionar*/
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /*Diseño de reacciones*/
-.nomegusta{
-    background-color: #e63636;
-    border: none;
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    border-radius: 5px;
-    margin-bottom: 5px;
+/* .nomegusta {
+  background-color: #e63636;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
 
-.nomegusta:hover{
-    background-color: rgb(238, 104, 104);
+.nomegusta:hover {
+  background-color: rgb(238, 104, 104);
 }
 
-.megusta{
-    background-color: #03b112;
-    border: none;
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    border-radius: 5px;
-    margin-bottom: 5px;
+.megusta {
+  background-color: #03b112;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
 
-.megusta:hover{
-    background-color: rgb(178, 255, 168);
+.megusta:hover {
+  background-color: rgb(178, 255, 168);
 }
 
-p a{
-    color:rgb(0, 46, 92);
+p a {
+  color: rgb(0, 46, 92);
 }
 
-p a:hover{
-    color: blue;
-}
+p a:hover {
+  color: blue;
+} */
 
 /*Responsive*/
 
-@media(max-width:900px){
-    .formforo{
-        width: 100%;
-    }
+@media (max-width: 900px) {
+  .formforo {
+    width: 100%;
+  }
 
-    .formcomment{
-        width: 100%;
-    }
+  .formcomment {
+    width: 100%;
+  }
 
-    .ForosPrueba .Foros div{
-        width: 100%;
-        word-wrap: break-word;
-        text-align: left;
-    }
+  .ForosPrueba .Foros div {
+    width: 100%;
+    word-wrap: break-word;
+    text-align: left;
+  }
 
-    .seccioncomentarios .mensajes .contentmessage{
-        width: 100%;
-        word-wrap: break-word;
-        text-align: left;
-    }
+  .seccioncomentarios .mensajes .contentmessage {
+    width: 100%;
+    word-wrap: break-word;
+    text-align: left;
+  }
 }
