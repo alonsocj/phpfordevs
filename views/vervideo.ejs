@@ -49,7 +49,7 @@
                 <div class="allcomments flex">
                     <%for(let i=0;i<comments.length;i++){%>
                         <div class="comment-user flex">
-                            <div class="inforcoment">
+                            <div class="inforcomment">
                                 <strong class="user">
                                     <%=users[i][0].username%>
                                 </strong> - <p>
@@ -60,9 +60,39 @@
                                 <%=comments[i].opinion%>
                             </p>
                             <div class="likes">
-                                <p class="tipo">Likes <i class="far fa-thumbs-up"></i>
-                                    <%=comments[i].megusta%>
-                                </p>
+                                <%if(commentsLikes[i]==true){%>
+                                    <%if(login !=undefined){%>
+                                        <form
+                                            action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/unlike/<%=comments[i].id_coment%>/<%=actualUser%>"
+                                            method="post">
+                                            <button type="submit" class="nomegusta">No me gusta <i
+                                                    class="far fa-thumbs-up"></i>
+                                                <%= comments[i].megusta%>
+                                            </button>
+                                        </form>
+                                        <%}else{%>
+
+                                            <button class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
+                                                <%= comments[i].megusta%>
+                                            </button>
+                                            <%}%>
+                                                <%}else{%>
+                                                    <%if(login !=undefined){%>
+                                                        <form
+                                                            action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/like/<%=comments[i].id_coment%>/<%=actualUser%>"
+                                                            method="post">
+                                                            <button type="submit" class="megusta">Me gusta <i
+                                                                    class="far fa-thumbs-up"></i>
+                                                                <%= comments[i].megusta%>
+                                                            </button>
+                                                        </form>
+                                                        <%}else{%>
+                                                            <button type="submit" class="megusta">Me gusta <i
+                                                                    class="far fa-thumbs-up"></i>
+                                                                <%= comments[i].megusta%>
+                                                            </button>
+                                                            <%}%>
+                                                                <%}%>
                             </div>
                         </div>
 
