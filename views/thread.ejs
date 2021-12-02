@@ -1,32 +1,81 @@
 <%- include("templates/head",{ruta:'/css/foro.css',title:'Titulo Foro',login:login}) %>
 
     <div class="top-bar">
-        <h1><%=foro[0].titforo%></h1>
-        <h2><%=foro[0].descripcion%></h2>
-        <h3>Publicado por: <%=foro[0].user_foro%></h3>
+        <h1>
+            <%=foro[0].titforo%>
+        </h1>
+        <h2>
+            <%=foro[0].descripcion%>
+        </h2>
+        <h3>Publicado por: <%=foro[0].user_foro%>
+        </h3>
     </div>
 
     <div class="maincomment">
         <div class="comments">
             <% if(login !=undefined ){%>
-            <form method="post" class="formcomment">
-                <label>Comentario:</label><textarea type="text" placeholder="Comentario" id="comment" name="comment"
-                class="formatextarea"></textarea>
-                <button type="submit" class="btnComment">Comentar</button>
-            </form>
-            <%}%>
+                <form method="post" class="formcomment">
+                    <label>Comentario:</label><textarea type="text" placeholder="Comentario" id="comment" name="comment"
+                        class="formatextarea"></textarea>
+                    <button type="submit" class="btnComment">Comentar</button>
+                </form>
+                <%}%>
         </div>
     </div>
 
     <% for(let i=0; i<data.length;i++){ %>
         <div class="seccioncomentarios">
             <div class="mensajes">
-                <div class="contentmessage"><p>Autor: <%= users[i][0].username%></p></div>
-                <div class="contentmessage"><p>Fecha de publicacion: <%= data[i].fecha_coment%></p></div>
-                <div class="contentmessage"><p>Respuesta: <%= data[i].descripcion_res%></p></div>
-                <div class="contentmessage"><i class="far fa-thumbs-up"></i><%= data[i].ayuda%></div>
+                <div class="contentmessage">
+                    <p>Autor: <%= users[i][0].username%>
+                    </p>
+                </div>
+                <div class="contentmessage">
+                    <p>Fecha de publicacion: <%= data[i].fecha_coment%>
+                    </p>
+                </div>
+                <div class="contentmessage">
+                    <p>Respuesta: <%= data[i].descripcion_res%>
+                    </p>
+                </div>
+                <%console.log(likes[i])%>
+                    <%if(likes[i]==true){%>
+                        <%if(login !=undefined){%>
+                            <form action="/foro/<%=foro[0].id_foro%>/unlike/<%=data[i].id_respuesta%>/<%=actualUser%>"
+                                method="post">
+                                <button type="submit">Unlike <i class="far fa-thumbs-up"></i>
+                                    <%= data[i].ayuda%>
+                                </button>
+                            </form>
+                            <%}else{%>
+
+                                <button>Unlike <i class="far fa-thumbs-up"></i>
+                                    <%= data[i].ayuda%>
+                                </button>
+                                <%}%>
+                                    <%}else{%>
+                                        <%if(login !=undefined){%>
+                                            <form
+                                                action="/foro/<%=foro[0].id_foro%>/like/<%=data[i].id_respuesta%>/<%=actualUser%>"
+                                                method="post">
+                                                <button type="submit">Like <i class="far fa-thumbs-up"></i>
+                                                    <%= data[i].ayuda%>
+                                                </button>
+                                            </form>
+                                            <%}else{%>
+                                                <button type="submit">Like <i class="far fa-thumbs-up"></i>
+                                                    <%= data[i].ayuda%>
+                                                </button>
+                                                <%}%>
+                                                    <%}%>
             </div>
         </div>
         <% } %>
-
-<%- include("templates/footer") %>
+            <script>
+                document.querySelectorAll(".like").forEach(element => {
+                    element.addEventListener('click', () => {
+                        alert("has dado click en el elemento con id " + element.attributes[2].nodeValue)
+                    })
+                })
+            </script>
+            <%- include("templates/footer") %>
