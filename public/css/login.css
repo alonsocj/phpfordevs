@@ -1,3 +1,107 @@
 h1{
-    color: blue;
+    color: #242434;
+    text-align: center;
+    margin: 0;
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.pos{
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.loginform, .registerform{
+    width: 450px;
+    margin: auto;
+    background-color: lightgrey;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input{
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: justify;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btnRegistrar, .btnCancelar{
+    background-color: #242434;
+    border-color:#242434;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 1%;
+    width: 200px;
+}
+
+.btnRegistrar:hover, .btnCancelar:hover{
+    background-color: #545474;
+    border-color:#545474;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    padding: 1%;
+    cursor: pointer;
+}
+
+.btnIniciar, .btnRegistro{
+    display: inline-block;
+    margin-top: 5px;
+    background-color: #242434;
+    border-color:#242434;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 1%;
+    width: 200px;
+}
+
+.btnIniciar:hover, .btnRegistro:hover{
+    background-color: #545474;
+    border-color:#545474;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    padding: 1%;
+    cursor: pointer;
+}
+
+a, a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+/*login responsivo*/
+
+@media (max-width: 900px){
+    .loginform{
+        width: 100%;
+    }
+
+    .registerform{
+        width: 100%;
+    }
+    
+}
+
+
