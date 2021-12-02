@@ -100,15 +100,15 @@ export const postLikeVideo = async (req, res) => {
 export const postUnlikeVideo = async (req, res) => {
   const video = await getVideo(req.params.id, req.params.cod);
   video.forEach(async (video) => {
+    await conexion.query("DELETE FROM like_vid WHERE id_user = $1 AND cod=$2", [
+      req.params.us,
+      video.cod,
+    ]);
     if (video.cod == req.params.cod) {
       await conexion.query("UPDATE video SET likes = $1 WHERE cod = $2", [
         video.likes - 1,
         video.cod,
       ]);
-      await conexion.query(
-        "DELETE FROM like_vid WHERE id_user = $1 AND cod=$2",
-        [req.params.us, video.cod]
-      );
     }
   });
   res.redirect("/cursos/" + req.params.id + "/videos/" + req.params.cod);
@@ -139,12 +139,12 @@ export const postUnlikeComment = async (req, res) => {
   comments.forEach(async (comment) => {
     if (comment.id_coment == req.params.res) {
       await conexion.query(
-        "UPDATE comentario SET megusta = $1 WHERE id_coment = $2",
-        [comment.megusta - 1, comment.id_coment]
-      );
-      await conexion.query(
         "DELETE FROM likes_coments WHERE id_user = $1 AND id_coment=$2",
         [req.params.us, comment.id_coment]
+      );
+      await conexion.query(
+        "UPDATE comentario SET megusta = $1 WHERE id_coment = $2",
+        [comment.megusta - 1, comment.id_coment]
       );
     }
   });

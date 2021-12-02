@@ -58,12 +58,12 @@ export const postUnlike = async (req, res) => {
   coments.forEach(async (coment) => {
     if (coment.id_respuesta == req.params.res) {
       await conexion.query(
-        "UPDATE respuesta SET ayuda = $1 WHERE id_respuesta = $2",
-        [coment.ayuda - 1, coment.id_respuesta]
-      );
-      await conexion.query(
         "DELETE FROM apoyo_res WHERE id_user = $1 AND id_respuesta=$2",
         [req.params.us, coment.id_respuesta]
+      );
+      await conexion.query(
+        "UPDATE respuesta SET ayuda = $1 WHERE id_respuesta = $2",
+        [coment.ayuda - 1, coment.id_respuesta]
       );
     }
   });
