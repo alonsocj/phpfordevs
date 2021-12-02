@@ -171,9 +171,16 @@ a{
     padding-bottom: 15px;
     align-items: center;
 }
+
+.general .welcome{
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
 .general .general-linea{
     display:flex;
-    margin-top: 15px;
+    margin-top: 10px;
     justify-content: space-around;
 }
 .cuadrados{
@@ -190,7 +197,6 @@ a{
     width: 100%;
 }
 .cuadradosT{
-    
     float: left;
     width: 100%;
     height: 350px;
@@ -202,34 +208,33 @@ a{
     align-items: center;
     margin-bottom: 15px;
     font-size: 20px;
-    
 }
 
 .textobienvenida{
-
     font-size: 20px;
-    padding-top: 10px;
+    margin-top: 20px;
     padding-bottom: 15px;
     color:black;
-    
 }
 
 .textoimagen{
-
     font-size: 20px;
-    padding-top: 10px;
+    margin-top: 20px;
     padding-bottom: 15px;
     color:black;
-    
 }
 
 .textoimagen:hover{
-
     font-size: 20px;
-    padding-top: 10px;
+    margin-top: 20px;
     padding-bottom: 15px;
     color: blue;
-    
+}
+
+.textoeslogan{
+    margin-right: 25px;
+    margin-left: 25px;
+    text-align: center;
 }
 
 /*Para que sea responsivo*/

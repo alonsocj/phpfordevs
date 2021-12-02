@@ -1,6 +1,13 @@
 <%- include("templates/head",{ruta:'',title:'phpfordevs',loggin:login}) %>
     <div class="cuerpo">
         <div class="general">
+            <% if(login !=undefined ){%>
+                <% for(let i=0; i<data.length;i++){ %>
+                    <% if(name == data[i].id_user ){%>
+                    <p class="welcome">Bienvenido <%=data[i].username%></p>
+            <% } %>
+            <% } %>
+            <% } %>
             <div class="general-linea">
                 <div class="cuadrados">
                     <a href="/cursos" class="Cuadrados">
@@ -27,7 +34,7 @@
                     </a>
                 </div>
                 <div class="cuadradosT">
-                    <p">"Somos PhpForDevs, más que una pagina de enseñanzas sobre PHP, somos tu mejor aliado en tu
+                    <p class="textoeslogan">"Somos PhpForDevs, más que una pagina de enseñanzas sobre PHP, somos tu mejor aliado en tu
                         camino de aprendizaje"</p>
                 </div>
                 <div class="cuadrados">

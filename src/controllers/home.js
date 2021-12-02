@@ -1,7 +1,8 @@
 import { conexion } from "../database";
 
 export const index = async (req, res) => {
-  res.render("index", { login: req.session.loggedin, name: req.session.name });
+  const { rows } = await conexion.query("SELECT * FROM usuario");
+  res.render("index", { login: req.session.loggedin, name: req.session.name, data:rows});
 };
 export const cuestionarios = async (req, res) => {
   res.render("cuestionarios", {
