@@ -1,16 +1,27 @@
-<link rel="stylesheet" type="text/css" href="/css/login.css">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+</head>
+
+<body> 
 
 <div class="pos">
     <div class="registerform">
         <!--Registro de usuario-->
-        <form action="/register" method="POST">
-            <h1>Registro</h1>
-            <input type="text" name="user" id="user" placeholder="Usuario">
-            <input type="password" name="pass" id="pass" placeholder="Constraseña">
-            <button type="submit" class="btnRegistro">Registro</button>
+        <h1>Registro</h1>
+        <form action="/register" method="POST">  
+            <input type="text" name="user" id="user" placeholder="Usuario"><br>
+            <input type="password" name="pass" id="pass" placeholder="Constraseña"> <br>
+           <p><button type="submit" class="btnRegistro">Registro</button><br></p> 
         </form>
         <!--En caso de no querer registrarse-->
-        <button class="btnCancelar"><a href="/login">Cancelar registro</a></button>
+        <p><button class="btnCancelar"><a href="/login">Cancelar registro</a></button></p>
 
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <% if(typeof alert !="undefined" ){%>
@@ -30,3 +41,6 @@
             <%}%>
     </div>
 </div>
+</body>
+
+</html>

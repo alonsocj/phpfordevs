@@ -1,31 +1,46 @@
-<link rel="stylesheet" type="text/css" href="/css/login.css">
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="pos">
-<div class="loginform">
-    <!--Inicio de Sesion-->
-    <h1>Iniciar Sesión</h1>
-    <form action="/auth" method="POST">
-        <input type="text" name="user" id="user" placeholder="Usuario">
-        <input type="password" name="pass" id="pass" placeholder="Constraseña">
-        <button type="submit" class="btnIniciar" >Iniciar Sesión</button>
-    </form>
-    <!--En caso de registro-->
-    <button class="btnRegistrar"><a href="/register">Registrate!</a></button>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <% if(typeof alert !="undefined" ){%>
-        <script>
-            Swal.fire({
-                title: '<%= alertTitle%>',
-                text: '<%= alertMessage%>',
-                icon: '<%= alertIcon%>',
-                showConfirmButton: <%= showConfirmButton%>,
-                timer: <%= time %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+</head>
+
+<body>
+    <div class="pos">
+        <div class="loginform">
+            <!--Inicio de Sesion-->
+            <h1>Iniciar Sesión</h1>
+            <form action="/auth" method="POST">
+                <input type="text" name="user" id="user" placeholder="Usuario"><br>
+                <input type="password" name="pass" id="pass" placeholder="Constraseña"><br>
+                
+               <p> <button type="submit" class="btnIniciar">Iniciar Sesión</button> <br> </p>
+                
+            </form>
+            <!--En caso de registro-->
+            <p><button class="btnRegistrar"><a href="/register">Registrate!</a></button></p>
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <% if(typeof alert !="undefined" ){%>
+                <script>
+                    Swal.fire({
+                        title: '<%= alertTitle%>',
+                        text: '<%= alertMessage%>',
+                        icon: '<%= alertIcon%>',
+                        showConfirmButton: <%= showConfirmButton%>,
+                        timer: <%= time %>
 
             }).then(() => {
-                    window.location = '/<%=ruta%>'
-                })
+                            window.location = '/<%=ruta%>'
+                        })
 
-        </script>
-        <%}%>
-</div>
-</div>
+                </script>
+                <%}%>
+        </div>
+    </div>
+</body>
+
+</html>
