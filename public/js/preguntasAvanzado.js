@@ -47,23 +47,23 @@ let questionsA = [
     {
         num:5,
         question:"Permite definir nuevos valores para los parámetros de configuración de las cookies:",
-        answer: "session_get_cookie_params();",
+        answer: "D)",
         options: [
-            "session_get_cookie_params[];",
-            "session_get_cookie_param();",
-            "session_get_cookkie_param();",
-            "session_get_cookie_params();"
+            "A)<img class = 'opcionimg2' src='/img/avanzado5a.png'>",
+            "B)<img class = 'opcionimg2' src='/img/avanzado5b.png'>",
+            "C)<img class = 'opcionimg2' src='/img/avanzado5c.png'>",
+            "D)<img class = 'opcionimg2' src='/img/avanzado5d.png'>"
         ]
     },
     {
         num:6,
         question:"Devuelve el nombre del módulo que se usa para realizar la gestión de sesiones:",
-        answer: "session_module_name([modulo]);",
+        answer: "A)",
         options: [
-            "session_module_name([modulo]);",
-            "session_module_names(modulo);",
-            "session_decode(modulo);",
-            "session_encode();"
+            "A)<img class = 'opcionimg2' src='/img/avanzado6a.png'>",
+            "B)<img class = 'opcionimg2' src='/img/avanzado6b.png'>",
+            "C)<img class = 'opcionimg2' src='/img/avanzado6c.png'>",
+            "D)<img class = 'opcionimg2' src='/img/avanzado6d.png'>"
         ]
     },
     {
@@ -71,10 +71,10 @@ let questionsA = [
         question:"Permite definir nuevos valores para los parámetros de configuración de las cookies:",
         answer: "Ninguna opción es correcta",
         options: [
-            "session_get_cookie_param();",
+            "<img class = 'opcionimg2' src='/img/avanzado7a.png'>",
             "Ninguna opción es correcta",
-            "session_get_cokie_params();",
-            "session_unset();"
+            "<img class = 'opcionimg2' src='/img/avanzado7c.png'>",
+            "<img class = 'opcionimg2' src='/img/avanzado7d.png'>"
         ]
     },
     {
@@ -91,12 +91,12 @@ let questionsA = [
     {
         num:9,
         question:"¿Cuál es la sintaxis correcta para eliminar una cookie?",
-        answer: "<?php // set the expiration date to one hour ago setcookie('user', '', time() - 3600); ?> ",
+        answer: "C)",
         options: [
             "A) B y C son correctas",
             "B) Se debe usar la función setcookie() con una fecha de expiración pasada",
-            "C) <?php // set the expiration date to one hour ago setcookie('user', '', time() - 3600); ?> ",
-            "C) <?php // set the expiration date to one hour ago setcokie('user', '', time() - 3600); ?> "
+            "C)<img class = 'opcionimg2' src='/img/avanzado9C.png'>",
+            "D)<img class = 'opcionimg2' src='/img/avanzado9D.png'>"
         ]
     },
     {
