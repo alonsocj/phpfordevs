@@ -1,8 +1,8 @@
 <!--Formulario de llenado-->
 <%- include("templates/head",{ruta:'/css/foro.css',title:'Foro phpfordevs',login:login}) %>
 
-<script src="/js/validacionforo.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/validacionforo.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!--Captura los valores por medio de una lista ordenada-->
     <div class="mainforum">
@@ -11,15 +11,17 @@
                 <form method="post" class="formforo" onsubmit="return validarForo();">
                     <h1 class="titfo">Agrega un Tema!</h1>
                     <label>Titulo: </label> <input type="text" placeholder="Titulo" class="formatinput" id="Titulo"
-                        name="Titulo">
+                        name="Titulo" maxlength="150">
+                    <label id="title-error">Maximo 150 caracteres </label>
                     <label>Descripcion: </label> <textarea type="text" placeholder="Descripcion" id="contenido"
-                        name="contenido" class="formatextarea"></textarea>
-                    <button type="submit" class="btnForo">Agregar</button>
+                        name="contenido" class="formatextarea" maxlength="250"></textarea>
+                    <label id="area-error">Maximo 250 caracteres </label>
+                    <button type="submit" class="btnForo btnSubmit">Agregar</button>
                 </form>
                 <%}else{%>
                     <p>Si quieres Agregar un Tema <a href="/register">Registrate!</a> o </p>
                     <p>Si ya tienes una cuenta <a href="/login">Inicia Sesión</a></p>
-                <%}%>
+                    <%}%>
         </div>
     </div>
 
@@ -46,5 +48,53 @@
             </div>
         </div>
         <% } %>
+            <script>
+                const maxPermittedTitle = 150;
+                const maxPermitted = 250;
+                // La varible de control
+                let validArea = true;
 
-<%- include("templates/footer") %>
+                const area = document.querySelector(".formatextarea");
+                const title = document.querySelector(".formatinput");
+                const submit = document.querySelector(".btnSubmit");
+                const errorA = document.querySelector("#area-error");
+                const errorT = document.querySelector("#title-error");
+                submit.addEventListener(`click`, () => {
+                    // Quizás sería más conveniente darle el
+                    // atributo 'disabled' true/false
+                    // en los métodos 'handleValid' y
+                    // 'handleInvalid'
+                    if (validArea) console.log(`valid`);
+                    else console.warn(`invalid`);
+                });
+
+                // Nos suscribimos al evento 'input'
+                // del area, que se disparará cada
+                // vez que cambie el valor del textarea
+                area.addEventListener(`input`, () => {
+
+                    const { value } = area;
+
+                    value.length >= maxPermitted ? handleInvalid(errorA) : handleValid(errorA);
+                });
+                title.addEventListener(`input`, () => {
+
+                    const { value } = title;
+
+                    value.length >= maxPermittedTitle ? handleInvalid(errorT) : handleValid(errorT);
+                });
+
+                // Mostramos el texto de error
+                const handleInvalid = (error) => {
+                    validArea = false;
+                    error.style.display = `block`;
+                };
+
+                // Ocultamos el bloque de error
+                const handleValid = (error) => {
+                    validArea = true;
+                    error.style.display = `none`;
+                };
+
+            </script>
+            <%- include("templates/footer") %>

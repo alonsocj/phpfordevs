@@ -236,7 +236,18 @@ p a:hover {
 } */
 
 /*Responsive*/
-
+.formcomment {
+  display: flex;
+  flex-direction: column;
+}
+#area-error {
+  display: none;
+  color: red;
+}
+#title-error {
+  display: none;
+  color: red;
+}
 @media (max-width: 900px) {
   .formforo {
     width: 100%;

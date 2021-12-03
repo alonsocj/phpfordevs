@@ -19,8 +19,9 @@
             <% if(login !=undefined ){%>
                 <form method="post" class="formcomment" onsubmit="return validarComentarios();">
                     <label>Comentario:</label><textarea type="text" placeholder="Comentario" id="comment" name="comment"
-                        class="formatextarea"></textarea>
-                    <button type="submit" class="btnComment">Comentar</button>
+                        class="formatextarea" maxlength="250"></textarea>
+                    <label id="area-error">Maximo 250 caracteres </label>
+                    <button type="submit" class="btnComment btnSubmit">Comentar</button>
                 </form>
                 <%}else{%>
                     <p>Si quieres interactuar en el foro <%=foro[0].titforo%>
@@ -74,4 +75,44 @@
 
             <% } %>
     </div>
+    <script>
+        const maxPermitted = 250;
+        // La varible de control
+        let validArea = true;
+
+        const area = document.querySelector(".formatextarea");
+        let submit = document.querySelector(".btnSubmit");
+        const error = document.querySelector("#area-error");
+
+        submit.addEventListener(`click`, () => {
+            // Quizás sería más conveniente darle el
+            // atributo 'disabled' true/false
+            // en los métodos 'handleValid' y
+            // 'handleInvalid'
+            if (validArea) console.log(`valid`);
+            else console.warn(`invalid`);
+        });
+
+        // Nos suscribimos al evento 'input'
+        // del area, que se disparará cada
+        // vez que cambie el valor del textarea
+        area.addEventListener(`input`, () => {
+            const { value } = area;
+
+            value.length >= maxPermitted ? handleInvalid() : handleValid();
+        });
+
+        // Mostramos el texto de error
+        const handleInvalid = () => {
+            validArea = false;
+            error.style.display = `block`;
+        };
+
+        // Ocultamos el bloque de error
+        const handleValid = () => {
+            validArea = true;
+            error.style.display = `none`;
+        };
+
+    </script>
     <%- include("templates/footer") %>
