@@ -18,30 +18,31 @@
             <form action="/auth" method="POST">
                 <input type="text" name="user" id="user" placeholder="Usuario"><br>
                 <input type="password" name="pass" id="pass" placeholder="Constraseña"><br>
-                
-               <p> <button type="submit" class="btnIniciar">Iniciar Sesión</button> <br> </p>
-                
+
+                <p> <button type="submit" class="btnIniciar">Iniciar Sesión</button> <br> </p>
+
             </form>
             <!--En caso de registro-->
             <p><button class="btnRegistrar"><a href="/register">Registrate!</a></button></p>
-            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-            <% if(typeof alert !="undefined" ){%>
-                <script>
-                    Swal.fire({
-                        title: '<%= alertTitle%>',
-                        text: '<%= alertMessage%>',
-                        icon: '<%= alertIcon%>',
-                        showConfirmButton: <%= showConfirmButton%>,
-                        timer: <%= time %>
 
-            }).then(() => {
-                            window.location = '/<%=ruta%>'
-                        })
-
-                </script>
-                <%}%>
         </div>
     </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if(typeof alert !="undefined" ){%>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle%>',
+                text: '<%= alertMessage%>',
+                icon: '<%= alertIcon%>',
+                showConfirmButton: <%= showConfirmButton%>,
+                timer: <%= time %>
+
+            }).then(() => {
+                    window.location = '/<%=ruta%>'
+                })
+
+        </script>
+        <%}%>
 </body>
 
 </html>
