@@ -6,7 +6,6 @@ export const getTemas = async (req, res) => {
   for (let i = 0; i < rows.length; i++) {
     users.push(await getUser(rows[i].id_user));
   }
-  console.log(users);
   //Pintar en pantalla
   res.render("foro", { data: rows, users: users, login: req.session.loggedin });
 };

@@ -77,7 +77,6 @@ export const postComments = async (req, res) => {
 // un video obtiene un like
 export const postLikeVideo = async (req, res) => {
   const videos = await getVideo(req.params.id, req.params.cod);
-  console.log(videos[0].cod == req.params.cod);
   videos.forEach(async (video) => {
     if (video.cod == req.params.cod) {
       await conexion.query("UPDATE video SET likes = $1 WHERE cod = $2", [
