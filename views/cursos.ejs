@@ -16,19 +16,36 @@
                                     <td colspan="3">
                                         <div class="contenido">Contenido:</div>
                                         <%var dato="" %>
-                                            <% for(let i=0; i<data[j].contenido.length;i++){ %>
-                                                <% if(data[j].contenido[i]=="." ){ %>
-                                                    <%dato=dato + data[j].contenido[i];%>
-                                                        <div class="pContenido">
-                                                            <p class="iconoDiv">·</p>
-                                                            <%=dato;%>
-                                                        </div>
-                                                        <%dato="";%>
-                                                            <%i++%>
-                                                                <%}else{%>
-                                                                    <%dato=dato + data[j].contenido[i];%>
-                                                                        <%}%>
-                                                                            <%}%>
+                                        <% for(let i=0; i<data[j].contenido.length;i++){ %>
+                                            <% if(data[j].contenido[i]=="." ){ %>
+                                                <%dato=dato + data[j].contenido[i];%>
+                                                <div class="pContenido">
+                                                    <p class="iconoDiv">·</p>
+                                                    <%=dato;%>
+                                                </div>
+                                                <%dato="";%>
+                                                <%i++%>
+                                            <%}else{%>
+                                                <%dato=dato + data[j].contenido[i];%>
+                                            <%}%>
+                                        <%}%>
+                                        <%var encontrado="" %>
+                                        <%var videoS=0 %>
+                                        <% for(let i=0; i<video.length;i++){ %>
+                                            
+                                            <div class="contenido"><%=video[i].titulo%></div>
+                                        <%}%>
+                                        <% if(encontrado=="si"){ %>
+                                            <% for(let i=0; i<recurso.length;i++){ %>
+                                                <% if(videoS==recurso.cod[i]){ %>
+                                                    <div class="pContenido">
+                                                        <p class="iconoDiv">·</p>
+                                                        <%=recurso[i].nombre_recurso;%>
+                                                    </div>
+                                                <%}%>
+                                            <%}%>
+                                        <%}%>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
