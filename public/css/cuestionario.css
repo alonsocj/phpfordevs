@@ -421,7 +421,7 @@ footer .nextbtn.show{
 }
 
 .opcionimg3{
-    height: 40px;
+    height: 70px;
     width: 100%;
     border-radius: 5px;
 }
@@ -540,5 +540,8 @@ footer .nextbtn.show{
     }
     .opcionimg2{
     height: 15px;
+    }
+    .opcionimg3{
+    height: 55px;
     }
 }
