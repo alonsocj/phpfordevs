@@ -28,24 +28,7 @@
                                             <%}else{%>
                                                 <%dato=dato + data[j].contenido[i];%>
                                             <%}%>
-                                        <%}%>
-                                        <%var encontrado="" %>
-                                        <%var videoS=0 %>
-                                        <% for(let i=0; i<video.length;i++){ %>
-                                            
-                                            <div class="contenido"><%=video[i].titulo%></div>
-                                        <%}%>
-                                        <% if(encontrado=="si"){ %>
-                                            <% for(let i=0; i<recurso.length;i++){ %>
-                                                <% if(videoS==recurso.cod[i]){ %>
-                                                    <div class="pContenido">
-                                                        <p class="iconoDiv">·</p>
-                                                        <%=recurso[i].nombre_recurso;%>
-                                                    </div>
-                                                <%}%>
-                                            <%}%>
-                                        <%}%>
-                                        
+                                        <%}%>                                        
                                     </td>
                                 </tr>
                                 <tr>
