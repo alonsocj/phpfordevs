@@ -187,3 +187,7 @@
     width: 100%;
   }
 }
+#area-error {
+  display: none;
+  color: red;
+}
