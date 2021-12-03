@@ -67,9 +67,10 @@
                 <div class="publication">
                     <% if(login !=undefined ){%>
                         <form action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>" method="post"
-                            class="formcomment">
+                            class="formcomment flex">
                             <label>Comentario:</label><textarea type="text" placeholder="Comentario" id="comment"
-                                name="comment" class="formatextarea"></textarea>
+                                name="comment" class="formatextarea" maxlength="250"></textarea>
+                            <label id="area-error">ERROR NO PUEDE ESCRIBIR MAS DE 250 CARACTERES</label>
                             <button type="submit" class="btnComment">Comentar</button>
                         </form>
                         <%}else{%>

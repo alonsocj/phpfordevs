@@ -1,7 +1,10 @@
 .container-watch {
   display: flex;
-  flex-wrap: wrap;
+  gap: 5rem;
 }
+/* .watch {
+  margin: auto;
+} */
 .flex {
   display: flex;
 }
@@ -35,9 +38,9 @@
   color: #ffffff;
 }
 .home-section {
-  position: relative;
+  position: absolute;
   color: #ffffff;
-  left: -4rem;
+  left: 12rem;
   height: 0;
   transition: all 0.5s ease-out;
 }
@@ -61,35 +64,50 @@
 }
 .video {
   margin-top: 2rem;
-  margin-left: calc(100% - 85rem);
   flex-direction: column;
   gap: 1rem;
 }
-@media screen and (max-width: 1320px) {
+/* @media screen and (max-width: 1320px) {
   div.video {
-    margin-left: calc(90% - 56rem);
+    margin-left: 15rem;
   }
-}
+} */
 @media screen and (max-width: 810px) {
-  div.video {
-    margin-left: calc(88% - 42rem);
+  /* div.video {
+    margin-left: 5rem;
+  } */
+  .watch {
+    margin: auto;
+  }
+  .comentaries,
+  div.publication {
+    width: 100%;
+    margin: auto;
+  }
+  div .video-info {
+    margin-left: 3rem;
+  }
+  .container-watch {
+    gap: 0;
   }
   .sidebar-videos {
-    width: 50rem;
+    width: 100%;
   }
 
   div.navcontent {
-    overflow: auto;
-    margin-left: 1rem;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
   }
   .home-section {
+    left: 48rem;
     background: red;
   }
   .video {
     margin-top: 4rem;
   }
   .sidebar-videos.close ~ .home-section {
-    position: fixed;
     left: 48rem;
   }
 }
@@ -97,9 +115,13 @@
   background: #d1d1d1;
   border-radius: 5px;
   padding: 1rem;
+  width: 50%;
+}
+.comentarie {
+  word-break: break-all;
 }
 .comentaries {
-  width: 100%;
+  width: 90%;
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 2rem;
@@ -122,4 +144,46 @@
 .inforcomment {
   display: flex;
   gap: 1rem;
+}
+.formcomment {
+  flex-direction: column;
+}
+.formatextarea {
+  display: block;
+  width: 100%;
+  height: 5%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: justify;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  resize: none; /*Impide que el textarea se pueda redimnensionar*/
+}
+.btnComment {
+  margin-top: 5px;
+  background-color: #242434;
+  border-color: #242434;
+  border-radius: 10px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 1%;
+  width: 100px;
+}
+
+.btnComment:hover {
+  background-color: #545474;
+  border-color: #545474;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  padding: 1%;
+}
+@media (max-width: 900px) {
+  .formcomment {
+    width: 100%;
+  }
 }

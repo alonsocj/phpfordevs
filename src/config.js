@@ -6,7 +6,7 @@ export const CONFIG = {
   database: process.env.DB_NAME || "root",
   password: process.env.DB_PASSWORD || "root",
   port: process.env.DB_PORT || 5432,
-  ssl: {
+  /* ssl: {
     rejectUnauthorized: false,
-  },
+  }, */
 };
