@@ -420,6 +420,12 @@ footer .nextbtn.show{
     border-radius: 5px;
 }
 
+.opcionimg2{
+    height: 60px;
+    width: 100%;
+    border-radius: 5px;
+}
+
 .preguntaimg{
     height: 90px;
     width: 40%;
