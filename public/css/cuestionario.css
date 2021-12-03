@@ -413,6 +413,13 @@ footer .nextbtn.show{
     width: 100%;
     border-radius: 5px;
 }
+
+.opcionimg2{
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+}
+
 .preguntaimg{
     height: 90px;
     width: 40%;
@@ -524,5 +531,8 @@ footer .nextbtn.show{
         width: 100%;
         margin-left: 0%;
         margin-right: 0%;
+    }
+    .opcionimg2{
+    height: 15px;
     }
 }
