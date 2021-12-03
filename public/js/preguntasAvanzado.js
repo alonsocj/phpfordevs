@@ -95,8 +95,8 @@ let questionsA = [
         options: [
             "A) B y C son correctas",
             "B) Se debe usar la función setcookie() con una fecha de expiración pasada",
-            "C)<img class = 'opcionimg' src='/img/avanzado9C.png'>",
-            "D)<img class = 'opcionimg' src='/img/avanzado9D.png'>"
+            "C)<img class = 'opcionimg3' src='/img/avanzado9C.png'>",
+            "D)<img class = 'opcionimg3' src='/img/avanzado9D.png'>"
         ]
     },
     {
