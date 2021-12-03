@@ -11,7 +11,7 @@ let validArea = true;
 const area = document.querySelector(".formatextarea");
 const submit = document.querySelector(".btnComment");
 const error = document.querySelector("#area-error");
-
+submit.setAttribute("disabled", "true");
 submit.addEventListener(`click`, () => {
   // Quizás sería más conveniente darle el
   // atributo 'disabled' true/false
@@ -26,7 +26,11 @@ submit.addEventListener(`click`, () => {
 // vez que cambie el valor del textarea
 area.addEventListener(`input`, () => {
   const { value } = area;
-
+  if (value == 0) {
+    submit.setAttribute("disabled", "true");
+  } else {
+    submit.removeAttribute("disabled");
+  }
   value.length >= maxPermitted ? handleInvalid() : handleValid();
 });
 

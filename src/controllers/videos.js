@@ -66,15 +66,11 @@ const getVideo = async (id, cod) => {
 export const postComments = async (req, res) => {
   const idcurso = req.params.id;
   const codvideo = req.params.cod;
+  const comment = req.body.comment;
+
   await conexion.query(
     "INSERT INTO comentario (cod,id_user,opinion,megusta,date_comment) VALUES($1,$2,$3,$4,$5)",
-    [
-      codvideo,
-      req.session.name,
-      req.body.comment,
-      0,
-      new Date().toLocaleString(),
-    ]
+    [codvideo, req.session.name, comment, 0, new Date().toLocaleString()]
   );
   res.redirect("/cursos/" + idcurso + "/videos/" + codvideo);
 };
