@@ -1,6 +1,12 @@
 .container-watch {
   display: flex;
   gap: 5rem;
+
+}
+.container-watch .video .watch iframe{
+  width:720px; 
+  height:450px;
+  border-radius: 5px;
 }
 /* .watch {
   margin: auto;
@@ -183,10 +189,26 @@
   padding: 1%;
 }
 @media (max-width: 900px) {
+  .container-watch{
+    width:100%;
+    padding: 0%;
+    margin: 0%; 
+  }
   .formcomment {
     width: 100%;
   }
+  .container-watch .video .video-info{
+    width:80%; 
+    
+  }
+
+  .container-watch .video .watch iframe{
+    width:425px; 
+    height: 280px;
+    border-radius: 5px;
+  }
 }
+
 #area-error {
   display: none;
   color: red;
