@@ -1,7 +1,8 @@
 /*posicion de los divs del cuestionario*/
 .contenedorCuestionario{
     position:relative;
-    height: 600px;
+    /*height: 600px;*/
+    height: 82vh;
     width: 100%;
 }
 .startbtn, .infobox, .quizbox, .resultbox{
