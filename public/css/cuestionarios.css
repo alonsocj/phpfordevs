@@ -1,17 +1,20 @@
 .contenedorG{
-    margin-bottom: 20px;
-    padding: 0;
-    margin-left: 3%;
-    margin-right: 3%;
-    height: 100%;
+    margin: 3%;
+    padding: 0%;
+    height: 33em;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.contenedorG a{
+    width: 80%;
 }
 .contenedorG a .cSectionC{
     border-radius: 10px;
-    margin-top: 20px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin: 0%;
+    padding: 2%;
     background-color: #ececec;
     color:rgb(37, 37, 37);
 }
@@ -44,5 +47,19 @@
 .contenedorG a .cSectionC table tbody tr .tituloC .parrafo{
     text-justify: left;
 }
-
+/*Para que sea responsivo*/
+@media(max-width:900px){
+    .contenedorG{
+        margin: 5%;
+        padding: 5%;
+        height: 100%;
+    }
+    .contenedorG a{
+        width: 100%;
+    }
+    .contenedorG a .cSectionC{
+        margin: 2%;
+        padding: 0%;
+    }
+}
 
