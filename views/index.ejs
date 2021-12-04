@@ -1,26 +1,30 @@
 <%- include("templates/head",{ruta:'',title:'phpfordevs',loggin:login}) %>
     <div class="cuerpo">
         <div class="general">
-            <% if(login !=undefined ){%>
-                <% for(let i=0; i<data.length;i++){ %>
-                    <% if(name == data[i].id_user ){%>
-                    <p class="welcome">Bienvenido <%=data[i].username%></p>
+            
+            <div class="general-linea">
+                <% if(login !=undefined ){%>
+                    <% for(let i=0; i<data.length;i++){ %>
+                        <% if(name == data[i].id_user ){%>
+                        <p class="welcome2">Usuario: <%=data[i].username%></p>
+                        <% } %>
                     <% } %>
                 <% } %>
-            <% } %>
-            <div class="general-linea">
-                
                 <div class="cuadrados">
                     <a href="/cursos" class="Cuadrados enlace">
                         <p class="textoimagen">Cursos</p>
                         <img src="/img/cursos.jpg" width="70%" height="70%" alt="Cursos">
                     </a>
-                </div>
-                <!--cuadros-->
+                </div>               
                 <div class="cuadrados">
                     <p class="textobienvenida">Bienvenidos a PhpForDevs</p>
-                    
-                    
+                    <% if(login !=undefined ){%>
+                        <% for(let i=0; i<data.length;i++){ %>
+                            <% if(name == data[i].id_user ){%>
+                            <p class="welcome1">Usuario: <%=data[i].username%></p>
+                            <% } %>
+                        <% } %>
+                    <% } %>
                     <img src="/img/bienvenidos.png" width="55%" height="75%" alt="Bienvenido a PhpForDevs" >
                 </div>
                 <div class="cuadrados">
