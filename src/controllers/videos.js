@@ -1,7 +1,7 @@
 import { conexion } from "../database";
 // renderiza la pantalla curso
 export const cursos = async (req, res) => {
-  const { rows } = await conexion.query("SELECT * FROM curso");
+  const { rows } = await conexion.query("SELECT * FROM curso ORDER BY id_curso");
   res.render("cursos", {
     data: rows,
     login: req.session.loggedin,

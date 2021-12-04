@@ -18,14 +18,16 @@ VALUES
     0,
     'Video explicativo para instalar y configurar el entorno de trabajo de PHP utilizando XAMPP en Windows.'
   );
-  /* falta 
-                                                        aaaaa
-                                                        aaaaa
-                                                      
-                                                        aaaaa
-                                                        
-                                                        
-                                                        linux */
+INSERT INTO
+  video (id_curso, titulo, url, likes, descripcion_video)
+VALUES
+  (
+    3,
+    'Tipos de datos.',
+    'https://www.youtube.com/embed/WEuT99vdhhc',
+    0,
+    'Video explicativo para instalar y configurar el entorno de trabajo de PHP en Ubuntu.'
+  );
 INSERT INTO
   video (id_curso, titulo, url, likes, descripcion_video)
 VALUES
@@ -64,7 +66,7 @@ VALUES
     'Ciclos',
     'https://www.youtube.com/embed/3zoFwfxIeSk',
     0,
-    'En este video se explica acerca de las estructuras While y For, así como un breve repaso acerca de las estructuras condicionales para mayor comprensión.'
+    'En este video se explica acerca de las estructuras While y For, así como un repaso acerca de las estructuras condicionales.'
   );
 INSERT INTO
   video (id_curso, titulo, url, likes, descripcion_video)
@@ -111,10 +113,20 @@ INSERT INTO
 VALUES
   (
     5,
-    'Intefaces',
-    'https://www.youtube.com/embed/XxxCU3kqAMg',
+    'Constructores y Destructores',
+    'https://www.youtube.com/embed/eKDY8Tq7-ys',
     0,
-    'Video sobre constructores y destructores en el lenguaje de programación PHP en donde se explica cómo funcionan y cuál es su aplicación.'
+    'Video sobre constructores y destructores en el lenguaje de programación PHP.'
+  );
+INSERT INTO
+  video (id_curso, titulo, url, likes, descripcion_video)
+VALUES
+  (
+    5,
+    'Intefaces',
+    'https://www.youtube.com/embed/y7xZDKHweeY',
+    0,
+    'Video explicativo sobre interfaces, su utilidad e implementación en PHP.'
   );
 INSERT INTO
   video (id_curso, titulo, url, likes, descripcion_video)
@@ -204,7 +216,17 @@ VALUES
     'Consumo de una API',
     'https://www.youtube.com/embed/T6kvsfehsMM',
     0,
-    'Video que muestra el consumo de una API en este caso de Google Maps, a su vez se hace el uso de HTML, JSON y PHP como herramientas para su realización.'
+    'Video que muestra el consumo de una API en este caso de Google Maps mediante el uso de HTML, JSON y PHP.'
+  );
+INSERT INTO
+  video (id_curso, titulo, url, likes, descripcion_video)
+VALUES
+  (
+    8,
+    'Creación de una API',
+    'https://www.youtube.com/embed/DhF_MNMcPtg',
+    0,
+    'Video que trata acerca de la elaboración de una API sobre películas en MySQL y PHP.'
   );
 INSERT INTO
   video (id_curso, titulo, url, likes, descripcion_video)
