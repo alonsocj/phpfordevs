@@ -172,11 +172,7 @@ a{
     align-items: center;
 }
 
-.general .welcome{
-    text-align: right;
-    margin-right: 20px;
-    margin-top: 10px;
-}
+
 
 .general .general-linea{
     display:flex;
@@ -192,6 +188,21 @@ a{
     border-radius: 15px;
     margin-bottom: 15px;
 }
+
+.general .welcome1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+.general .welcome2{
+    text-align: center;
+    font-weight: bold;
+    font-size: 0px;
+    visibility: hidden;
+    padding: 0%;
+}
+
 
 .footer{
     width: 100%;
@@ -215,6 +226,14 @@ a{
     margin-top: 20px;
     padding-bottom: 15px;
     color:black;
+}
+
+.textobienvenida2{
+    font-size: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    color:black;
+    visibility: hidden;
 }
 
 .textoimagen{
@@ -297,4 +316,19 @@ a{
         display:flex;
         
     }
+    .general .welcome1{
+        text-align: center;
+        font-weight: bold;
+        font-size: 0px;
+        visibility: hidden;
+        
+    }
+    .general .welcome2{
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        visibility: visible;
+        padding: 2%;
+    }
+
 }
