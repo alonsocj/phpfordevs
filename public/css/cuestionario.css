@@ -2,7 +2,7 @@
 .contenedorCuestionario{
     position:relative;
     /*height: 600px;*/
-    height: 82vh;
+    height: 85vh;
     width: 100%;
 }
 .startbtn, .infobox, .quizbox, .resultbox{

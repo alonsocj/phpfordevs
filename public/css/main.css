@@ -4,6 +4,7 @@
     padding: 0;
 }
 
+
 body{
     background-color: rgb(255, 255, 255);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -185,6 +186,7 @@ a{
     display:flex;
     margin-top: 10px;
     justify-content: space-around;
+    
 }
 .cuadrados{
     float: left;
@@ -328,8 +330,7 @@ a{
         text-align: center;
         padding-right: 15px;
         justify-content: center;
-        display:flex;
-        
+        display:flex;       
     }
     .general .welcome1{
         text-align: center;
