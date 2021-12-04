@@ -3,6 +3,9 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+.cuerpo{
+  height: 42em;
+}
 
 .mainforum .forum {
   width: 450px;

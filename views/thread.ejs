@@ -3,76 +3,78 @@
     <script src="/js/validacionforo.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <div class="top-bar">
-        <h1>
-            <%=foro[0].titforo%>
-        </h1>
-        <h2>
-            <%=foro[0].descripcion%>
-        </h2>
-              
-    </div>
-
-    <div class="maincomment">
-        <div class="comments">
-            <% if(login !=undefined ){%>
-                <form method="post" class="formcomment" onsubmit="return validarComentarios();">
-                    <label>Comentario:</label><textarea type="text" placeholder="Comentario" id="comment" name="comment"
-                        class="formatextarea" maxlength="250"></textarea>
-                    <label id="area-error">Maximo 250 caracteres </label>
-                    <button type="submit" class="btnComment btnSubmit">Comentar</button>
-                </form>
-                <%}else{%>
-                    <p>Si quieres interactuar en el foro <%=foro[0].titforo%>
-                            <a href="/register">registrate!</a> o </p>
-                    <p>Si ya tienes una cuenta <a href="/login">Inicia Sesión</a></p>
-                    <%}%>
+    <div class="cuerpo">
+        <div class="top-bar">
+            <h1>
+                <%=foro[0].titforo%>
+            </h1>
+            <h2>
+                <%=foro[0].descripcion%>
+            </h2>
+                  
         </div>
-    </div>
-    <div class="seccioncomentarios">
-        <% for(let i=0; i<data.length;i++){ %>
-
-            <div class="mensajes">
-                <div class="contentmessage">
-                    <p>Autor: <%= users[i][0].username%>
-                    </p>
-                </div>
-                <div class="contentmessage">
-                    <p>Fecha de publicacion: <%= data[i].fecha_coment%>
-                    </p>
-                </div>
-                <div class="contentmessage">
-                    <p>Respuesta: <%= data[i].descripcion_res%>
-                    </p>
-                </div>
-                <!--Session de likes-->
-
-                <%if(login !=undefined){%>
-                    <%if(likes[i]==true){%>
-                        <form action="/foro/<%=foro[0].id_foro%>/unlike/<%=data[i].id_respuesta%>/<%=actualUser%>"
-                            method="post">
-                            <button type="submit" class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
-                                <%= data[i].ayuda%>
-                            </button>
-                        </form>
-                        <%}else{%>
-
-                            <form action="/foro/<%=foro[0].id_foro%>/like/<%=data[i].id_respuesta%>/<%=actualUser%>"
+    
+        <div class="maincomment">
+            <div class="comments">
+                <% if(login !=undefined ){%>
+                    <form method="post" class="formcomment" onsubmit="return validarComentarios();">
+                        <label>Comentario:</label><textarea type="text" placeholder="Comentario" id="comment" name="comment"
+                            class="formatextarea" maxlength="250"></textarea>
+                        <label id="area-error">Maximo 250 caracteres </label>
+                        <button type="submit" class="btnComment btnSubmit">Comentar</button>
+                    </form>
+                    <%}else{%>
+                        <p>Si quieres interactuar en el foro <%=foro[0].titforo%>
+                                <a href="/register">registrate!</a> o </p>
+                        <p>Si ya tienes una cuenta <a href="/login">Inicia Sesión</a></p>
+                        <%}%>
+            </div>
+        </div>
+        <div class="seccioncomentarios">
+            <% for(let i=0; i<data.length;i++){ %>
+    
+                <div class="mensajes">
+                    <div class="contentmessage">
+                        <p>Autor: <%= users[i][0].username%>
+                        </p>
+                    </div>
+                    <div class="contentmessage">
+                        <p>Fecha de publicacion: <%= data[i].fecha_coment%>
+                        </p>
+                    </div>
+                    <div class="contentmessage">
+                        <p>Respuesta: <%= data[i].descripcion_res%>
+                        </p>
+                    </div>
+                    <!--Session de likes-->
+    
+                    <%if(login !=undefined){%>
+                        <%if(likes[i]==true){%>
+                            <form action="/foro/<%=foro[0].id_foro%>/unlike/<%=data[i].id_respuesta%>/<%=actualUser%>"
                                 method="post">
-                                <button type="submit" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
+                                <button type="submit" class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
                                     <%= data[i].ayuda%>
                                 </button>
                             </form>
-                            <%}%>
-                                <%}else{%>
-
-                                    <a href="/login" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
+                            <%}else{%>
+    
+                                <form action="/foro/<%=foro[0].id_foro%>/like/<%=data[i].id_respuesta%>/<%=actualUser%>"
+                                    method="post">
+                                    <button type="submit" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
                                         <%= data[i].ayuda%>
-                                    </a>
-                                    <%}%>
-            </div>
-
-            <% } %>
+                                    </button>
+                                </form>
+                                <%}%>
+                                    <%}else{%>
+    
+                                        <a href="/login" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
+                                            <%= data[i].ayuda%>
+                                        </a>
+                                        <%}%>
+                </div>
+    
+                <% } %>
+        </div>
     </div>
     <script>
         const maxPermitted = 250;

@@ -51,7 +51,7 @@
 @media(max-width:900px){
     .contenedorG{
         margin: 3%;
-        padding: 3%;
+        padding: 0%;
         height: 800px;
     }
     .contenedorG a{
@@ -59,7 +59,7 @@
         
     }
     .contenedorG a .cSectionC{
-        padding: 20px;
+        padding: 15px;
     }
 }
 
