@@ -262,6 +262,14 @@ a{
     margin-left: 25px;
     text-align: center;
 }
+.general .welcome{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    
+    
+}
+
 
 /*Para que sea responsivo*/
 @media(max-width:900px){
