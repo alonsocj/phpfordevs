@@ -1,4 +1,5 @@
 <%- include("templates/head",{ruta:'/css/contac.css',title:'Contactanos',login:login}) %>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <div class="formulario">
     <div class="contacto">
         <h3>Escribenos tus sugerencias!</h3><br/>
@@ -34,25 +35,51 @@
         const nombre=document.getElementById('nombre').value;
         const subject=document.getElementById('subject').value;
         const mensaje=document.getElementById('mensaje').value;
-
         if(nombre==""){
-            alert("El campo de nombre de usuario está vacío");
-            document.getElementById('nombre').value="";
-            document.getElementById("nombre").focus();
+            Swal.fire({
+                title: "Campo Requerido",
+                text: "Debe de Ingresar el nombre de usuario",
+                icon: "error",
+                showConfirmButton: "Aceptar",
+                confirmButtonColor: "#3085d6",
+            });
+            document.getElementById('nombre').value="";           
         }else if(email==""){
-            alert("El campo de email está vacío");
-            document.getElementById('email').value="";
-            document.getElementById("email").focus();
+            Swal.fire({
+                title: "Campo Requerido",
+                text: "El campo de email está vacío",
+                icon: "error",
+                showConfirmButton: "Aceptar",
+                confirmButtonColor: "#3085d6",
+            });
+            document.getElementById('email').value="";           
         }else if(subject==""){
-            alert("El campo de asunto del correo a enviar está vacío");
-            document.getElementById('subject').value="";
-            document.getElementById("subject").focus();
+            Swal.fire({
+                title: "Campo Requerido",
+                text: "El campo de asunto del correo a enviar está vacío",
+                icon: "error",
+                showConfirmButton: "Aceptar",
+                confirmButtonColor: "#3085d6",
+            });
+            document.getElementById('subject').value="";            
         }else if(mensaje==""){
-            alert("El campo del mensaje a enviar está vacío");
+            Swal.fire({
+                title: "Campo Requerido",
+                text: "El campo del mensaje a enviar está vacío",
+                icon: "error",
+                showConfirmButton: "Aceptar",
+                confirmButtonColor: "#3085d6",
+            });
             document.getElementById('mensaje').value="";
-            document.getElementById("mensaje").focus();
         }else{
             window.location.href=`mailto:phpfordevs@gmail.com?subject=${subject}&body=Nombre%3A%20${nombre}%0ACorreo%3A%20${email}%0AMensaje%3A%20${mensaje}`;
+            Swal.fire({
+                title: "Mensaje",
+                text: "Mensaje enviado con éxito",
+                icon: "success",
+                showConfirmButton: "Aceptar",
+                confirmButtonColor: "#3085d6",
+            });
             document.getElementById('email').value="";
             document.getElementById('nombre').value="";
             document.getElementById('subject').value="";
