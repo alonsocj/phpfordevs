@@ -437,7 +437,7 @@ footer .nextbtn.show{
 
 @media(max-width:900px){
     .contenedorCuestionario{
-        height: 600px;
+        height: 800px;
     }
     .startbtn, .infobox, .quizbox, .resultbox{
         top:40%;
