@@ -107,7 +107,7 @@
     position: absolute;
   }
   .home-section {
-    left: 48rem;
+    left: calc(100% - 3rem);
     background: red;
   }
   .video {
