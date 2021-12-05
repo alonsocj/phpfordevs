@@ -196,8 +196,12 @@
   .formcomment {
     width: 100%;
   }
+  .container-watch .video{
+    padding: 2%;
+    
+  }
   .container-watch .video .video-info{
-    width:70%; 
+    width:80%;
     
   }
   
