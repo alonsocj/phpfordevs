@@ -203,8 +203,8 @@
   
 
   .container-watch .video .watch iframe{
-    width:375px; 
-    height: 175px;
+    width:320px; 
+    height: 180px;
     border-radius: 5px;
   }
 }
