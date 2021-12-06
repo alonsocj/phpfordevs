@@ -244,6 +244,6 @@
 .recursos ul li:hover {
   background: #545474af;
 }
-a:visited{
+.recursos ul li a:visited{
   color: #ffffff;
 }
