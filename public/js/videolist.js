@@ -11,16 +11,17 @@ let validArea = true;
 const area = document.querySelector(".formatextarea");
 const submit = document.querySelector(".btnComment");
 const error = document.querySelector("#area-error");
-submit.setAttribute("disabled", "true");
-submit.addEventListener(`click`, () => {
-  // Quizás sería más conveniente darle el
-  // atributo 'disabled' true/false
-  // en los métodos 'handleValid' y
-  // 'handleInvalid'
-  if (validArea) console.log(`valid`);
-  else console.warn(`invalid`);
-});
-
+if (submit) {
+  submit.setAttribute("disabled", "true");
+  submit.addEventListener(`click`, () => {
+    // Quizás sería más conveniente darle el
+    // atributo 'disabled' true/false
+    // en los métodos 'handleValid' y
+    // 'handleInvalid'
+    if (validArea) console.log(`valid`);
+    else console.warn(`invalid`);
+  });
+}
 // Nos suscribimos al evento 'input'
 // del area, que se disparará cada
 // vez que cambie el valor del textarea
