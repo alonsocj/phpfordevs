@@ -24,44 +24,58 @@
         </div>
         <div class="video flex">
             <div class="watch">
-                <iframe src="<%= video[0].url %>" title="YouTube video player" frameborder="0"
-                    allowfullscreen></iframe>
+                <iframe src="<%= video[0].url %>" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="video-info">
+            <div class="video-info flex">
                 <h1 class="videotitle">
                     <%= video[0].titulo %>
                 </h1>
-                <p>
+                <p class="videodescription">
                     <%= video[0].descripcion_video%>
                 </p>
-                <div class="likes">
-                    <%if(login !=undefined){%>
-                        <%if(videoLike==true){%>
-
-                            <form
-                                action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/unlike/<%=actualUser%>"
-                                method="post">
-                                <button type="submit" class="nomegusta">No me gusta <i class="far fa-thumbs-up"></i>
-                                    <%= video[0].likes%>
-                                </button>
-                            </form>
-                            <%}else{%>
-
-                                <form
-                                    action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/like/<%=actualUser%>"
-                                    method="post">
-                                    <button type="submit" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
-                                        <%= video[0].likes%>
-                                    </button>
-                                </form>
+                <%if(recurso.length>0){%>
+                    <div class="recursos">
+                        <strong> RECURSOS DEL VIDEO</strong>
+                        <ul class="menu-recurso">
+                            <%for(let i=0;i<recurso.length;i++){%>
+                                <li class="recurso"><a href="<%=recurso[i].url_recurso%>" target="_blank">
+                                        <%=i+1%>.<%=recurso[i].nombre_recurso%>
+                                    </a></li>
                                 <%}%>
+                        </ul>
+                    </div>
+                    <%}%>
+                        <div class="likes">
+                            <%if(login !=undefined){%>
+                                <%if(videoLike==true){%>
+
+                                    <form
+                                        action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/unlike/<%=actualUser%>"
+                                        method="post">
+                                        <button type="submit" class="nomegusta">No me gusta <i
+                                                class="far fa-thumbs-up"></i>
+                                            <%= video[0].likes%>
+                                        </button>
+                                    </form>
                                     <%}else{%>
 
-                                        <a href="/login" class="megusta">Me gusta <i class="far fa-thumbs-up"></i>
-                                            <%= video[0].likes%>
-                                        </a>
+                                        <form
+                                            action="/cursos/<%=video[0].id_curso%>/videos/<%=video[0].cod%>/like/<%=actualUser%>"
+                                            method="post">
+                                            <button type="submit" class="megusta">Me gusta <i
+                                                    class="far fa-thumbs-up"></i>
+                                                <%= video[0].likes%>
+                                            </button>
+                                        </form>
                                         <%}%>
-                </div>
+                                            <%}else{%>
+
+                                                <a href="/login" class="megusta">Me gusta <i
+                                                        class="far fa-thumbs-up"></i>
+                                                    <%= video[0].likes%>
+                                                </a>
+                                                <%}%>
+                        </div>
             </div>
             <div class="comentaries flex">
                 <div class="publication">
