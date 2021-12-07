@@ -25,15 +25,17 @@ if (submit) {
 // Nos suscribimos al evento 'input'
 // del area, que se disparará cada
 // vez que cambie el valor del textarea
-area.addEventListener(`input`, () => {
-  const { value } = area;
-  if (value == 0) {
-    submit.setAttribute("disabled", "true");
-  } else {
-    submit.removeAttribute("disabled");
-  }
-  value.length >= maxPermitted ? handleInvalid() : handleValid();
-});
+if (area) {
+  area.addEventListener(`input`, () => {
+    const { value } = area;
+    if (value == 0) {
+      submit.setAttribute("disabled", "true");
+    } else {
+      submit.removeAttribute("disabled");
+    }
+    value.length >= maxPermitted ? handleInvalid() : handleValid();
+  });
+}
 
 // Mostramos el texto de error
 const handleInvalid = () => {
