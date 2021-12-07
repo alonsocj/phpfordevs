@@ -46,13 +46,13 @@ let questionsI = [
     },
     {
         num:5,
-        question:"Cuanto es 1 + 8?",
-        answer: "9",
+        question:"Facilita la creación de objetos a partir de otros ya existentes e implica que una subclase obtiene el comportamiento y los atributos de su superclase:",
+        answer: "Herencia",
         options: [
-            "1",
-            "2",
-            "3",
-            "9"
+            "Abstracción",
+            "Constructor",
+            "Herencia",
+            "Polimorfismo"
         ]
     },
 ]

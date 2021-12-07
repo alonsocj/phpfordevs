@@ -89,7 +89,7 @@
     margin: auto;
   }
   div .video-info {
-    margin-left: 3rem;
+    margin-left: 2rem;
   }
   .container-watch {
     gap: 0;
@@ -198,7 +198,7 @@
     width: 100%;
   }
   .container-watch .video .video-info {
-    width: 85%;
+    width: 80%;
   }
 
   .container-watch .video .watch iframe {
