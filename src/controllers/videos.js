@@ -175,7 +175,6 @@ const getRecurso = async (cod) => {
     "SELECT * FROM recursos WHERE cod = $1",
     [cod]
   );
-  console.log(rows);
   return rows;
 };
 
