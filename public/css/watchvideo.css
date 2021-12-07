@@ -198,12 +198,12 @@
     width: 100%;
   }
   .container-watch .video .video-info {
-    width: 70%;
+    width: 85%;
   }
 
   .container-watch .video .watch iframe {
-    width: 400px;
-    height: 200px;
+    width: 320px;
+    height: 180px;
     border-radius: 5px;
   }
 }
