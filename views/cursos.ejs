@@ -1,6 +1,7 @@
 <%- include("templates/head",{ruta:"/css/cursos.css",title:'Cursos de php'}) %>
     <div class="contenedor">
         <% for(let j=0; j<data.length;j++){ %>
+            <%console.log(data)%>
                 <a href="/cursos/<%=data[j].id_curso%>/videos">
                     <section class="cSection">
                         <table>

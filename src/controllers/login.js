@@ -55,6 +55,7 @@ export const auth = async (req, res) => {
   }
 };
 export const logout = async (req, res) => {
+  console.log(req.session);
   req.session = null;
   res.redirect("/");
 };
